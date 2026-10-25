@@ -1,11 +1,12 @@
-const CACHE_NAME = 'gpc-1x2zip-v20261025-6';
+const CACHE_NAME = 'gpc-1x2zip-v20261026-1';
 const ASSETS = [
   './',
   './index.html',
   './style.css',
   './app.js',
   './manifest.json',
-  './app-icon.svg'
+  './app-icon.svg',
+  './og-banner.png'
 ];
 
 self.addEventListener('install', function(event) {

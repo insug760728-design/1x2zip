@@ -1,6 +1,99 @@
 [build]
   publish = "."
 
+[[redirects]]
+  from = "/kr/"
+  to = "/kr"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/jp/"
+  to = "/jp"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/cn/"
+  to = "/cn"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/es/"
+  to = "/es"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/it/"
+  to = "/it"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/br/"
+  to = "/br"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/uk/"
+  to = "/uk"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/us/"
+  to = "/us"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/kr"
+  to = "/kr.html"
+  status = 200
+
+[[redirects]]
+  from = "/jp"
+  to = "/jp.html"
+  status = 200
+
+[[redirects]]
+  from = "/cn"
+  to = "/cn.html"
+  status = 200
+
+[[redirects]]
+  from = "/es"
+  to = "/es.html"
+  status = 200
+
+[[redirects]]
+  from = "/it"
+  to = "/it.html"
+  status = 200
+
+[[redirects]]
+  from = "/br"
+  to = "/br.html"
+  status = 200
+
+[[redirects]]
+  from = "/uk"
+  to = "/uk.html"
+  status = 200
+
+[[redirects]]
+  from = "/us"
+  to = "/us.html"
+  status = 200
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "no-cache, must-revalidate"
+
 [[headers]]
   for = "/index.html"
   [headers.values]
@@ -10,3 +103,9 @@
   for = "/sw.js"
   [headers.values]
     Cache-Control = "no-cache, no-store, must-revalidate"
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml; charset=utf-8"
+    Cache-Control = "public, max-age=3600"

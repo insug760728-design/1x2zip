@@ -2287,3 +2287,94 @@ body[data-view-mode="mobile"] .slip-marks {
   justify-content: space-between;
 }
 
+/* 1-Click Share Button & Toast & SEO Crawl Summary */
+.btn-share-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 11px;
+  border-radius: 8px;
+  border: 1px solid rgba(56, 189, 248, 0.55);
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.22), rgba(16, 185, 129, 0.22));
+  color: #e0f2fe;
+  font-size: 0.78rem;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.18s;
+}
+
+.btn-share-app:hover {
+  border-color: var(--accent-cyan);
+  background: linear-gradient(135deg, rgba(14, 165, 233, 0.38), rgba(16, 185, 129, 0.35));
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.btn-tool.btn-tool-share {
+  border-color: rgba(16, 185, 129, 0.55);
+  background: rgba(16, 185, 129, 0.16);
+  color: #6ee7b7;
+  font-weight: 700;
+}
+
+.btn-tool.btn-tool-share:hover {
+  background: rgba(16, 185, 129, 0.32);
+  color: #fff;
+}
+
+.share-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 84px;
+  transform: translate(-50%, 16px);
+  background: rgba(15, 23, 42, 0.96);
+  border: 1.5px solid var(--accent-emerald);
+  color: #ecfdf5;
+  padding: 11px 20px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 9999;
+  max-width: 92vw;
+  text-align: center;
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.share-toast.show {
+  opacity: 1;
+  transform: translate(-50%, 0);
+}
+
+.seo-crawl-summary {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  font-size: 0.74rem;
+  color: var(--text-sub);
+  line-height: 1.5;
+}
+
+.seo-crawl-links {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px 14px;
+}
+
+.seo-crawl-links a {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.seo-crawl-links a:hover {
+  color: var(--accent-cyan);
+  text-decoration: underline;
+}
+
+
