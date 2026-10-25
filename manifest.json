@@ -1,0 +1,19 @@
+{
+  "name": "GLOBAL POOL COMBINATOR (1X2 / W-5-L)",
+  "short_name": "1X2 Pool Pro",
+  "description": "14/15-Match Soccer & Basketball Pool 2nd-Prize (N-1) 100% Guarantee Combinator (Patent Pending KR 10-2026-0205596)",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#0a0f1d",
+  "theme_color": "#0f172a",
+  "icons": [
+    {
+      "src": "app-icon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

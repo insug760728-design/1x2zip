@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1X2ZIP 글로벌 6개국 24시간 전면 무료 이벤트 배포 센터</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0b1120;
+      color: #f8fafc;
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 24px 18px 70px;
+      line-height: 1.55;
+    }
+    .container { max-width: 1220px; margin: 0 auto; }
+    .head-box {
+      background: linear-gradient(135deg, rgba(16,185,129,0.22), rgba(15,23,42,0.98));
+      border: 1.5px solid #10b981;
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 22px;
+      text-align: center;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.45);
+    }
+    .head-box h1 { font-size: 1.55rem; color: #34d399; margin-bottom: 8px; }
+    .head-box p { font-size: 0.9rem; color: #e2e8f0; max-width: 880px; margin: 0 auto; }
+    .how-it-works {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .how-pill {
+      background: rgba(15,23,42,0.9);
+      border: 1px solid rgba(52,211,153,0.45);
+      color: #6ee7b7;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 6px 13px;
+      border-radius: 999px;
+    }
+    .site-pill {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 7px 18px;
+      background: rgba(245,158,11,0.18);
+      border: 1px solid #fbbf24;
+      color: #fde047;
+      font-weight: 800;
+      font-size: 0.85rem;
+      border-radius: 999px;
+      text-decoration: none;
+    }
+
+    .mode-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 22px;
+    }
+    .mode-tab {
+      background: #1e293b;
+      border: 1.5px solid rgba(148,163,184,0.3);
+      color: #cbd5e1;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 0.86rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+    .mode-tab:hover { border-color: #34d399; color: #fff; }
+    .mode-tab.active {
+      background: linear-gradient(135deg, #10b981, #059669);
+      border-color: #6ee7b7;
+      color: #06281e;
+      box-shadow: 0 4px 16px rgba(16,185,129,0.4);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(520px, 1fr));
+      gap: 20px;
+    }
+    @media (max-width: 600px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+    .card {
+      background: #111827;
+      border: 1px solid rgba(148,163,184,0.22);
+      border-radius: 14px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(148,163,184,0.15);
+      padding-bottom: 10px;
+    }
+    .card-head h2 { font-size: 1.15rem; color: #38bdf8; }
+    .target-tag {
+      font-size: 0.74rem;
+      background: rgba(16,185,129,0.18);
+      border: 1px solid rgba(16,185,129,0.5);
+      color: #34d399;
+      padding: 4px 10px;
+      border-radius: 99px;
+      font-weight: 800;
+    }
+
+    .auto-post-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      background: rgba(16,185,129,0.08);
+      border: 1px dashed rgba(16,185,129,0.45);
+      padding: 10px 12px;
+      border-radius: 10px;
+    }
+    .auto-post-title {
+      width: 100%;
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: #34d399;
+      margin-bottom: 2px;
+    }
+    .btn-autofill {
+      padding: 7px 12px;
+      background: linear-gradient(135deg, #059669, #047857);
+      border: 1px solid #34d399;
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+    .btn-autofill:hover {
+      filter: brightness(1.15);
+      transform: translateY(-1px);
+    }
+
+    .sites-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .site-btn {
+      padding: 7px 11px;
+      background: #1e293b;
+      border: 1px solid rgba(148,163,184,0.35);
+      color: #f1f5f9;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.15s;
+      text-align: left;
+    }
+    .site-btn:hover {
+      border-color: #fbbf24;
+      color: #fbbf24;
+      background: #0f172a;
+    }
+
+    .box-label {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      font-weight: 700;
+      margin-bottom: 5px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .copy-box {
+      background: #090d16;
+      border: 1px solid rgba(148,163,184,0.22);
+      border-radius: 8px;
+      padding: 11px 12px;
+      font-size: 0.83rem;
+      color: #e2e8f0;
+      white-space: pre-wrap;
+    }
+    .btn-copy {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #090d16;
+      border: none;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-weight: 800;
+      font-size: 0.76rem;
+      cursor: pointer;
+    }
+    .btn-copy:hover { filter: brightness(1.1); }
+    .kr-trans {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      background: rgba(15,23,42,0.75);
+      border-left: 3px solid #10b981;
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+    .toast-bar {
+      position: fixed;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #10b981;
+      color: #06281e;
+      font-weight: 900;
+      font-size: 0.9rem;
+      padding: 12px 24px;
+      border-radius: 999px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      display: none;
+      z-index: 9999;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="head-box">
+      <h1>🎁 [24시간 한시적 100% 무료 개방] 글로벌 6개국 바이럴 배포 센터</h1>
+      <p>카드결제 승인 대기 기간(하루) 동안 <b>"오늘 하루만 로그인·결제 없이 100% 전면 무료 개방!"</b>으로 홍보하면<br>커뮤니티 거부감이 0%가 되어 추천수·즐겨찾기·입소문이 10배 이상 폭발합니다!</p>
+      <div class="how-it-works">
+        <span class="how-pill">🎁 핵심 훅: "로그인 없음 · 결제창 없음 · 오늘 하루 전체 슬립 & 엑셀 다운로드 100% 무료!"</span>
+        <span class="how-pill">🔥 내일 결제 승인 완료 시 이미 즐겨찾기해 둔 수천 명의 유저가 자연스럽게 유료 전환!</span>
+      </div>
+      <a href="https://1x2zip.netlify.app" target="_blank" class="site-pill">🔗 내 공식 배포 주소: https://1x2zip.netlify.app</a>
+    </div>
+
+    <div class="mode-bar">
+      <button class="mode-tab active" id="tabReview" onclick="switchTemplateMode('review')">🎁 1. [오늘 하루 100% 무료 개방] 커뮤니티 폭발용 (가장 추천!)</button>
+      <button class="mode-tab" id="tabStealth" onclick="switchTemplateMode('stealth')">🛡️ 2. 레딧 신규계정 스팸필터 우회용 (링크 띄어쓰기 버전)</button>
+      <button class="mode-tab" id="tabComment" onclick="switchTemplateMode('comment')">💬 3. 유튜브·카페 픽 분석글 베스트 댓글용 (3줄 요약)</button>
+    </div>
+
+    <div class="grid" id="cardsGrid"></div>
+  </div>
+
+  <div class="toast-bar" id="toastBar">✅ 무료 오픈 홍보글이 자동 복사되었습니다! 열린 창에 바로 붙여넣기(Ctrl+V) 하세요!</div>
+
+  <script>
+    var SITE_URL = 'https://1x2zip.netlify.app';
+    var currentMode = 'review';
+
+    var COUNTRIES_DATA = [
+      {
+        code: 'KR',
+        name: '🇰🇷 한국 (축구 승무패 14경기 · 농구 승5패 14경기)',
+        badge: '🎁 오늘 하루 100% 무료 개방',
+        redditSub: '',
+        xHashtags: '축구토토승무패,농구토토승5패,스포츠토토,승무패조합기',
+        sites: [
+          { label: '🔥 디시 프로토 갤러리 (글쓰기 직통)', url: 'https://gall.dcinside.com/mgallery/board/write/?id=proto' },
+          { label: '⚽ 디시 해외축구 갤러리 (글쓰기 직통)', url: 'https://gall.dcinside.com/board/write/?id=football_new8' },
+          { label: '🏀 디시 미국농구 NBA 갤러리 (글쓰기 직통)', url: 'https://gall.dcinside.com/board/write/?id=nba' },
+          { label: '🏆 에펨코리아 해외축구', url: 'https://www.fmkorea.com/football_world' },
+          { label: '☕ 네이버 승무패 카페', url: 'https://section.cafe.naver.com/ca-fe/home/search/combinations?q=%EC%B6%95%EA%B5%AC%ED%86%A0%ED%86%A0%20%EC%8A%B9%EB%AC%B4%ED%8C%A8' },
+          { label: '▶️ 유튜브 축구 승무패 분석 채널', url: 'https://www.youtube.com/results?search_query=%EC%B6%95%EA%B5%AC%ED%86%A0%ED%86%A0+%EC%8A%B9%EB%AC%B4%ED%8C%A8' },
+          { label: '🏀 유튜브 농구 승5패 분석 채널', url: 'https://www.youtube.com/results?search_query=%EB%86%8D%EA%B5%AC%ED%86%A0%ED%86%A0+%EC%8A%B95%ED%8C%A8' }
+        ],
+        templates: {
+          review: {
+            title: '승무패/승5패 14경기 복식 비용 88% 줄이고 2등 100% 보장하는 특허 압축기 (현재 로그인 없이 100% 전면 무료)',
+            body: '축구 승무패랑 농구 승5패 할 때 복식(더블)·삼식(트리플) 몇 개만 찍어도 구매 금액이 19만 원, 76만 원, 345만 원으로 뛰어서 부담되셨던 분들 지금 바로 써보세요.\n\n👉 ' + SITE_URL + '\n\n현재 오픈 기념으로 **회원가입·로그인·결제 전혀 없이 100% 전면 무료**로 전체 압축 슬립 열람이랑 TXT/엑셀(CSV) 다운로드까지 다 풀려 있습니다!\n\n✅ 원조합 192장(192,000원) 👉 딱 24장(24,000원)으로 87.5% 압축\n✅ 원조합 768장(768,000원) 👉 딱 86장(86,000원)으로 88.8% 압축\n✅ 인위적인 조건부 필터 삭제가 아니라 특허출원(제10-2026-0205596호) 독점 압축 기술이라, 내 마킹 안에 경기 결과만 들어오면 구멍(누수) 0건으로 무조건 최소 2등(13경기) 100.0% 당첨 확정입니다.\n✅ 지난 회차(61·62회차) 실제 결과 대입 시 1·2등 몇 장 당첨되는지 실시간 자동 채점도 바로 확인 가능합니다.\n\n유료 전환되기 전에 북마크(즐겨찾기) 해두시고 이번 회차 승무패·승5패 무료로 뽑아가세요:\n' + SITE_URL,
+            krNote: '🇰🇷 포인트: "로그인도 없고 결제도 없이 지금 100% 완전 무료로 다 풀려 있다"고 하면 커뮤니티 유저들이 광고 거부감 없이 폭발적으로 접속하고 즐겨찾기를 해둡니다!'
+          },
+          stealth: {
+            title: '승무패/승5패 14경기 복식 76만원을 8만원으로 줄이고 2등 100% 보장하는 특허 압축기 (현재 100% 무료)',
+            body: '승무패랑 농구 승5패 복식·삼식 많이 찍으시는 분들 지금 100% 무료로 풀려있는 특허출원(제10-2026-0205596호) 압축 조합기 써보세요.\n\n주소창에 👉 1x2zip . netlify . app (가운데 띄어쓰기 빼고 입력)\n\n- 원조합 192장(19만2천원) → 24장(2만4천원)으로 87.5% 절감\n- 원조합 768장(76만8천원) → 86장(8만6천원)으로 88.8% 절감\n- 마킹 안에 결과만 들어오면 누락 0건으로 무조건 최소 2등(13경기) 100% 보장\n- 로그인 없이 전체 슬립 복사 및 엑셀 다운로드 현재 100% 무료 개방 중입니다.',
+            krNote: '🇰🇷 포인트: 외부 링크 금지 게시판(일부 카페 등)에서 필터링 없이 100% 올라가는 버전입니다.'
+          },
+          comment: {
+            title: '유튜브 승무패/승5패 분석 영상 댓글용',
+            body: '분석 잘 봤습니다! 이번 회차 복식 6~7개 찍으면 19만~76만원 나와서 부담되시는 분들은 특허출원 승무패·승5패 압축기(' + SITE_URL + ') 써보세요. 원조합 192장을 24장(2만4천원)으로 줄여주면서 마킹 안에만 들어오면 최소 2등(13경기) 100% 보장되는데, 지금 로그인 없이 100% 무료로 전체 슬립 다 뽑을 수 있습니다!',
+            krNote: '🇰🇷 포인트: 유튜브 댓글에서 "로그인 없이 100% 무료"라는 문구가 들어가면 클릭률이 3배 이상 올라갑니다.'
+          }
+        }
+      },
+      {
+        code: 'EN',
+        name: '🇺🇸 · 🇬🇧 미국 / 영국 (Soccer Pools · EPL · NBA Parlays)',
+        badge: '🎁 100% FREE (No Login / No Paywall)',
+        redditSub: 'SoccerBetting',
+        xHashtags: 'SoccerPools,FootballPools,SoccerBetting,NBAParlays',
+        sites: [
+          { label: '🔥 Reddit r/SoccerBetting', url: 'https://www.reddit.com/r/SoccerBetting/' },
+          { label: '🏈 Reddit r/sportsbook', url: 'https://www.reddit.com/r/sportsbook/' },
+          { label: '🇬🇧 Punters Lounge UK Forum', url: 'https://www.punterslounge.com/forum/' },
+          { label: '🇺🇸 Covers.com Forum', url: 'https://www.covers.com/forum' },
+          { label: '🏆 OLBG UK Community', url: 'https://www.olbg.com/forum' }
+        ],
+        templates: {
+          review: {
+            title: '[100% Free / No Login] Patent-Pending 14 & 15-Match Soccer & NBA Pool Slip Compressor (Cuts 768 combos to 86 slips with 100% 2nd-Prize Guarantee)',
+            body: 'Hey everyone,\n\nIf you play 14 or 15-match 1X2 Soccer Pools (MLS/EPL/European Jackpot Pools) or NBA Pools, adding multiple Doubles and Triples usually blows up the ticket cost to $192 or $768.\n\nRight now, this patent-pending slip compression tool is 100% FREE to use (no login, no paywall, full slip view & CSV/TXT export unlocked):\n👉 ' + SITE_URL + '\n\nWhat it does:\n✅ Compresses 192 raw combinations down to just 24 slips (87.5% savings) / 768 combinations down to 86 slips (88.8% savings).\n✅ 100.0% 2nd-Prize Guarantee (0 missed outcomes) — as long as the match results fall within your selected Doubles/Triples, at least 13/14 (or 14/15) hits are 100% guaranteed.\n✅ Supports both Soccer (1X2) and Basketball (NBA W-5-L) with live ESPN scoreboard auto-grading on past and current rounds.\n\nBookmark it and generate your reduced slips for free while full access is open:\n' + SITE_URL,
+            krNote: '🇰🇷 뜻: "[100% 무료 / 노로그인] 768조합을 86장으로 줄이고 2등을 100% 보장하는 14/15경기 축구·NBA 슬립 압축기가 현재 회원가입·결제 없이 100% 전면 무료 개방 중입니다!"'
+          },
+          stealth: {
+            title: '[100% Free Tool] 14 & 15-Match Soccer & NBA Pool Slip Compressor (Cuts 768 combos down to 86 slips with 100% 2nd-Prize Guarantee)',
+            body: 'Hey everyone,\n\nIf you play 14 or 15-match 1X2 Soccer Pools or NBA Pools, adding a few Doubles/Triples blows up the ticket cost to $192 or $768.\n\nThis patent-pending slip compression tool is currently 100% FREE with no login required (full slip export unlocked):\n👉 1x2zip . netlify . app (remove spaces)\n\n- Compresses 192 raw combinations down to just 24 slips (87.5% savings) / 768 combinations down to 86 slips (88.8% savings).\n- 100.0% 2nd-Prize Guarantee (0 missed outcomes) if the match results land inside your picks.\n- Supports both Soccer (1X2) and Basketball (NBA W-5-L) with live ESPN scoreboard auto-grading.',
+            krNote: '🇰🇷 포인트: 레딧 신규 계정 링크 필터를 100% 통과하는 띄어쓰기 주소 버전입니다.'
+          },
+          comment: {
+            title: '미국/영국 유튜브·레딧 Daily Picks 댓글용',
+            body: 'Great breakdown! If anyone is hedging multiple games on 14/15-match pools, check out this free slip compressor (' + SITE_URL + '). It cuts 192 combinations down to 24 slips (87.5% cheaper) with a 100% 2nd-prize guarantee, and it is currently 100% free with no login required!',
+            krNote: '🇰🇷 뜻: "좋은 분석입니다! 14/15경기 풀에서 복수 마킹하시는 분들은 현재 로그인 없이 100% 무료로 풀려 있는 슬립 압축기(링크)로 비용을 87.5% 아껴보세요!"'
+          }
+        }
+      },
+      {
+        code: 'ES',
+        name: '🇪🇸 스페인 (La Quiniela 14/15 · Quiniela Basket)',
+        badge: '🎁 100% GRATIS (Sin Registro)',
+        redditSub: 'LaLiga',
+        xHashtags: 'LaQuiniela,Quiniela,QuinielaReducida,LaLiga',
+        sites: [
+          { label: '🔥 Foro1X2 (스페인 최대 키니엘라 포럼)', url: 'https://www.foro1x2.com/' },
+          { label: '🚗 ForoCoches', url: 'https://www.forocoches.com/' },
+          { label: '⚽ Mediavida Deportes', url: 'https://www.mediavida.com/foro/deportes' },
+          { label: '📢 Reddit r/LaLiga', url: 'https://www.reddit.com/r/LaLiga/' }
+        ],
+        templates: {
+          review: {
+            title: '[100% GRATIS sin registro] Reductor al 13 para La Quiniela (de 768 a 86 apuestas con 100% garantía sin condiciones)',
+            body: 'Hola compañeros quinielistas,\n\nAhora mismo tenéis abierto de forma 100% GRATUITA (sin registro ni pago, con descarga completa de columnas en TXT/CSV desbloqueada) este reductor al 13 para La Quiniela (14 y Pleno al 15):\n👉 ' + SITE_URL + '\n\n✅ Permite marcar cualquier mezcla libre de Dobles y Triples.\n✅ 192 apuestas se reducen a solo 24 columnas (87,5% de ahorro) / 768 apuestas bajan a 86 columnas (88,8% de ahorro).\n✅ Garantía del 100,0% al 13 (N-1) con 0 fallos, sin filtros ni condiciones que eliminen premios.\n✅ Incluye la Jornada actual en vivo y escrutinio automático de jornadas anteriores.\n\nAprovechad mientras está 100% gratis y sin límite aquí:\n' + SITE_URL,
+            krNote: '🇰🇷 뜻: "[로그인 없이 100% 무료] 768조합을 86장으로 줄이고 조건 없이 13경기 당첨을 100% 보장하는 키니엘라 압축기가 현재 전체 다운로드까지 100% 무료 개방 중입니다!"'
+          },
+          stealth: {
+            title: '[100% GRATIS] Reductor al 13 para La Quiniela (de 768 a 86 apuestas con 100% garantía sin condiciones)',
+            body: 'Hola compañeros,\n\nEstá abierto de forma 100% GRATUITA (sin registro) este reductor al 13 para La Quiniela con descarga completa de columnas:\n👉 1x2zip . netlify . app (sin espacios)\n\n- 192 apuestas bajan a solo 24 columnas (87,5% de ahorro) / 768 apuestas bajan a 86 columnas.\n- Garantía del 100,0% al 13 (N-1) con 0 fallos sin condiciones.\n- Incluye los partidos reales de la Jornada actual gratis.',
+            krNote: '🇰🇷 포인트: 레딧 r/LaLiga 스팸 필터 우회용 버전입니다.'
+          },
+          comment: {
+            title: '스페인 유튜브/포럼 댓글용',
+            body: '¡Gran análisis! Para reducir varios dobles y triples en La Quiniela sin gastar de más, ahora mismo está 100% GRATIS y sin registro este reductor al 13 (' + SITE_URL + '). Baja 192 apuestas a solo 24 columnas con 100% de garantía al 13 y descarga TXT/CSV gratis.',
+            krNote: '🇰🇷 뜻: "좋은 분석입니다! 키니엘라 더블·트리플을 192장에서 24장으로 줄여주는 13보장 압축기가 지금 회원가입 없이 100% 무료로 열려 있으니 바로 써보세요!"'
+          }
+        }
+      },
+      {
+        code: 'BR',
+        name: '🇧🇷 브라질 (Loteca 14/15 Jogos · Basquete NBB/NBA)',
+        badge: '🎁 100% GRÁTIS (Sem Cadastro)',
+        redditSub: 'futebol',
+        xHashtags: 'Loteca,LotecaCaixa,BolaoLoteca,Futebol',
+        sites: [
+          { label: '⚽ Vovoteca (브라질 Loteca 1위)', url: 'https://www.vovoteca.com/' },
+          { label: '🔥 Reddit r/futebol', url: 'https://www.reddit.com/r/futebol/' },
+          { label: '📘 페이스북 Loteca 그룹', url: 'https://www.facebook.com/search/groups/?q=Loteca%20Caixa' },
+          { label: '▶️ YouTube Palpites Loteca', url: 'https://www.youtube.com/results?search_query=Palpites+Loteca+Concurso' }
+        ],
+        templates: {
+          review: {
+            title: '[100% GRÁTIS e Sem Login] Gerador de Desdobramento da Loteca (768 combinações caem para 86 bilhetes com 100% garantia de 13 pontos)',
+            body: 'Fala galera da Loteca e dos Bolões!\n\nEstá liberado de forma 100% GRATUITA (sem login, sem pagamento, com visualização completa dos volantes e download TXT/CSV liberados) esse sistema de desdobramento para a Loteca:\n👉 ' + SITE_URL + '\n\n✅ Marque quantos Duplos e Triplos quiser livremente nos 14 ou 15 jogos.\n✅ 192 combinações caem para apenas 24 volantes (87,5% de economia) / 768 combinações caem para 86 volantes (88,8% de economia).\n✅ Garantia de 100,0% para no mínimo 13 pontos (0 combinações descobertas!).\n✅ Grade atualizada do Concurso atual da Loteca + conferência automática ao vivo.\n\nAproveitem enquanto está 100% grátis para gerar os jogos do Concurso:\n' + SITE_URL,
+            krNote: '🇰🇷 뜻: "[로그인 없이 100% 무료] 브라질 Loteca 768조합을 86장으로 줄이고 13점을 100% 보장하는 압축기가 현재 전체 슬립 열람 및 다운로드까지 100% 무료 개방 중입니다!"'
+          },
+          stealth: {
+            title: '[100% GRÁTIS] Gerador de Desdobramento da Loteca (768 combinações caem para 86 bilhetes com 100% garantia de 13 pontos)',
+            body: 'Fala galera da Loteca!\n\nEstá liberado 100% GRÁTIS (sem login) esse sistema de desdobramento com todos os volantes liberados:\n👉 1x2zip . netlify . app (tire os espaços)\n\n- 192 combinações caem para apenas 24 volantes (87,5% de economia) / 768 caem para 86 volantes.\n- Garantia de 100,0% para no mínimo 13 pontos (0 combinações descobertas).\n- Grade atualizada do Concurso atual da Loteca.',
+            krNote: '🇰🇷 포인트: 레딧 r/futebol 스팸 필터 우회용 버전입니다.'
+          },
+          comment: {
+            title: '브라질 유튜브/페이스북 댓글용',
+            body: 'Ótimos palpites! Para quem quer jogar vários duplos e triplos na Loteca economizando 88%, esse gerador de fechamento para 13 pontos está 100% GRÁTIS e sem login hoje (' + SITE_URL + '). Reduz 192 jogos para 24 bilhetes com todos os volantes liberados!',
+            krNote: '🇰🇷 뜻: "좋은 픽입니다! Loteca 더블·트리플 비용을 88% 아껴주는 13점 보장 압축기가 오늘 로그인 없이 100% 무료 개방 중이니 바로 뽑아보세요!"'
+          }
+        }
+      },
+      {
+        code: 'IT',
+        name: '🇮🇹 이탈리아 (Totocalcio Il 13 · Serie A & Basket)',
+        badge: '🎁 100% GRATIS (Senza Registrazione)',
+        redditSub: 'Calcio',
+        xHashtags: 'Totocalcio,SerieA,Scommesse,Schedina',
+        sites: [
+          { label: '🔥 Forum FinanzaOnline', url: 'https://forum.finanzaonline.com/' },
+          { label: '📢 Reddit r/Calcio', url: 'https://www.reddit.com/r/Calcio/' },
+          { label: '📘 페이스북 Totocalcio 그룹', url: 'https://www.facebook.com/search/groups/?q=Totocalcio' }
+        ],
+        templates: {
+          review: {
+            title: '[100% GRATIS senza registrazione] Generatore di Sistemi Ridotti N-1 per il Totocalcio (da 768 a 86 colonne con Garanzia 100%)',
+            body: 'Ciao a tutti gli appassionati di Totocalcio e Serie A,\n\nIn questo momento è aperto al 100% GRATIS (senza login e con esportazione completa TXT/CSV delle colonne sbloccata) questo generatore di Sistemi Ridotti N-1:\n👉 ' + SITE_URL + '\n\n✅ Doppie e Triple libere sulle 14 partite del Concorso attuale.\n✅ Riduce 192 colonne a sole 24 colonne (-87,5%) e 768 colonne a 86 colonne (-88,8%).\n✅ Garanzia pura al 100,0% (0 colonne scoperte) per il premio N-1.\n\nApprofittatene finché è 100% gratuito qui:\n' + SITE_URL,
+            krNote: '🇰🇷 뜻: "[로그인 없이 100% 무료] 토토칼초 768열을 86열로 줄여주는 N-1 축소 시스템 생성기가 지금 전체 열람 및 다운로드 100% 무료로 열려 있습니다!"'
+          },
+          stealth: {
+            title: '[100% GRATIS] Generatore di Sistemi Ridotti N-1 per il Totocalcio (da 768 a 86 colonne con Garanzia 100%)',
+            body: 'Ciao a tutti,\n\nÈ aperto al 100% GRATIS (senza registrazione) questo generatore di Sistemi Ridotti N-1 per il Totocalcio:\n👉 1x2zip . netlify . app (senza spazi)\n\n- Riduce 192 colonne a sole 24 colonne (-87,5%) e 768 colonne a 86 colonne.\n- Garanzia al 100,0% (0 colonne scoperte).\n- Verifica automatica delle vincite in tempo reale.',
+            krNote: '🇰🇷 포인트: 레딧 r/Calcio 스팸 필터 우회용 버전입니다.'
+          },
+          comment: {
+            title: '이탈리아 유튜브/포럼 댓글용',
+            body: 'Ottima analisi! Per chi gioca doppie e triple al Totocalcio, questo generatore di sistemi ridotti N-1 è attualmente 100% GRATIS e senza registrazione (' + SITE_URL + '). Riduce 192 colonne a sole 24 con garanzia 100%!',
+            krNote: '🇰🇷 뜻: "좋은 분석입니다! 토토칼초 N-1 압축기가 지금 로그인 없이 100% 무료로 열려 있으니 192열을 24열로 줄여보세요!"'
+          }
+        }
+      }
+    ];
+
+    function showToast(msg) {
+      var bar = document.getElementById('toastBar');
+      bar.textContent = msg;
+      bar.style.display = 'block';
+      clearTimeout(window._toastTimer);
+      window._toastTimer = setTimeout(function() {
+        bar.style.display = 'none';
+      }, 4000);
+    }
+
+    function copyTextById(id, msg) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      navigator.clipboard.writeText(el.innerText).then(function() {
+        showToast(msg || '✅ 클립보드에 복사되었습니다! 이제 사이트에 붙여넣기(Ctrl+V) 하세요.');
+      });
+    }
+
+    function copyAndOpenSite(countryIdx, siteUrl) {
+      var c = COUNTRIES_DATA[countryIdx];
+      var tpl = c.templates[currentMode];
+      var fullText = (currentMode === 'comment') ? tpl.body : (tpl.title + '\n\n' + tpl.body);
+      navigator.clipboard.writeText(fullText).then(function() {
+        showToast('🚀 [100% 무료 오픈] 홍보글이 자동 복사되었습니다! 열린 창에 붙여넣기(Ctrl+V) 하세요!');
+        window.open(siteUrl, '_blank');
+      }).catch(function() {
+        window.open(siteUrl, '_blank');
+      });
+    }
+
+    function openAutoFilledReddit(countryIdx) {
+      var c = COUNTRIES_DATA[countryIdx];
+      var tpl = c.templates[currentMode];
+      var sub = c.redditSub || 'SoccerBetting';
+      var url = 'https://www.reddit.com/r/' + sub + '/submit?title=' + encodeURIComponent(tpl.title) + '&text=' + encodeURIComponent(tpl.body);
+      window.open(url, '_blank');
+    }
+
+    function openAutoFilledTelegram(countryIdx) {
+      var c = COUNTRIES_DATA[countryIdx];
+      var tpl = c.templates[currentMode];
+      var url = 'https://t.me/share/url?url=' + encodeURIComponent(SITE_URL) + '&text=' + encodeURIComponent(tpl.title + '\n\n' + tpl.body);
+      window.open(url, '_blank');
+    }
+
+    function openAutoFilledWhatsApp(countryIdx) {
+      var c = COUNTRIES_DATA[countryIdx];
+      var tpl = c.templates[currentMode];
+      var url = 'https://api.whatsapp.com/send?text=' + encodeURIComponent(tpl.title + '\n\n' + tpl.body);
+      window.open(url, '_blank');
+    }
+
+    function switchTemplateMode(mode) {
+      currentMode = mode;
+      document.getElementById('tabReview').classList.toggle('active', mode === 'review');
+      document.getElementById('tabStealth').classList.toggle('active', mode === 'stealth');
+      document.getElementById('tabComment').classList.toggle('active', mode === 'comment');
+      renderCards();
+    }
+
+    function renderCards() {
+      var grid = document.getElementById('cardsGrid');
+      grid.innerHTML = '';
+
+      COUNTRIES_DATA.forEach(function(c, idx) {
+        var tpl = c.templates[currentMode];
+        var card = document.createElement('div');
+        card.className = 'card';
+        if (c.code === 'KR') {
+          card.style.gridColumn = '1 / -1';
+        }
+
+        var sitesBtnsHtml = c.sites.map(function(s) {
+          return '<button type="button" class="site-btn" onclick="copyAndOpenSite(' + idx + ', \'' + s.url + '\')">' + s.label + ' <span style="color:#34d399;">(자동복사+열기↗)</span></button>';
+        }).join('');
+
+        var redditBtnHtml = c.redditSub
+          ? '<button type="button" class="btn-autofill" onclick="openAutoFilledReddit(' + idx + ')">📢 Reddit r/' + c.redditSub + ' 무료오픈 글 자동작성 열기</button>'
+          : '';
+
+        card.innerHTML =
+          '<div class="card-head">' +
+            '<h2>' + c.name + '</h2>' +
+            '<span class="target-tag">' + c.badge + '</span>' +
+          '</div>' +
+
+          '<div class="auto-post-row">' +
+            '<div class="auto-post-title">⚡ 원클릭 자동 입력 발사대 (클릭 시 [100% 무료 오픈] 제목·본문이 미리 채워진 글쓰기 창이 열립니다!)</div>' +
+            redditBtnHtml +
+            '<button type="button" class="btn-autofill" onclick="openAutoFilledTelegram(' + idx + ')">✈️ 텔레그램 방 자동공유</button>' +
+            '<button type="button" class="btn-autofill" onclick="openAutoFilledWhatsApp(' + idx + ')">💬 왓츠앱(WhatsApp) 자동공유</button>' +
+          '</div>' +
+
+          '<div>' +
+            '<div class="box-label">📌 핵심 커뮤니티 (버튼 클릭 시 <b>[100% 무료 개방] 홍보글이 자동 복사되면서 사이트가 동시에 열립니다!</b>)</div>' +
+            '<div class="sites-list">' + sitesBtnsHtml + '</div>' +
+          '</div>' +
+
+          '<div>' +
+            '<div class="box-label">' +
+              '<span>제목 (Title)</span>' +
+              '<button class="btn-copy" onclick="copyTextById(\'title_' + idx + '\')">제목만 복사</button>' +
+            '</div>' +
+            '<div class="copy-box" id="title_' + idx + '">' + tpl.title + '</div>' +
+          '</div>' +
+
+          '<div>' +
+            '<div class="box-label">' +
+              '<span>본문 (Body)</span>' +
+              '<button class="btn-copy" onclick="copyTextById(\'body_' + idx + '\')">본문만 복사</button>' +
+            '</div>' +
+            '<div class="copy-box" id="body_' + idx + '">' + tpl.body + '</div>' +
+          '</div>' +
+
+          '<div class="kr-trans">' + tpl.krNote + '</div>';
+
+        grid.appendChild(card);
+      });
+    }
+
+    renderCards();
+  </script>
+</body>
+</html>

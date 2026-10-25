@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0a0f1d"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#ea580c"/>
+    </linearGradient>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="112" fill="url(#bgGrad)" stroke="#38bdf8" stroke-width="10"/>
+  <rect x="44" y="54" width="424" height="106" rx="26" fill="#0f172a" stroke="#f59e0b" stroke-width="6"/>
+  <text x="256" y="125" font-family="Arial, sans-serif" font-size="68" font-weight="900" fill="url(#goldGrad)" text-anchor="middle">1 X 2</text>
+  <rect x="44" y="186" width="130" height="120" rx="24" fill="#2563eb"/>
+  <text x="109" y="266" font-family="Arial, sans-serif" font-size="64" font-weight="900" fill="#ffffff" text-anchor="middle">W</text>
+  <rect x="191" y="186" width="130" height="120" rx="24" fill="#d97706"/>
+  <text x="256" y="266" font-family="Arial, sans-serif" font-size="64" font-weight="900" fill="#ffffff" text-anchor="middle">D</text>
+  <rect x="338" y="186" width="130" height="120" rx="24" fill="#dc2626"/>
+  <text x="403" y="266" font-family="Arial, sans-serif" font-size="64" font-weight="900" fill="#ffffff" text-anchor="middle">L</text>
+  <rect x="44" y="334" width="424" height="120" rx="28" fill="url(#emeraldGrad)"/>
+  <text x="256" y="412" font-family="Arial, sans-serif" font-size="56" font-weight="900" fill="#ffffff" text-anchor="middle">100% N-1</text>
+</svg>
