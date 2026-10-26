@@ -1,0 +1,93 @@
+{
+  "version": "2026-10-26-v1",
+  "description": "TOKEON Official Published Pool Rounds Registry (Korea Sports Toto, Japan toto, China Sports Lottery 14, Spain La Quiniela, Italy Totocalcio, Brazil Loteca, UK Football Pools, USA MLS/NBA/NFL/NHL)",
+  "rounds": [
+    {
+      "sport": "soccer",
+      "country": "KR",
+      "id": "260065",
+      "roundNum": 65,
+      "badge": "제65회차",
+      "label": "제65회차 (차기 발매예정 · EPL/라리가 주말 공식대진)",
+      "deadline": "2026-10-31 21:20 마감예정",
+      "isPast": false,
+      "isUpcoming": true,
+      "statusTag": "발매예정",
+      "matches": [
+        { "home": "첼시", "away": "맨체스터U", "league": "EPL", "date": "10.31 21:30", "status": "OPEN" },
+        { "home": "본머스", "away": "리즈U", "league": "EPL", "date": "11.01 00:00", "status": "OPEN" },
+        { "home": "브렌트퍼드", "away": "노팅엄포레스트", "league": "EPL", "date": "11.01 00:00", "status": "OPEN" },
+        { "home": "코번트리", "away": "선덜랜드", "league": "EPL", "date": "11.01 00:00", "status": "OPEN" },
+        { "home": "헐시티", "away": "입스위치", "league": "EPL", "date": "11.01 00:00", "status": "OPEN" },
+        { "home": "맨체스터시티", "away": "브라이턴", "league": "EPL", "date": "11.01 00:00", "status": "OPEN" },
+        { "home": "토트넘", "away": "크리스털팰리스", "league": "EPL", "date": "11.01 02:30", "status": "OPEN" },
+        { "home": "애스턴빌라", "away": "풀럼", "league": "EPL", "date": "11.01 05:00", "status": "OPEN" },
+        { "home": "레반테", "away": "AT마드리드", "league": "라리가", "date": "10.31 22:00", "status": "OPEN" },
+        { "home": "라요바예카노", "away": "셀타비고", "league": "라리가", "date": "11.01 00:15", "status": "OPEN" },
+        { "home": "바르셀로나", "away": "알라베스", "league": "라리가", "date": "11.01 05:00", "status": "OPEN" },
+        { "home": "헤타페", "away": "세비야", "league": "라리가", "date": "11.01 22:00", "status": "OPEN" },
+        { "home": "라싱산탄데르", "away": "레알마드리드", "league": "라리가", "date": "11.02 00:15", "status": "OPEN" },
+        { "home": "리버풀", "away": "아스널", "league": "EPL", "date": "11.02 01:30", "status": "OPEN" },
+        { "home": "A빌바오", "away": "레알소시에다드", "league": "라리가", "date": "11.02 05:00", "status": "OPEN" }
+      ]
+    },
+    {
+      "sport": "soccer",
+      "country": "US",
+      "id": "US_R36",
+      "roundNum": 36,
+      "badge": "Round 36",
+      "label": "Round 36 (Upcoming · Official Weekend European & MLS Slate)",
+      "deadline": "Closes Oct 31, 08:30 ET",
+      "isPast": false,
+      "isUpcoming": true,
+      "statusTag": "Upcoming",
+      "matches": [
+        { "home": "Chelsea", "away": "Manchester United", "league": "Premier League", "date": "Oct 31 08:30", "status": "OPEN" },
+        { "home": "AFC Bournemouth", "away": "Leeds United", "league": "Premier League", "date": "Oct 31 11:00", "status": "OPEN" },
+        { "home": "Brentford", "away": "Nottingham Forest", "league": "Premier League", "date": "Oct 31 11:00", "status": "OPEN" },
+        { "home": "Coventry City", "away": "Sunderland", "league": "Premier League", "date": "Oct 31 11:00", "status": "OPEN" },
+        { "home": "Manchester City", "away": "Brighton", "league": "Premier League", "date": "Oct 31 11:00", "status": "OPEN" },
+        { "home": "Tottenham Hotspur", "away": "Crystal Palace", "league": "Premier League", "date": "Oct 31 13:30", "status": "OPEN" },
+        { "home": "Aston Villa", "away": "Fulham", "league": "Premier League", "date": "Oct 31 16:00", "status": "OPEN" },
+        { "home": "Liverpool", "away": "Arsenal", "league": "Premier League", "date": "Nov 01 11:30", "status": "OPEN" },
+        { "home": "Levante UD", "away": "Atletico Madrid", "league": "LaLiga", "date": "Oct 31 09:00", "status": "OPEN" },
+        { "home": "FC Barcelona", "away": "Deportivo Alaves", "league": "LaLiga", "date": "Oct 31 16:00", "status": "OPEN" },
+        { "home": "Racing Santander", "away": "Real Madrid", "league": "LaLiga", "date": "Nov 01 10:15", "status": "OPEN" },
+        { "home": "Athletic Club", "away": "Real Sociedad", "league": "LaLiga", "date": "Nov 01 15:00", "status": "OPEN" },
+        { "home": "AC Milan", "away": "Inter Milan", "league": "Serie A", "date": "Oct 31 15:45", "status": "OPEN" },
+        { "home": "Juventus", "away": "Napoli", "league": "Serie A", "date": "Nov 01 14:45", "status": "OPEN" },
+        { "home": "Bayern Munich", "away": "Borussia Dortmund", "league": "Bundesliga", "date": "Oct 31 13:30", "status": "OPEN" }
+      ]
+    },
+    {
+      "sport": "soccer",
+      "country": "JP",
+      "id": "JP_1668",
+      "roundNum": 1668,
+      "badge": "第1668回",
+      "label": "第1668回 (次回販売回 · J1リーグ公式toto指定試合)",
+      "deadline": "締切: 10月31日 13:50 JST",
+      "isPast": false,
+      "isUpcoming": true,
+      "statusTag": "販売予定",
+      "matches": [
+        { "home": "ファジアーノ岡山", "away": "FC東京", "league": "J1リーグ", "date": "10.31 14:00", "status": "OPEN" },
+        { "home": "京都サンガ", "away": "清水エスパルス", "league": "J1リーグ", "date": "10.31 14:00", "status": "OPEN" },
+        { "home": "水戸ホーリーホック", "away": "サンフレッチェ広島", "league": "J1リーグ", "date": "10.31 14:00", "status": "OPEN" },
+        { "home": "鹿島アントラーズ", "away": "セレッソ大阪", "league": "J1リーグ", "date": "10.31 15:00", "status": "OPEN" },
+        { "home": "ヴィッセル神戸", "away": "名古屋グランパス", "league": "J1リーグ", "date": "10.31 15:00", "status": "OPEN" },
+        { "home": "柏レイソル", "away": "浦和レッズ", "league": "J1リーグ", "date": "10.31 16:00", "status": "OPEN" },
+        { "home": "横浜F・マリノス", "away": "川崎フロンターレ", "league": "J1リーグ", "date": "11.01 13:00", "status": "OPEN" },
+        { "home": "ジェフ千葉", "away": "アビスパ福岡", "league": "J1リーグ", "date": "11.01 14:00", "status": "OPEN" },
+        { "home": "V・ファーレン長崎", "away": "東京ヴェルディ", "league": "J1リーグ", "date": "11.01 14:00", "status": "OPEN" },
+        { "home": "FC町田ゼルビア", "away": "ガンバ大阪", "league": "J1リーグ", "date": "11.01 15:00", "status": "OPEN" },
+        { "home": "チェルシー", "away": "マンチェスターU", "league": "プレミア", "date": "10.31 21:30", "status": "OPEN" },
+        { "home": "ボーンマス", "away": "リーズU", "league": "プレミア", "date": "11.01 00:00", "status": "OPEN" },
+        { "home": "トッテナム", "away": "クリスタル・パレス", "league": "プレミア", "date": "11.01 02:30", "status": "OPEN" },
+        { "home": "リヴァプール", "away": "アーセナル", "league": "プレミア", "date": "11.02 01:30", "status": "OPEN" },
+        { "home": "バルセロナ", "away": "アラベス", "league": "ラリーガ", "date": "11.01 05:00", "status": "OPEN" }
+      ]
+    }
+  ]
+}
