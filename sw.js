@@ -1,9 +1,5 @@
-const CACHE_NAME = 'gpc-1x2zip-v20261026-4';
+const CACHE_NAME = 'gpc-1x2zip-v20261027-8';
 const ASSETS = [
-  './',
-  './index.html',
-  './style.css',
-  './app.js',
   './manifest.json',
   './app-icon.svg',
   './og-banner.png'
@@ -33,7 +29,7 @@ self.addEventListener('activate', function(event) {
 self.addEventListener('fetch', function(event) {
   if (event.request.method !== 'GET') return;
   event.respondWith(
-    fetch(event.request).catch(function() {
+    fetch(event.request, { cache: 'no-store' }).catch(function() {
       return caches.match(event.request);
     })
   );
