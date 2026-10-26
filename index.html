@@ -61,7 +61,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261027_9">
+  <link rel="stylesheet" href="style.css?v=20261027_10">
 </head>
 <body translate="no" class="notranslate" data-view-mode="pc">
 
@@ -84,7 +84,7 @@
         <!-- 1. Country / League Pool Dropdown Scroll Selector -->
         <div class="top-scroll-select-wrap">
           <select id="countrySelect" class="top-select-scroll country-select-highlight" onchange="selectCountryPool(this.value)">
-            <option value="US" id="optCountry_US" selected>🇺🇸 USA Soccer Pool (Round 35 · 14M · Open)</option>
+            <option value="US" id="optCountry_US" selected>🇺🇸 USA 1×2 Pool (14M · Open)</option>
             <option value="UK" id="optCountry_UK">🇬🇧 UK Football Pool (Week 13 · 15M · Open)</option>
             <option value="JP" id="optCountry_JP">🇯🇵 Japan Sports Toto (Round 1667 · 14M · Open)</option>
             <option value="CN" id="optCountry_CN">🇨🇳 China Sports Lottery 14 (Round 26151 · 14M · Open)</option>
@@ -116,8 +116,8 @@
         <!-- 4. Notation Dropdown Scroll Selector -->
         <div class="top-scroll-select-wrap">
           <select id="notationSelect" class="top-select-scroll" onchange="setNotationMode(this.value)">
-            <option value="WDL" id="optNotWDL" selected>🔤 W / D / L</option>
-            <option value="1X2" id="optNot1X2">🔤 1 / X / 2</option>
+            <option value="WDL" id="optNotWDL">🔤 W / D / L</option>
+            <option value="1X2" id="optNot1X2" selected>🔤 1 / X / 2</option>
             <option value="KOR" id="optNotKOR" style="display:none;">🔤 승 / 무 / 패</option>
           </select>
         </div>
@@ -188,8 +188,8 @@
         <div class="section-header" style="flex-wrap:wrap; gap:10px;">
           <div class="section-title" style="flex-wrap:wrap; gap:10px;">
             <i class="fa-solid fa-list-check" style="color:var(--accent-cyan);"></i>
-            <span id="txtMatchBoardTitle">🇺🇸 USA MLS & Global Soccer Pool · 14-Match Selection Board</span>
-            <span class="board-round-badge" id="txtBoardRoundBadge">Round 34</span>
+            <span id="txtMatchBoardTitle">🇺🇸 USA 1×2 Pool · 14-Match Selection Board</span>
+            <span class="board-round-badge" id="txtBoardRoundBadge">1 × 2</span>
           </div>
           <div class="section-actions" style="flex-wrap:wrap;">
             <button type="button" class="btn-tool" id="btnSample192" onclick="loadSamplePreset(192)">⚡ 192 Combos Sample</button>
@@ -225,9 +225,9 @@
 
         <!-- Sport Scoring Rule Guide Banner -->
         <div class="sport-rule-banner notranslate" id="sportRuleBanner" translate="no">
-          <span class="rule-pill rule-1" id="txtRule1" translate="no"><b>W</b> : Home</span>
-          <span class="rule-pill rule-x" id="txtRuleX" translate="no"><b>D</b> : Draw</span>
-          <span class="rule-pill rule-2" id="txtRule2" translate="no"><b>L</b> : Away</span>
+          <span class="rule-pill rule-1" id="txtRule1" translate="no"><b>1</b> : Home</span>
+          <span class="rule-pill rule-x" id="txtRuleX" translate="no"><b>X</b> : Draw</span>
+          <span class="rule-pill rule-2" id="txtRule2" translate="no"><b>2</b> : Away</span>
           <span class="rule-sync-tag" id="txtRuleSyncNote" translate="no">🌐 Live 60s Official Score & Result Auto-Sync across 8 Global Pools</span>
         </div>
 
@@ -283,9 +283,9 @@
                 <tr>
                   <th>No</th>
                   <th id="thMatchCol">Match</th>
-                  <th id="thMark1">W (Home)</th>
-                  <th id="thMarkX">D (Draw)</th>
-                  <th id="thMark2">L (Away)</th>
+                  <th id="thMark1">1 (Home)</th>
+                  <th id="thMarkX">X (Draw)</th>
+                  <th id="thMark2">2 (Away)</th>
                 </tr>
               </thead>
               <tbody id="distributionTbody"></tbody>
@@ -603,6 +603,6 @@
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261027_8"></script>
+  <script src="app.js?v=20261027_10"></script>
 </body>
 </html>
