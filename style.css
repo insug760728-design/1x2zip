@@ -2651,4 +2651,34 @@ body[data-view-mode="mobile"] .slips-grid.omr-mode {
 .btn-saved-view:hover { background: rgba(16, 185, 129, 0.32); color: #fff; }
 .btn-saved-del:hover { background: rgba(220, 38, 38, 0.3); color: #fff; }
 
-
+/* ===== MOBILE FIT FIX v2 =====
+   PC layout untouched. On phones (<=820px) or when Mobile UI is active, every column may shrink to the
+   screen width so nothing is cut off on the right side. */
+@media (max-width: 820px) {
+  html, body { max-width: 100%; overflow-x: hidden; }
+  .main-container { grid-template-columns: minmax(0, 1fr) !important; width: 100%; box-sizing: border-box; }
+  .main-container > section, .main-container > aside { min-width: 0; max-width: 100%; }
+}
+body[data-view-mode="mobile"] .main-container { grid-template-columns: minmax(0, 1fr) !important; box-sizing: border-box; }
+body[data-view-mode="mobile"] .main-container > section,
+body[data-view-mode="mobile"] .main-container > aside { min-width: 0; max-width: 100%; }
+body[data-view-mode="mobile"] .section-box { min-width: 0; max-width: 100%; box-sizing: border-box; overflow-x: hidden; }
+body[data-view-mode="mobile"] .section-header,
+body[data-view-mode="mobile"] .section-title,
+body[data-view-mode="mobile"] .section-actions { flex-wrap: wrap; min-width: 0; max-width: 100%; }
+body[data-view-mode="mobile"] .section-title { font-size: 0.92rem; line-height: 1.35; overflow-wrap: anywhere; }
+body[data-view-mode="mobile"] .section-actions { gap: 6px; }
+body[data-view-mode="mobile"] .section-actions .btn-tool { flex: 1 1 calc(50% - 6px); justify-content: center; white-space: normal; text-align: center; font-size: 0.78rem; padding: 8px 6px; }
+body[data-view-mode="mobile"] .round-control-bar { flex-wrap: wrap; gap: 8px; max-width: 100%; box-sizing: border-box; }
+body[data-view-mode="mobile"] .round-control-bar > *, body[data-view-mode="mobile"] .round-select-wrap { min-width: 0; max-width: 100%; }
+body[data-view-mode="mobile"] .round-select-wrap select, body[data-view-mode="mobile"] #roundSelect { width: 100%; max-width: 100%; text-overflow: ellipsis; }
+body[data-view-mode="mobile"] .brand-sub, body[data-view-mode="mobile"] #txtRuleSyncNote,
+body[data-view-mode="mobile"] .filter-box, body[data-view-mode="mobile"] .filter-row { overflow-wrap: anywhere; max-width: 100%; box-sizing: border-box; }
+body[data-view-mode="mobile"] .filter-row { flex-wrap: wrap; gap: 4px 10px; }
+body[data-view-mode="mobile"] .match-row, body[data-view-mode="mobile"] .match-cell, body[data-view-mode="mobile"] .match-info { min-width: 0; max-width: 100%; box-sizing: border-box; }
+body[data-view-mode="mobile"] .match-meta-bar { flex-wrap: wrap; gap: 4px; }
+body[data-view-mode="mobile"] .team-input { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+body[data-view-mode="mobile"] .slips-grid, body[data-view-mode="mobile"] .slips-grid > * { min-width: 0; max-width: 100%; }
+body[data-view-mode="mobile"] .slips-grid.omr-mode { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+body[data-view-mode="mobile"] #distributionTable, body[data-view-mode="mobile"] .matrix-table { font-size: 0.74rem; }
+body[data-view-mode="mobile"] .mobile-sticky-bar { max-width: 100vw; box-sizing: border-box; }
