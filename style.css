@@ -600,6 +600,12 @@ header {
   position: relative;
 }
 
+.pick-btn.actual-winner:not(.selected) {
+  background: rgba(253, 224, 71, 0.2);
+  border-color: #fde047;
+  color: #fde047;
+}
+
 .pick-btn.actual-winner::after {
   content: '★';
   position: absolute;
@@ -2376,5 +2382,266 @@ body[data-view-mode="mobile"] .slip-marks {
   color: var(--accent-cyan);
   text-decoration: underline;
 }
+
+/* ===== Marking Sheet View (5 games A–E per sheet) ===== */
+.slips-grid.omr-mode {
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  max-height: 900px;
+  gap: 14px;
+}
+
+.omr-hint {
+  grid-column: 1 / -1;
+  font-size: 0.78rem;
+  color: var(--text-sub);
+  padding: 2px 2px 0;
+}
+
+.omr-sheet {
+  background: #0b1424;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  border-radius: 10px;
+  padding: 10px 10px 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+}
+
+.omr-sheet-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.12);
+}
+
+.omr-sheet-title {
+  font-weight: 900;
+  font-size: 0.92rem;
+  color: var(--accent-gold);
+}
+
+.omr-sheet-range {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.omr-table-wrap {
+  overflow-x: auto;
+}
+
+.omr-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.8rem;
+}
+
+.omr-table th,
+.omr-table td {
+  padding: 3px 2px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.omr-no-h,
+.omr-no {
+  width: 30px;
+  color: var(--accent-gold);
+  font-weight: 900;
+}
+
+.omr-team-h,
+.omr-team {
+  text-align: left !important;
+  width: auto;
+}
+
+.omr-team {
+  color: var(--text-main);
+  font-size: 0.74rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.omr-team-txt i {
+  color: var(--text-sub);
+  font-style: normal;
+  font-size: 0.66rem;
+}
+
+.omr-res {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 0 5px;
+  border-radius: 4px;
+  font-size: 0.66rem;
+  font-weight: 900;
+  color: #0f172a;
+  background: #fde047;
+}
+
+.omr-col-h {
+  width: 44px;
+  font-weight: 900;
+  color: #e2e8f0;
+  border-radius: 6px 6px 0 0;
+  line-height: 1.1;
+}
+
+.omr-col-letter {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--accent-cyan);
+}
+
+.omr-col-no {
+  display: block;
+  font-size: 0.62rem;
+  color: var(--text-sub);
+  font-weight: 700;
+}
+
+.omr-hit {
+  display: block;
+  font-size: 0.62rem;
+  color: #cbd5e1;
+}
+
+.omr-col-h.prize-1st { background: rgba(245, 158, 11, 0.28); }
+.omr-col-h.prize-2nd { background: rgba(16, 185, 129, 0.25); }
+.omr-cell.prize-1st { background: rgba(245, 158, 11, 0.1); }
+.omr-cell.prize-2nd { background: rgba(16, 185, 129, 0.09); }
+
+.omr-row td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.omr-row-sep td {
+  border-bottom: 2px solid rgba(56, 189, 248, 0.45);
+}
+
+.omr-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 22px;
+  border-radius: 5px;
+  font-weight: 900;
+  font-size: 0.82rem;
+  color: #fff;
+  background: #334155;
+}
+
+.omr-mark.mark-1 { background: #2563eb; }
+.omr-mark.mark-X { background: #d97706; }
+.omr-mark.mark-2 { background: #dc2626; }
+.omr-mark.actual-hit { box-shadow: 0 0 0 2px #fde047; }
+.omr-mark.actual-miss { opacity: 0.38; }
+.omr-empty { opacity: 0.25; }
+
+body[data-view-mode="mobile"] .slips-grid.omr-mode {
+  grid-template-columns: 1fr;
+}
+
+/* ===== Saved Combinations ===== */
+.saved-count-pill {
+  font-size: 0.72rem;
+  font-weight: 900;
+  padding: 1px 8px;
+  border-radius: 999px;
+  background: rgba(16, 185, 129, 0.2);
+  color: #6ee7b7;
+}
+
+.saved-combos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 420px;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+
+.saved-empty {
+  font-size: 0.82rem;
+  color: var(--text-sub);
+  padding: 14px;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.saved-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #0f172a;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.saved-item.active {
+  border-color: var(--accent-emerald);
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.25);
+}
+
+.saved-item-main {
+  min-width: 0;
+}
+
+.saved-item-title {
+  font-weight: 800;
+  font-size: 0.88rem;
+  color: var(--text-main);
+}
+
+.saved-item-meta {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.saved-item-grade {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-sub);
+  margin-top: 3px;
+}
+
+.saved-item-grade.live { color: #7dd3fc; }
+.saved-item-grade.done { color: #cbd5e1; }
+.saved-item-grade.win2 { color: #34d399; }
+.saved-item-grade.win1 { color: #fbbf24; }
+
+.saved-item-actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.btn-saved-view,
+.btn-saved-del {
+  border-radius: 7px;
+  font-size: 0.78rem;
+  font-weight: 800;
+  padding: 6px 10px;
+  cursor: pointer;
+  border: 1px solid var(--border-color);
+  background: #1e293b;
+  color: var(--text-main);
+}
+
+.btn-saved-view {
+  border-color: rgba(16, 185, 129, 0.55);
+  background: rgba(16, 185, 129, 0.16);
+  color: #6ee7b7;
+}
+
+.btn-saved-view:hover { background: rgba(16, 185, 129, 0.32); color: #fff; }
+.btn-saved-del:hover { background: rgba(220, 38, 38, 0.3); color: #fff; }
 
 
