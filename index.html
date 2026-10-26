@@ -61,7 +61,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261027_13">
+  <link rel="stylesheet" href="style.css?v=20261027_14">
 </head>
 <body translate="no" class="notranslate" data-view-mode="pc">
 
@@ -391,53 +391,15 @@
 
       <div class="modal-brand-head">
         <span class="patent-badge" id="txtModalPatentTag">🏅 PATENT PENDING (10-2026-0205596)</span>
-        <h3 id="txtModalTitle">Google Sign-In & 3-Tier 1-Time Checkout</h3>
+        <h3 id="txtModalTitle">??1-Click Checkout & Unlock Slips</h3>
         <p id="txtModalSub">No monthly subscription! Ultra-low 3-tier 1-time pricing by combo volume: $3 (≤192 combos) · $6 (193–768 combos) · $9 (769+ heavy combos).</p>
       </div>
 
-      <!-- STEP 1: Google Login Box -->
-      <div class="auth-step-box" id="modalStepGoogle">
-        <div class="step-label-row">
-          <span class="step-num-badge" id="txtStep1Badge">STEP 1</span>
-          <strong id="txtStep1Title">One-Click Google Sign-In</strong>
-          <span class="step-done-tag" id="step1DoneTag" style="display:none;">✅ Signed In</span>
-        </div>
-
-        <!-- Logged out view -->
-        <div id="googleLoginActionArea">
-          <div class="google-email-input-row">
-            <input type="email" id="inputGoogleEmail" class="google-email-input" placeholder="Enter your Google email (e.g. name@gmail.com)" autocomplete="email">
-            <button type="button" class="btn-google-signin-main" id="btnModalGoogleSignin" onclick="handleGoogleSignIn()">
-              <svg viewBox="0 0 24 24" width="18" height="18">
-                <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
-                <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.6l3.7 2.9c2.2-2 3.7-5 3.7-8.7z"/>
-                <path fill="#FBBC05" d="M5.3 14.8c-.2-.8-.4-1.8-.4-2.8s.2-2 .4-2.8L1.6 6.4C.6 8.4 0 10.6 0 12s.6 3.6 1.6 5.6l3.7-2.8z"/>
-                <path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.1-6.7-5l-3.7 2.8C3.5 19.9 7.4 23 12 23z"/>
-              </svg>
-              <span id="txtBtnContinueGoogle">Sign in with Google</span>
-            </button>
-          </div>
-          <div style="font-size:0.74rem; color:var(--text-sub); margin-top:6px;" id="txtGoogleHint">
-            * Instant Google account linking with zero complex registration.
-          </div>
-        </div>
-
-        <!-- Logged in summary -->
-        <div class="logged-in-bar" id="modalLoggedInBar" style="display:none;">
-          <div style="display:flex; align-items:center; gap:8px;">
-            <i class="fa-brands fa-google" style="color:#38bdf8;"></i>
-            <strong id="txtModalLoggedEmail">user@gmail.com</strong>
-            <span class="user-pass-badge" id="txtModalPassStatus">Free Account</span>
-          </div>
-          <button type="button" class="btn-tool" style="padding:3px 8px; font-size:0.72rem;" onclick="handleGoogleLogout()" id="txtBtnSwitchAccount">Switch Account</button>
-        </div>
-      </div>
-
-      <!-- STEP 2: Plan Selection + Card Payment Box -->
+      <!-- 1-Click Fast Payment Box -->
       <div class="auth-step-box" id="modalStepPayment">
         <div class="step-label-row">
-          <span class="step-num-badge gold" id="txtStep2Badge">STEP 2</span>
-          <strong id="txtStep2Title">3-Tier 1-Time Extraction Pass (Consumed After 1 Extraction)</strong>
+          <span class="step-num-badge gold" id="txtStep2Badge" style="font-size:0.68rem;padding:1px 6px;">1-CLICK</span>
+          <strong id="txtStep2Title">1-Time Extraction Pass 쨌 Select Your Tier</strong>
         </div>
 
         <!-- Three Tiered 1-Time Extraction Plans ($3 <=192 / $6 <=768 / $9 769+ combos) -->
@@ -512,6 +474,45 @@
           </div>
         </div>
       </div>
+      <!-- STEP 1: Google Login Box -->
+      <div class="auth-step-box" id="modalStepGoogle" style="margin-top:14px;padding:10px 14px;background:rgba(15,23,42,0.5);border:1px dashed rgba(255,255,255,0.12);border-radius:10px;">
+        <div class="step-label-row">
+          <span class="step-num-badge" id="txtStep1Badge" style="background:rgba(56,189,248,0.2);color:#38bdf8;font-size:0.68rem;padding:1px 6px;">OPTIONAL</span>
+          <strong id="txtStep1Title" style="font-size:0.8rem;color:#94a3b8;">Google Sign-In (Sync across devices)</strong>
+          <span class="step-done-tag" id="step1DoneTag" style="display:none;">✅ Signed In</span>
+        </div>
+
+        <!-- Logged out view -->
+        <div id="googleLoginActionArea">
+          <div class="google-email-input-row">
+            <input type="email" id="inputGoogleEmail" class="google-email-input" placeholder="Enter your Google email (e.g. name@gmail.com)" autocomplete="email">
+            <button type="button" class="btn-google-signin-main" id="btnModalGoogleSignin" onclick="handleGoogleSignIn()">
+              <svg viewBox="0 0 24 24" width="18" height="18">
+                <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
+                <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.6l3.7 2.9c2.2-2 3.7-5 3.7-8.7z"/>
+                <path fill="#FBBC05" d="M5.3 14.8c-.2-.8-.4-1.8-.4-2.8s.2-2 .4-2.8L1.6 6.4C.6 8.4 0 10.6 0 12s.6 3.6 1.6 5.6l3.7-2.8z"/>
+                <path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.1-6.7-5l-3.7 2.8C3.5 19.9 7.4 23 12 23z"/>
+              </svg>
+              <span id="txtBtnContinueGoogle">Sign in with Google</span>
+            </button>
+          </div>
+          <div style="font-size:0.74rem; color:var(--text-sub); margin-top:6px;" id="txtGoogleHint">
+            * Instant Google account linking with zero complex registration.
+          </div>
+        </div>
+
+        <!-- Logged in summary -->
+        <div class="logged-in-bar" id="modalLoggedInBar" style="display:none;">
+          <div style="display:flex; align-items:center; gap:8px;">
+            <i class="fa-brands fa-google" style="color:#38bdf8;"></i>
+            <strong id="txtModalLoggedEmail">user@gmail.com</strong>
+            <span class="user-pass-badge" id="txtModalPassStatus">Free Account</span>
+          </div>
+          <button type="button" class="btn-tool" style="padding:3px 8px; font-size:0.72rem;" onclick="handleGoogleLogout()" id="txtBtnSwitchAccount">Switch Account</button>
+        </div>
+      </div>
+
+
     </div>
   </div>
 
@@ -602,6 +603,6 @@
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261027_13"></script>
+  <script src="app.js?v=20261027_14"></script>
 </body>
 </html>
