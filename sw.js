@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gpc-1x2zip-v20261026-3';
+const CACHE_NAME = 'gpc-1x2zip-v20261026-4';
 const ASSETS = [
   './',
   './index.html',
