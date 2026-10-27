@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gpc-1x2zip-v20261028_mobfix';
+const CACHE_NAME = 'gpc-1x2zip-v20261028_phone_match';
 const ASSETS = [
   './manifest.json',
   './app-icon.svg',
