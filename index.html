@@ -61,7 +61,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261027_14">
+  <link rel="stylesheet" href="style.css?v=20261027_15">
 </head>
 <body translate="no" class="notranslate" data-view-mode="pc">
 
@@ -151,6 +151,7 @@
 
         <!-- 7. Google Login & 1-Time Pass Button -->
         <div class="header-auth-box" id="headerAuthBox">
+          <span class="header-free-trial-pill" id="txtHeaderFreeTrial"><i class="fa-solid fa-gift" style="color:#fde047;"></i> <span id="txtHeaderFreeTrialText">100% Free Trial (No Card Required)</span></span>
           <button type="button" class="btn-google-header" id="btnHeaderGoogleLogin" onclick="openAuthPayModal()">
             <svg class="google-g-icon" viewBox="0 0 24 24" width="16" height="16">
               <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
@@ -346,10 +347,13 @@
         </div>
 
         <!-- Main Execute Button -->
-        <button type="button" class="btn-execute" id="btnExecute" onclick="executeReduction()">
-          <i class="fa-solid fa-bolt"></i>
-          <span>GENERATE 100% 13/14 GUARANTEED SLIPS</span>
-        </button>
+        <div class="btn-execute-container">
+          <button type="button" class="btn-execute" id="btnExecute" onclick="executeReduction()">
+            <i class="fa-solid fa-bolt"></i>
+            <span>GENERATE 100% 13/14 GUARANTEED SLIPS</span>
+          </button>
+          <div class="btn-execute-subtext" id="txtExecuteSubtext"><i class="fa-solid fa-unlock-keyhole" style="color:#fde047;"></i> FREE GENERATION (NO LOGIN REQUIRED)</div>
+        </div>
 
         <!-- Mathematical 100% Guarantee Verification Box -->
         <div class="filter-box" style="border-color: rgba(16, 185, 129, 0.4); background: rgba(15, 23, 42, 0.95); margin-bottom: 0;">
@@ -603,6 +607,6 @@
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261027_14"></script>
+  <script src="app.js?v=20261027_15"></script>
 </body>
 </html>
