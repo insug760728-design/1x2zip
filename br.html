@@ -78,7 +78,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261028_28">
+  <link rel="stylesheet" href="style.css?v=20261028_29">
 <script>
 window.openBulkPasteModal = function(){
   var m = document.getElementById('bulkPasteModal');
@@ -175,15 +175,17 @@ window.closeBulkPasteModal = function(){
         <!-- 3-Sport US Pool Tabs Bar -->
         <div class="pool-sport-tabs" id="usPoolSportTabs">
           <button type="button" class="sport-tab-btn active" id="tabSportFootball" onclick="switchUsSport('football')">
-            ?룉 NFL Football Pool
+            <i class="fa-solid fa-football"></i> NFL Football Pool
           </button>
           <button type="button" class="sport-tab-btn" id="tabSportBasketball" onclick="switchUsSport('basketball')">
-            ?? NBA Basketball Pool
+            <i class="fa-solid fa-basketball"></i> NBA Basketball Pool
           </button>
           <button type="button" class="sport-tab-btn" id="tabSportSoccer" onclick="switchUsSport('soccer')">
-            ??Soccer 1X2 Pool
+            <i class="fa-solid fa-futbol"></i> Soccer 1X2 Pool
           </button>
         </div>
+        <!-- 3-Sport US Pool Tabs Bar -->
+        
         <div class="section-header" style="flex-wrap:wrap; gap:10px;">
           <div class="section-title" style="flex-wrap:wrap; gap:10px;">
             <i class="fa-solid fa-list-check" style="color:var(--accent-cyan);"></i>
@@ -196,7 +198,7 @@ window.closeBulkPasteModal = function(){
               <span>⚡ 192 Combos → 24 Slips (Instant 13/14 1X2 Hedge)</span>
             </button>
           </div>
-          <div class="section-actions" style="display:flex; flex-wrap:wrap; gap:8px; width:100%; align-items:center;">
+          <div class="section-actions" style="display:none !important;">
             <button type="button" class="btn-tool" id="btnGenericLegs" onclick="resetToGenericLegs()" style="border-color:#38bdf8; color:#38bdf8; font-weight:700;"><i class="fa-solid fa-list-ol"></i> <span>Custom 14-Legs</span></button>
             <button type="button" class="btn-tool btn-bulk-paste" id="btnBulkPaste" onclick="openBulkPasteModal()"><i class="fa-solid fa-paste"></i> <span>Paste Games</span></button>
             <button type="button" class="btn-tool" id="btnResetPicks" onclick="clearAllPicks()" title="Clear picks only"><i class="fa-solid fa-rotate-left"></i> <span>Clear Picks</span></button>
@@ -216,7 +218,7 @@ window.closeBulkPasteModal = function(){
         </div>
 
         <!-- Sport Scoring Rule Guide Banner -->
-        <div class="sport-rule-banner notranslate" id="sportRuleBanner" translate="no" style="display:flex; align-items:center; gap:8px; flex-wrap:wrap; padding:8px 12px; background:rgba(15,23,42,0.6); border-radius:8px; border:1px solid rgba(255,255,255,0.08); margin-bottom:12px;">
+        <div class="sport-rule-banner notranslate" id="sportRuleBanner" translate="no" style="display:none !important;">
           <span class="rule-pill rule-1" id="txtRule1" style="background:#2563eb; color:#fff; font-size:0.75rem; font-weight:900; padding:3px 10px; border-radius:6px;">1 : Home</span>
           <span class="rule-pill rule-x" id="txtRuleX" style="background:#d97706; color:#fff; font-size:0.75rem; font-weight:900; padding:3px 10px; border-radius:6px;">X : Draw</span>
           <span class="rule-pill rule-2" id="txtRule2" style="background:#dc2626; color:#fff; font-size:0.75rem; font-weight:900; padding:3px 10px; border-radius:6px;">2 : Away</span>
@@ -224,7 +226,7 @@ window.closeBulkPasteModal = function(){
         </div>
 
         <!-- Past Round Official Result Summary Banner (Shown when round has finished matches) -->
-        <div class="past-result-banner notranslate" id="pastResultBanner" translate="no" style="display:none;">
+        <div class="past-result-banner notranslate" id="pastResultBanner" translate="no" style="display:none !important;">
           <div class="past-result-left">
             <span id="txtPastBannerTitle">🏆 Past Match Official Results & Auto-Grading Active</span>
           </div>
@@ -253,7 +255,7 @@ window.closeBulkPasteModal = function(){
               <i class="fa-solid fa-ticket" style="color:var(--accent-gold);"></i>
               <span id="txtSlipsHeaderLabel">Generated Reduced Slips</span> (<span id="outSlipsCount">0</span><span id="txtSlipsUnit"> slips</span>)
             </div>
-            <div class="section-actions">
+            <div class="section-actions" style="display:none !important;">
               <button type="button" class="btn-tool btn-copy-highlight" onclick="copySlipsToClipboard()"><i class="fa-solid fa-copy"></i> <span id="txtBtnCopy">Copy All</span></button>
               <button type="button" class="btn-tool btn-tool-share" id="btnShareSlips" onclick="shareCurrentPool(true)"><i class="fa-solid fa-share-nodes"></i> <span id="txtBtnShareResult">Share Link</span></button>
               <button type="button" class="btn-tool" onclick="downloadSlipsTxt()"><i class="fa-solid fa-download"></i> <span id="txtBtnTxt">TXT</span></button>
@@ -335,7 +337,7 @@ window.closeBulkPasteModal = function(){
             <span id="txtSavedCombosTitle">Saved Combinations</span>
             <span class="saved-count-pill" id="savedCombosCount">0</span>
           </div>
-          <div class="section-actions">
+          <div class="section-actions" style="display:none !important;">
             <button type="button" class="btn-tool" id="btnSavedClearAll" onclick="clearSavedCombos()" style="display:none;"><i class="fa-solid fa-trash-can"></i> <span id="txtSavedClearAll">Clear All</span></button>
           </div>
         </div>
@@ -348,17 +350,7 @@ window.closeBulkPasteModal = function(){
       <!-- Real-time Stats Card -->
       <div class="section-box">
         <!-- 3-Sport US Pool Tabs Bar -->
-        <div class="pool-sport-tabs" id="usPoolSportTabs">
-          <button type="button" class="sport-tab-btn active" id="tabSportFootball" onclick="switchUsSport('football')">
-            ?룉 NFL Football Pool
-          </button>
-          <button type="button" class="sport-tab-btn" id="tabSportBasketball" onclick="switchUsSport('basketball')">
-            ?? NBA Basketball Pool
-          </button>
-          <button type="button" class="sport-tab-btn" id="tabSportSoccer" onclick="switchUsSport('soccer')">
-            ??Soccer 1X2 Pool
-          </button>
-        </div>
+        
         <div class="section-header">
           <div class="section-title">
             <i class="fa-solid fa-calculator" style="color:var(--accent-gold);"></i>
@@ -686,6 +678,6 @@ window.closeBulkPasteModal = function(){
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261028_28"></script>
+  <script src="app.js?v=20261028_29"></script>
 </body>
 </html>
