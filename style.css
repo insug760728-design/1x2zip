@@ -994,6 +994,21 @@ header {
   padding: 8px 12px;
   border-radius: 8px;
   text-align: center;
+  transition: all 0.2s ease;
+}
+
+.btn-execute-subtext.exhausted {
+  color: #fca5a5;
+  background: rgba(239, 68, 68, 0.12);
+  border: 1px solid rgba(239, 68, 68, 0.55);
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.15);
+}
+
+.btn-execute-subtext.exhausted:hover {
+  background: rgba(239, 68, 68, 0.2);
+  border-color: rgba(239, 68, 68, 0.85);
+  transform: translateY(-1px);
 }
 
 /* Filter Box */
@@ -1179,6 +1194,27 @@ header {
   white-space: nowrap;
   box-shadow: 0 0 10px rgba(250, 204, 21, 0.2);
   animation: pulseGoldGlow 3s infinite ease-in-out;
+  transition: all 0.2s ease;
+}
+
+.header-free-trial-pill.exhausted {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.2) 0%, rgba(245, 158, 11, 0.25) 100%);
+  border-color: rgba(239, 68, 68, 0.6);
+  color: #fca5a5;
+  box-shadow: 0 0 10px rgba(239, 68, 68, 0.25);
+  animation: pulseRedGlow 2.5s infinite ease-in-out;
+  cursor: pointer;
+}
+
+@keyframes pulseRedGlow {
+  0%, 100% {
+    box-shadow: 0 0 6px rgba(239, 68, 68, 0.25);
+    border-color: rgba(239, 68, 68, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 14px rgba(239, 68, 68, 0.65);
+    border-color: rgba(239, 68, 68, 0.95);
+  }
 }
 
 @keyframes pulseGoldGlow {
