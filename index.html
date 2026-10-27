@@ -61,7 +61,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261028_nav">
+  <link rel="stylesheet" href="style.css?v=20261028_sports">
 </head>
 <body translate="no" class="notranslate" data-view-mode="pc">
 
@@ -80,7 +80,7 @@
         </div>
       </div>
 
-                  <div class="header-controls">
+                        <div class="header-controls">
         <!-- 1. Country / League Pool Dropdown Selector -->
         <div class="top-scroll-select-wrap">
           <select id="countrySelect" class="top-select-scroll country-select-highlight" onchange="selectCountryPool(this.value)">
@@ -120,16 +120,48 @@
     <!-- Left Column: Match Selection Board -->
     <section>
       <div class="section-box">
-                                <!-- 1-Click 8-Country Quick Switcher Bar -->
-        <div class="country-quick-bar notranslate" translate="no">
-          <button type="button" class="btn-country-pill" data-country="KR" onclick="selectCountryPool('KR')">&#x1F1F0;&#x1F1F7; &#xd55c;&#xad6d;</button>
-          <button type="button" class="btn-country-pill" data-country="JP" onclick="selectCountryPool('JP')">&#x1F1EF;&#x1F1F5; &#x65e5;&#x672c;</button>
-          <button type="button" class="btn-country-pill" data-country="CN" onclick="selectCountryPool('CN')">&#x1F1E8;&#x1F1F3; &#x4e2d;&#x56fd;</button>
-          <button type="button" class="btn-country-pill active" data-country="US" onclick="selectCountryPool('US')">&#x1F1FA;&#x1F1F8; USA</button>
-          <button type="button" class="btn-country-pill" data-country="UK" onclick="selectCountryPool('UK')">&#x1F1EC;&#x1F1E7; UK</button>
-          <button type="button" class="btn-country-pill" data-country="ES" onclick="selectCountryPool('ES')">&#x1F1EA;&#x1F1F8; Spain</button>
-          <button type="button" class="btn-country-pill" data-country="IT" onclick="selectCountryPool('IT')">&#x1F1EE;&#x1F1F9; Italy</button>
-          <button type="button" class="btn-country-pill" data-country="BR" onclick="selectCountryPool('BR')">&#x1F1E7;&#x1F1F7; Brazil</button>
+                                        <!-- 1. Horizontal Scrollable 8-Country Bar -->
+        <div class="country-scroll-bar notranslate" translate="no">
+          <button type="button" class="country-chip" data-country="KR" onclick="selectCountryPool('KR')">
+            <span>&#x1F1F0;&#x1F1F7;</span> <span>&#xd55c;&#xad6d;</span>
+          </button>
+          <button type="button" class="country-chip" data-country="JP" onclick="selectCountryPool('JP')">
+            <span>&#x1F1EF;&#x1F1F5;</span> <span>&#x65e5;&#x672c;</span>
+          </button>
+          <button type="button" class="country-chip" data-country="CN" onclick="selectCountryPool('CN')">
+            <span>&#x1F1E8;&#x1F1F3;</span> <span>&#x4e2d;&#x56fd;</span>
+          </button>
+          <button type="button" class="country-chip active" data-country="US" onclick="selectCountryPool('US')">
+            <span>&#x1F1FA;&#x1F1F8;</span> <span>USA</span>
+          </button>
+          <button type="button" class="country-chip" data-country="UK" onclick="selectCountryPool('UK')">
+            <span>&#x1F1EC;&#x1F1E7;</span> <span>UK</span>
+          </button>
+          <button type="button" class="country-chip" data-country="ES" onclick="selectCountryPool('ES')">
+            <span>&#x1F1EA;&#x1F1F8;</span> <span>Spain</span>
+          </button>
+          <button type="button" class="country-chip" data-country="IT" onclick="selectCountryPool('IT')">
+            <span>&#x1F1EE;&#x1F1F9;</span> <span>Italy</span>
+          </button>
+          <button type="button" class="country-chip" data-country="BR" onclick="selectCountryPool('BR')">
+            <span>&#x1F1E7;&#x1F1F7;</span> <span>Brazil</span>
+          </button>
+        </div>
+
+        <!-- 2. Horizontal Scrollable Sports for Selected Country -->
+        <div class="sport-scroll-bar notranslate" translate="no">
+          <button type="button" class="sport-chip active" data-sport="soccer" onclick="selectSportMode('soccer')">
+            <i class="fa-solid fa-futbol"></i> <span id="lblSportSoccer">&#xcd95;&#xad6c; &#xc2b9;&#xbb34;&#xd328; (14M)</span>
+          </button>
+          <button type="button" class="sport-chip" data-sport="basketball" onclick="selectSportMode('basketball')">
+            <i class="fa-solid fa-basketball"></i> <span id="lblSportBasket">&#xb18d;&#xad6c; &#xc2b9;5&#xd328; (14M)</span>
+          </button>
+          <button type="button" class="sport-chip" data-sport="football" onclick="selectSportMode('football')">
+            <i class="fa-solid fa-football"></i> <span id="lblSportFootball">&#xbbf8;&#xc2dd;&#xcd95;&#xad6c; &#xc2b9;3&#xd328; (NFL)</span>
+          </button>
+          <button type="button" class="sport-chip" data-sport="hockey" onclick="selectSportMode('hockey')">
+            <i class="fa-solid fa-hockey-puck"></i> <span id="lblSportHockey">&#xc544;&#xc774;&#xc2a4;&#xd558;&#xd0a4; 1X2 (NHL)</span>
+          </button>
         </div>
 
         <div class="section-header" style="flex-direction:column; align-items:stretch; gap:10px;">
@@ -495,6 +527,6 @@
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261028_nav"></script>
+  <script src="app.js?v=20261028_sports"></script>
 </body>
 </html>

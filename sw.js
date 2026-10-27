@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gpc-1x2zip-v20261028_nav';
+const CACHE_NAME = 'gpc-1x2zip-v20261028_sports';
 const ASSETS = [
   './manifest.json',
   './app-icon.svg',

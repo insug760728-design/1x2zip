@@ -2701,3 +2701,108 @@ body[data-view-mode="mobile"] .slips-grid.omr-mode {
   font-weight: 900;
   box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
 }
+
+/* Horizontal Scrollable Country Bar */
+.country-scroll-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 2px 10px;
+  margin-bottom: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: #334155 #0f172a;
+}
+.country-scroll-bar::-webkit-scrollbar {
+  height: 5px;
+}
+.country-scroll-bar::-webkit-scrollbar-track {
+  background: #0f172a;
+  border-radius: 4px;
+}
+.country-scroll-bar::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+.country-chip {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 16px;
+  border-radius: 10px;
+  background: #0f172a;
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  color: #cbd5e1;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.country-chip:hover {
+  border-color: var(--accent-cyan);
+  background: #17253b;
+  color: #fff;
+}
+.country-chip.active {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.35), rgba(16, 185, 129, 0.3));
+  border-color: var(--accent-cyan);
+  color: #fff;
+  font-weight: 900;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+}
+
+/* Horizontal Scrollable Sport Tabs Bar */
+.sport-scroll-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+  padding: 2px 2px 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  scrollbar-width: thin;
+  scrollbar-color: #334155 #0f172a;
+}
+.sport-scroll-bar::-webkit-scrollbar {
+  height: 4px;
+}
+.sport-scroll-bar::-webkit-scrollbar-track {
+  background: #0f172a;
+  border-radius: 4px;
+}
+.sport-scroll-bar::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+.sport-chip {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  color: #94a3b8;
+  font-size: 0.83rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.sport-chip:hover {
+  border-color: var(--accent-emerald);
+  color: #fff;
+  background: #17253b;
+}
+.sport-chip.active {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.28), rgba(6, 182, 212, 0.22));
+  border-color: var(--accent-emerald);
+  color: #fff;
+  font-weight: 900;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
+}
