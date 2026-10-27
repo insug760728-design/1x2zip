@@ -78,7 +78,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261027_22">
+  <link rel="stylesheet" href="style.css?v=20261027_23">
 </head>
 <body translate="no" class="notranslate" data-view-mode="pc">
 
@@ -272,19 +272,28 @@
       </div>
 
       <!-- Result Slips Section -->
-      <div class="section-box slips-container" id="slipsSection" style="display:none;">
-        <div class="section-header">
-          <div class="section-title">
-            <i class="fa-solid fa-ticket" style="color:var(--accent-gold);"></i>
-            <span id="txtSlipsHeaderLabel">Generated Reduced Slips</span> (<span id="outSlipsCount">0</span><span id="txtSlipsUnit"> slips</span>)
+      <!-- Result Slips Section -->
+        <div class="section-box slips-container" id="slipsSection" style="display:none;">
+          <div class="section-header">
+            <div class="section-title">
+              <i class="fa-solid fa-ticket" style="color:var(--accent-gold);"></i>
+              <span id="txtSlipsHeaderLabel">Generated Reduced Slips</span> (<span id="outSlipsCount">0</span><span id="txtSlipsUnit"> slips</span>)
+            </div>
+            <div class="section-actions">
+              <button type="button" class="btn-tool btn-copy-highlight" onclick="copySlipsToClipboard()"><i class="fa-solid fa-copy"></i> <span id="txtBtnCopy">Copy All</span></button>
+              <button type="button" class="btn-tool btn-tool-share" id="btnShareSlips" onclick="shareCurrentPool(true)"><i class="fa-solid fa-share-nodes"></i> <span id="txtBtnShareResult">Share Link</span></button>
+              <button type="button" class="btn-tool" onclick="downloadSlipsTxt()"><i class="fa-solid fa-download"></i> <span id="txtBtnTxt">TXT</span></button>
+              <button type="button" class="btn-tool" onclick="downloadSlipsCsv()"><i class="fa-solid fa-file-csv"></i> <span id="txtBtnCsv">CSV</span></button>
+            </div>
           </div>
-          <div class="section-actions">
-            <button type="button" class="btn-tool btn-tool-share" id="btnShareSlips" onclick="shareCurrentPool(true)"><i class="fa-solid fa-share-nodes"></i> <span id="txtBtnShareResult">Share Pool Link</span></button>
-            <button type="button" class="btn-tool" onclick="copySlipsToClipboard()"><i class="fa-solid fa-copy"></i> <span id="txtBtnCopy">Copy All</span></button>
-            <button type="button" class="btn-tool" onclick="downloadSlipsTxt()"><i class="fa-solid fa-download"></i> <span id="txtBtnTxt">Download TXT</span></button>
-            <button type="button" class="btn-tool" onclick="downloadSlipsCsv()"><i class="fa-solid fa-file-csv"></i> <span id="txtBtnCsv">Download CSV</span></button>
+
+          <!-- Prominent 1-Click Fast Copy Bar -->
+          <div class="slips-quick-action-bar" style="margin-bottom:14px; display:flex; gap:10px; flex-wrap:wrap;">
+            <button type="button" class="btn-execute btn-quick-copy-all" style="padding:14px 20px; font-size:0.92rem; font-weight:900; margin-bottom:0; background:linear-gradient(135deg,#06b6d4,#10b981); color:#fff; border:1px solid #38bdf8; border-radius:10px; flex:1; display:flex; align-items:center; justify-content:center; gap:8px; cursor:pointer; box-shadow:0 4px 15px rgba(6,182,212,0.3);" onclick="copySlipsToClipboard()">
+              <i class="fa-solid fa-copy" style="font-size:1.1rem;"></i>
+              <span id="txtBtnQuickCopy">1-Click Copy All Slips (?먰겢由??꾩껜 蹂듭궗)</span>
+            </button>
           </div>
-        </div>
 
         <div class="slips-grade-banner" id="slipsGradeBanner" style="display:none;"></div>
 
@@ -658,6 +667,6 @@
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261027_22"></script>
+  <script src="app.js?v=20261027_23"></script>
 </body>
 </html>

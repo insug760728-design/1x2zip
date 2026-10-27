@@ -3125,3 +3125,19 @@ body[data-view-mode="mobile"] .patent-footer-inner .seo-crawl-links a {
   color: #64748b !important;
   padding: 1px 4px !important;
 }
+
+/* Fast Copy Button Highlight */
+.btn-tool.btn-copy-highlight {
+  background: rgba(6, 182, 212, 0.18) !important;
+  border-color: #38bdf8 !important;
+  color: #38bdf8 !important;
+  font-weight: 800 !important;
+}
+.btn-tool.btn-copy-highlight:hover {
+  background: #0284c7 !important;
+  color: #ffffff !important;
+}
+.btn-quick-copy-all:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(6, 182, 212, 0.45) !important;
+}
