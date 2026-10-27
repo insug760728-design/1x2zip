@@ -2,7 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>1X2ZIP 글로벌 6개국 24시간 전면 무료 이벤트 배포 센터</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -223,25 +223,6 @@
       z-index: 9999;
     }
   </style>
-<script>
-window.openBulkPasteModal = function(){
-  var m = document.getElementById('bulkPasteModal');
-  if(m){
-    m.style.display = 'flex';
-    m.style.zIndex = '99999';
-  }
-  var ta = document.getElementById('bulkPasteTextarea');
-  if(ta && !ta.value.trim()){
-    if(typeof window.loadBulkPasteSample === 'function'){
-      window.loadBulkPasteSample();
-    }
-  }
-};
-window.closeBulkPasteModal = function(){
-  var m = document.getElementById('bulkPasteModal');
-  if(m) m.style.display = 'none';
-};
-</script>
 </head>
 <body>
   <div class="container">
@@ -548,41 +529,5 @@ window.closeBulkPasteModal = function(){
 
     renderCards();
   </script>
-  <!-- Bulk Paste 14 Games Modal -->
-  <div class="modal-overlay notranslate" id="bulkPasteModal" translate="no" style="display:none;" onclick="if(event.target===this)closeBulkPasteModal()">
-    <div class="modal-content auth-pay-modal" style="max-width:560px;">
-      <button type="button" class="modal-close-btn" onclick="closeBulkPasteModal()">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-      <div class="modal-brand-head">
-        <span class="patent-badge" id="txtPatentBadge" style="display:none;"></span>
-        <h3 id="txtBulkModalTitle"><i class="fa-solid fa-paste"></i> Paste 14 Games in 1-Click</h3>
-        <p id="txtBulkModalSub">Copy 14 matches from DraftKings, FanDuel, SkyBet or your notes, paste below and click Apply.</p>
-      </div>
-      <div class="auth-step-box" style="margin-bottom:12px;">
-        <div class="step-label-row" style="display:flex; justify-content:space-between; align-items:center;">
-          <div>
-            <span class="step-num-badge gold">MATCHES &amp; PICKS</span>
-            <strong style="font-size:0.8rem; color:var(--text-muted);">Teams + Picks (1, X, 2) Supported</strong>
-          </div>
-          <button type="button" class="btn-tool" style="font-size:0.75rem; padding:3px 8px; border-color:#38bdf8; color:#38bdf8;" onclick="loadBulkPasteSample()"><i class="fa-solid fa-wand-magic-sparkles"></i> Try Sample</button>
-        </div>
-        <textarea id="bulkPasteTextarea" class="bulk-paste-textarea" rows="9" placeholder="Paste matches with or without picks (one per line):
-1. Arsenal vs Chelsea : 1, X
-2. Liverpool vs Man City : 1
-3. Aston Villa vs Tottenham : X, 2
-4. Chiefs @ Bills : 1, 2
-5. Celtics @ Lakers : 1
-...paste up to 14 matches"></textarea>
-      </div>
-      <div style="display:flex; gap:10px;">
-        <button type="button" class="btn-execute" style="margin-bottom:0; flex:2; padding:12px; background:linear-gradient(135deg,#06b6d4,#3b82f6); color:#fff;" onclick="applyBulkPasteMatches()">
-          <i class="fa-solid fa-check-double"></i>
-          <span id="txtBulkModalApplyBtn">Apply to 14 Match Slots</span>
-        </button>
-        <button type="button" class="btn-tool" style="flex:1; justify-content:center;" onclick="closeBulkPasteModal()">Cancel</button>
-      </div>
-    </div>
-  </div>
 </body>
 </html>
