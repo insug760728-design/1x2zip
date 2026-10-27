@@ -78,7 +78,26 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261027_20">
+  <link rel="stylesheet" href="style.css?v=20261028_02">
+<script>
+window.openBulkPasteModal = function(){
+  var m = document.getElementById('bulkPasteModal');
+  if(m){
+    m.style.display = 'flex';
+    m.style.zIndex = '99999';
+  }
+  var ta = document.getElementById('bulkPasteTextarea');
+  if(ta && !ta.value.trim()){
+    if(typeof window.loadBulkPasteSample === 'function'){
+      window.loadBulkPasteSample();
+    }
+  }
+};
+window.closeBulkPasteModal = function(){
+  var m = document.getElementById('bulkPasteModal');
+  if(m) m.style.display = 'none';
+};
+</script>
 </head>
 <body translate="no" class="notranslate" data-view-mode="pc">
 
@@ -93,7 +112,7 @@
             <span class="brand-badge">AI PRO ENGINE</span>
             <span class="patent-badge" id="txtPatentBadge">🏅 PATENT PENDING (10-2026-0205596)</span>
           </div>
-          <div class="brand-sub" id="txtBrandSub">14-Match Soccer Pool 2nd-Prize (13/14) 100% Guarantee Combinator (Patent Pending KR 10-2026-0205596)</div>
+          <div class="brand-sub" id="txtBrandSub" style="display:none;"></div>
         </div>
       </div>
 
@@ -586,14 +605,14 @@
   </div>
 
   <!-- Bulk Paste 14 Games Modal -->
-  <div class="modal-overlay notranslate" id="bulkPasteModal" translate="no" style="display:none;">
+  <div class="modal-overlay notranslate" id="bulkPasteModal" translate="no" style="display:none;" onclick="if(event.target===this)closeBulkPasteModal()">
     <div class="modal-content auth-pay-modal" style="max-width:560px;">
       <button type="button" class="modal-close-btn" onclick="closeBulkPasteModal()">
         <i class="fa-solid fa-xmark"></i>
       </button>
       <div class="modal-brand-head">
         <span class="patent-badge"><i class="fa-solid fa-bolt"></i> FAST 14-MATCH IMPORT</span>
-        <h3 id="txtBulkModalTitle">?뱥 Paste 14 Games in 1-Click</h3>
+        <h3 id="txtBulkModalTitle"><i class="fa-solid fa-paste"></i> Paste 14 Games in 1-Click</h3>
         <p id="txtBulkModalSub">Copy 14 matches from DraftKings, FanDuel, SkyBet or your notes, paste below and click Apply.</p>
       </div>
       <div class="auth-step-box" style="margin-bottom:12px;">
@@ -672,6 +691,6 @@
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261028_01"></script>
+  <script src="app.js?v=20261028_02"></script>
 </body>
 </html>
