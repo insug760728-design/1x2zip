@@ -78,7 +78,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261028_nowdl">
+  <link rel="stylesheet" href="style.css?v=20261028_clean">
 </head>
 <body translate="no" class="notranslate" data-view-mode="pc">
 
@@ -88,16 +88,16 @@
       <div class="brand-box">
         <i class="fa-solid fa-layer-group brand-icon"></i>
         <div>
-          <div class="brand-title">
-            <h1 style="display:inline;font:inherit;margin:0;" id="txtBrandTitle">GLOBAL POOL COMBINATOR</h1>
-            <span class="brand-badge">AI PRO ENGINE</span>
-            <span class="patent-badge" id="txtPatentBadge">🏅 PATENT PENDING (10-2026-0205596)</span>
+                    <div class="brand-title">
+            <h1 style="display:inline;font:inherit;margin:0;" id="txtBrandTitle">TOKEON 1X2 POOL</h1>
+            <span class="brand-badge" style="background:linear-gradient(135deg, #10b981, #06b6d4); color:#fff; font-weight:900; font-size:0.72rem; padding:2px 8px; border-radius:999px;">100% 13/14 HEDGE</span>
+            <span class="patent-badge" id="txtPatentBadge" style="display:none;"></span>
           </div>
-          <div class="brand-sub" id="txtBrandSub">14-Match Soccer Pool 2nd-Prize (13/14) 100% Guarantee Combinator (Patent Pending KR 10-2026-0205596)</div>
+          <div class="brand-sub" id="txtBrandSub" style="display:none;"></div>
         </div>
       </div>
 
-      <div class="header-controls">
+      <div class="header-controls" style="display:none;">
         <!-- 1. Country / League Pool Dropdown Scroll Selector -->
         <div class="top-scroll-select-wrap">
           <select id="countrySelect" class="top-select-scroll country-select-highlight" onchange="selectCountryPool(this.value)">
@@ -198,65 +198,32 @@
     <!-- Left Column: Match Selection Board -->
     <section>
       <div class="section-box">
-        <div class="section-header" style="flex-wrap:wrap; gap:10px;">
-          <div class="section-title" style="flex-wrap:wrap; gap:10px;">
+                <div class="section-header" style="flex-direction:column; align-items:stretch; gap:10px;">
+          <div class="section-title" style="display:flex; align-items:center; gap:8px;">
             <i class="fa-solid fa-list-check" style="color:var(--accent-cyan);"></i>
-            <span id="txtMatchBoardTitle">🇺🇸 USA MLS & Global Soccer Pool · 14-Match Selection Board</span>
-            <span class="board-round-badge" id="txtBoardRoundBadge">Round 34</span>
+            <span id="txtMatchBoardTitle">US USA 1횞2 Pool 쨌 14-Match Selection Board</span>
+            <span class="board-round-badge" id="txtBoardRoundBadge">1 횞 2</span>
           </div>
-          <div class="section-actions" style="flex-wrap:wrap;">
-            <button type="button" class="btn-tool" id="btnSample192" onclick="loadSamplePreset(192)">⚡ 192 Combos Sample</button>
-            <button type="button" class="btn-tool" id="btnSample768" onclick="loadSamplePreset(768)">🔥 768 Combos Sample</button>
-            <button type="button" class="btn-tool" id="btnSample3456" onclick="loadSamplePreset(3456)">💎 3,456 Combos Sample</button>
-            <button type="button" class="btn-tool" id="btnGenericLegs" onclick="resetToGenericLegs()" style="border-color:var(--accent-cyan); color:var(--accent-cyan);"><i class="fa-solid fa-list-ol"></i> <span>Custom Parlay (Leg 1~14)</span></button>
-            <button type="button" class="btn-tool" id="btnResetPicks" onclick="clearAllPicks()"><i class="fa-solid fa-rotate-left"></i> <span id="txtResetBtn">Reset</span></button>
-          </div>
-        </div>
-
-        <!-- Round Selector & Live Auto-Update Control Bar -->
-        <div class="round-control-bar notranslate" id="roundControlBar" translate="no">
-          <div class="round-select-wrap">
-            <label for="roundSelect" class="round-select-label" id="lblRoundSelect">
-              <i class="fa-solid fa-calendar-check"></i> <span>Pool Round:</span>
-            </label>
-            <select id="roundSelect" class="round-select" onchange="onRoundChange(this.value)"></select>
-            <span class="round-deadline-info" id="txtRoundDeadline">Closes Oct 24, 19:30 EST</span>
-          </div>
-
-          <div class="auto-update-wrap">
-            <span class="auto-update-indicator" id="autoUpdateBadge">
-              <span class="pulse-dot"></span>
-              <span id="txtAutoUpdateStatus">Auto-Update ON (60s)</span>
-            </span>
-            <span class="last-sync-time" id="txtLastSyncTime">Last Synced: Just now</span>
-            <button type="button" class="btn-sync-now" id="btnSyncNow" onclick="triggerManualSync()">
-              <i class="fa-solid fa-arrows-rotate" id="iconSyncSpin"></i>
-              <span id="txtBtnSyncNow">Sync Now</span>
+          <div class="sample-single-wrap" style="width:100%;">
+            <button type="button" class="btn-sample-192-full" id="btnSample192" onclick="loadSamplePreset(192)" style="width:100%; padding:12px 16px; border-radius:10px; background:linear-gradient(135deg, #10b981, #059669); color:#fff; font-size:0.95rem; font-weight:800; border:none; cursor:pointer; box-shadow:0 4px 14px rgba(16,185,129,0.35); text-align:center;">
+              <i class="fa-solid fa-bolt" style="margin-right:6px;"></i> 192 Combos Sample
             </button>
           </div>
-        </div>
-
-        <!-- Sport Scoring Rule Guide Banner -->
-        <div class="sport-rule-banner notranslate" id="sportRuleBanner" translate="no">
-          <span class="rule-pill rule-1" id="txtRule1" translate="no"><b>W</b> : Home</span>
-          <span class="rule-pill rule-x" id="txtRuleX" translate="no"><b>D</b> : Draw</span>
-          <span class="rule-pill rule-2" id="txtRule2" translate="no"><b>L</b> : Away</span>
-          <span class="rule-sync-tag" id="txtRuleSyncNote" translate="no">🌐 Live 60s Official Score & Result Auto-Sync across 8 Global Pools</span>
-        </div>
-
-        <!-- Past Round Official Result Summary Banner (Shown when round has finished matches) -->
-        <div class="past-result-banner notranslate" id="pastResultBanner" translate="no" style="display:none;">
-          <div class="past-result-left">
-            <span id="txtPastBannerTitle">🏆 Past Match Official Results & Auto-Grading Active</span>
-          </div>
-          <div class="past-result-right">
-            <span id="txtPastBannerSummary"></span>
-            <button type="button" class="btn-lock-finished" id="btnLockFinished" onclick="lockFinishedMatchResults()">
-              <i class="fa-solid fa-check-double"></i>
-              <span id="txtBtnLockFinished">Auto-Fill Finished Results</span>
-            </button>
+          <div class="section-actions" style="display:none !important;">
+            <button type="button" id="btnSample768" style="display:none;"></button>
+            <button type="button" id="btnSample3456" style="display:none;"></button>
+            <button type="button" id="btnGenericLegs" style="display:none;"></button>
+            <button type="button" id="btnResetPicks" onclick="clearAllPicks()" style="display:none;"></button>
           </div>
         </div>
+
+        <!-- Hidden Bars for Maximum Cleanliness -->
+        <div class="round-control-bar notranslate" id="roundControlBar" translate="no" style="display:none !important;">
+          <select id="roundSelect" style="display:none;"></select>
+          <button type="button" id="btnSyncNow" style="display:none;"></button>
+        </div>
+        <div class="sport-rule-banner notranslate" id="sportRuleBanner" translate="no" style="display:none !important;"></div>
+        <div class="past-result-banner notranslate" id="pastResultBanner" translate="no" style="display:none !important;"></div>
 
         <!-- Match Rows Container -->
         <table class="match-table notranslate" id="matchTable" translate="no">
@@ -616,6 +583,6 @@
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261028_nowdl"></script>
+  <script src="app.js?v=20261028_clean"></script>
 </body>
 </html>
