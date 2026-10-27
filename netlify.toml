@@ -1,5 +1,12 @@
 [build]
   publish = "."
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/reduce"
+  to = "/.netlify/functions/reduce"
+  status = 200
+  force = true
 
 [[redirects]]
   from = "/kr/"

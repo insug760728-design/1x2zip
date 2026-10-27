@@ -1,0 +1,403 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎬 7개국 유튜브 쇼츠(.mp4) + 쇼츠 전용 썸네일 + 80자 이내 제목·설명 복사 센터</title>
+  <style>
+    :root {
+      --bg: #060a12;
+      --card: #111827;
+      --border: #263248;
+      --cyan: #06b6d4;
+      --emerald: #10b981;
+      --gold: #f59e0b;
+      --rose: #f43f5e;
+      --text: #f8fafc;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      padding: 20px 16px 80px;
+      line-height: 1.5;
+    }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .top-bar {
+      position: sticky;
+      top: 10px;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.96);
+      backdrop-filter: blur(10px);
+      border: 2px solid var(--gold);
+      border-radius: 16px;
+      padding: 16px 22px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.65);
+    }
+    .top-bar h1 { font-size: 1.22rem; font-weight: 900; color: #fde047; }
+    .top-bar p { font-size: 0.86rem; color: #cbd5e1; margin-top: 2px; }
+    .top-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-yt {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      color: #fff;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 900;
+      font-size: 0.92rem;
+    }
+    .btn-folder {
+      background: var(--emerald);
+      color: #03150e;
+      border: none;
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 900;
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+
+    .country-card {
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 18px;
+      padding: 22px;
+      margin-bottom: 26px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.45);
+    }
+    .country-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+    }
+    .country-title {
+      font-size: 1.22rem;
+      font-weight: 900;
+      color: #fde68a;
+    }
+    .dl-group { display: flex; gap: 8px; flex-wrap: wrap; }
+    .btn-dl {
+      text-decoration: none;
+      padding: 9px 14px;
+      border-radius: 9px;
+      font-weight: 900;
+      font-size: 0.83rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-dl.mp4 { background: var(--emerald); color: #03150e; }
+    .btn-dl.thumb9 { background: var(--gold); color: #1a1002; }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 22px;
+      align-items: start;
+    }
+    @media (max-width: 920px) { .card-grid { grid-template-columns: 1fr; } }
+
+    .media-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      align-items: start;
+    }
+    .thumb-box {
+      background: #090d16;
+      border: 1px solid #334155;
+      border-radius: 10px;
+      padding: 6px;
+      text-align: center;
+    }
+    .thumb-box img, .thumb-box video {
+      width: 100%;
+      border-radius: 6px;
+      display: block;
+      margin-bottom: 4px;
+    }
+    .thumb-box span {
+      font-size: 0.74rem;
+      color: #94a3b8;
+      font-weight: 700;
+    }
+
+    .copy-block { margin-bottom: 14px; }
+    .copy-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .copy-label { font-size: 0.88rem; font-weight: 900; color: #38bdf8; }
+    .btn-copy {
+      padding: 7px 16px;
+      border-radius: 8px;
+      border: none;
+      background: var(--cyan);
+      color: #03151a;
+      font-weight: 900;
+      font-size: 0.84rem;
+      cursor: pointer;
+    }
+    .copy-box {
+      width: 100%;
+      background: #080c14;
+      border: 1px solid #263248;
+      border-radius: 10px;
+      padding: 11px 14px;
+      color: #f1f5f9;
+      font-size: 0.88rem;
+      white-space: pre-wrap;
+      user-select: all;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--emerald);
+      color: #03150e;
+      font-weight: 900;
+      padding: 14px 22px;
+      border-radius: 12px;
+      display: none;
+      z-index: 9999;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top-bar">
+      <div>
+        <h1>🎬 9개국 쇼츠(.mp4) + 잘림 없는 세로 썸네일(9:16) + 80자 이내 제목 복사 센터</h1>
+        <p>스페인·브라질·미국·영국·프랑스·이탈리아·한국 + <b>일본·중국 추가 완료!</b> 폴더에서 <code>_썸네일.png</code>를 고르시면 딱 맞습니다.</p>
+      </div>
+      <div class="top-actions">
+        <button class="btn-folder" onclick="copyTextRaw('c:\\Users\\user\\Desktop\\해외조합기\\유튜브_쇼츠_7개국_완성본')">📁 1. 영상·썸네일 폴더 경로 복사</button>
+        <a class="btn-yt" href="https://www.youtube.com/upload" target="_blank">🚀 2. 유튜브 업로드 창 열기</a>
+      </div>
+    </div>
+
+    <div id="cardsContainer"></div>
+  </div>
+
+  <div id="toast" class="toast">✅ 클립보드에 복사되었습니다!</div>
+
+  <script>
+    const ITEMS = [
+      {
+        num: "1번",
+        name: "🇪🇸 스페인 (La Quiniela Jornada 15)",
+        prefix: "01_스페인_LaQuiniela",
+        mp4: "01_스페인_LaQuiniela_Shorts.mp4",
+        title: "La Quiniela Jornada 15 ¡2º Premio (14) 100% Garantizado! Barça vs Madrid #Shorts",
+        desc: `🎁 La Quiniela Jornada 15 (Barça vs Real Madrid · Valencia vs Villarreal · Girona vs Osasuna) — Abierto 100% GRATIS por 24h:
+👉 https://1x2zip.netlify.app
+
+Reduce 192 combinaciones a 24 columnas (y 768 a 96) ahorrando 87.5% con 100% garantía al 2º Premio (14/15 aciertos) y 12.5% directo al Pleno (Patente Oficial 10-2026-0205596).
+
+#LaQuiniela #QuinielaJornada15 #ElClasico #LaLiga #PronosticosQuiniela #Shorts`,
+        comment: "🎁 La Quiniela Jornada 15 — 2º Premio 100% Garantizado (100% GRATIS hoy sin registro) 👉 https://1x2zip.netlify.app"
+      },
+      {
+        num: "2번",
+        name: "🇧🇷 브라질 (Loteca Concurso 1152)",
+        prefix: "02_브라질_Loteca",
+        mp4: "02_브라질_Loteca_Shorts.mp4",
+        title: "Loteca Concurso 1152: 13 Pontos 100% Garantidos! Inter vs Flamengo #Loteca #Shorts",
+        desc: `🎁 Loteca Concurso 1152 (Internacional vs Flamengo · Cruzeiro vs Palmeiras · Botafogo vs Grêmio) — 100% GRÁTIS por 24h:
+👉 https://1x2zip.netlify.app
+
+Reduza 192 combinações para 24 volantes (e 768 para 96) economizando 87,5% com 100% de garantia para 13 pontos (2º Prêmio) e 12,5% direto para 14 pontos!
+
+#Loteca #Loteca1152 #PalpitesLoteca #Brasileirao #Futebol #Shorts`,
+        comment: "🎁 Loteca Concurso 1152 — 13 Pontos 100% Garantidos (100% GRÁTIS hoje sem login) 👉 https://1x2zip.netlify.app"
+      },
+      {
+        num: "3번",
+        name: "🇺🇸 미국 (USA Soccer & NBA Pool Round 34)",
+        prefix: "03_미국_USA_Soccer_NBA",
+        mp4: "03_미국_USA_Soccer_NBA_Shorts.mp4",
+        title: "USA Soccer & NBA Pool Round 34: 2nd Prize (13/14) 100% Guaranteed! #NBA #Shorts",
+        desc: `🎁 USA Soccer & NBA Pool Round 34 (Inter Miami vs Cincinnati · LA Galaxy vs Seattle · Celtics vs Knicks) — Unlocked 100% FREE for 24h:
+👉 https://1x2zip.netlify.app
+
+optimize 192 combinations into 24 slips (or 768 into 96 slips) with 100% 2nd Prize (13/14) guarantee and 12.5% direct 1st Prize shot!
+
+#SoccerBetting #NBAPicks #MLS #Sportsbook #FootballPools #Shorts`,
+        comment: "🎁 USA Pool Round 34 — 2nd Prize (13/14) 100% Guaranteed (100% FREE for 24h) 👉 https://1x2zip.netlify.app"
+      },
+      {
+        num: "4번",
+        name: "🇬🇧 영국 (UK Football Pools Week 12)",
+        prefix: "04_영국_UK_FootballPools",
+        mp4: "04_영국_UK_FootballPools_Shorts.mp4",
+        title: "UK Football Pools Week 12: 2nd Prize (13/14) 100% Guaranteed! Chelsea vs Spurs #Shorts",
+        desc: `🎁 UK Football Pools Week 12 (Chelsea vs Tottenham · Arsenal vs Everton · Liverpool vs Brighton) — Unlocked 100% FREE for 24h:
+👉 https://1x2zip.netlify.app
+
+optimize 192 lines to 24 coupons (and 768 to 96) saving 87.5% stake with 100% 2nd Prize (13/14) guarantee!
+
+#FootballPools #PremierLeague #ChelseaVsTottenham #EPL #SoccerBetting #Shorts`,
+        comment: "🎁 UK Football Pools Week 12 — 13/14 Win 100% Guaranteed (100% FREE for 24h) 👉 https://1x2zip.netlify.app"
+      },
+      {
+        num: "5번",
+        name: "🇫🇷 프랑스 (Loto Foot 15 Grille 68)",
+        prefix: "05_프랑스_LotoFoot",
+        mp4: "05_프랑스_LotoFoot_Shorts.mp4",
+        title: "Loto Foot 15 Grille 68 : 2e Rang (13/14) 100% Garanti ! PSG vs OM #LotoFoot #Shorts",
+        desc: `🎁 Loto Foot 14/15 Grille 68 (PSG vs Marseille · Chelsea vs Tottenham · Barça vs Real) — 100% GRATUIT pendant 24h :
+👉 https://1x2zip.netlify.app
+
+Réduisez 192 combinaisons en 24 grilles (et 768 en 96) avec 100% de garantie au 2e Rang (13/14) et 12,5% de chance directe au Pactole !
+
+#LotoFoot #LotoFoot15 #ParionsSport #Ligue1 #PronosticsFoot #Shorts`,
+        comment: "🎁 Loto Foot Grille 68 — 2e Rang (13/14) 100% Garanti (100% GRATUIT aujourd'hui) 👉 https://1x2zip.netlify.app"
+      },
+      {
+        num: "6번",
+        name: "🇮🇹 이탈리아 (Totocalcio Concorso 35)",
+        prefix: "06_이탈리아_Totocalcio",
+        mp4: "06_이탈리아_Totocalcio_Shorts.mp4",
+        title: "Totocalcio Concorso 35: 2º Premio (13 Punti) 100% Garantito! Inter vs Napoli #Shorts",
+        desc: `🎁 Totocalcio Concorso N. 35 (Inter vs Napoli · AC Milan vs Bologna · Juventus vs Monza) — Aperto 100% GRATIS per 24h:
+👉 https://1x2zip.netlify.app
+
+Riduci 192 combinazioni a 24 colonne (e 768 a 96) risparmiando l'87,5% con garanzia matematica al 100% del 2º Premio (13 Punti)!
+
+#Totocalcio #SerieA #Schedina #InterNapoli #PronosticiCalcio #Shorts`,
+        comment: "🎁 Totocalcio Concorso 35 — 13 Punti 100% Garantiti (100% GRATIS oggi) 👉 https://1x2zip.netlify.app"
+      },
+      {
+        num: "7번",
+        name: "🇰🇷 한국 (축구토토 승무패 63회차)",
+        prefix: "07_한국_승무패_승5패",
+        mp4: "07_한국_승무패_승5패_Shorts.mp4",
+        title: "축구토토 승무패 63회차 2등 100% 당첨 보장! (첼시vs토트넘·바르샤vs레알) #승무패63회차 #Shorts",
+        desc: `🎁 축구토토 승무패 63회차 (첼시 vs 토트넘 · 바르셀로나 vs 레알마드리드 · 아스널 vs 에버턴 · 리버풀 vs 브라이턴) — 오늘 하루 100% 전면 무료 개방!
+👉 https://1x2zip.netlify.app
+
+특허출원(제 10-2026-0205596호) 승무패 63회차 2등(13경기) 100% 무조건 당첨 보장 압축기!
+192조합(19만2천원) ▶ 딱 24장(2만4천원), 768조합(76만8천원) ▶ 단 96장(9만6천원)으로 87.5% 비용 절감!
+
+#축구토토승무패 #승무패63회차 #스포츠토토 #프로토 #첼시토트넘 #엘클라시코 #Shorts`,
+        comment: "🎁 승무패 63회차 2등 100% 당첨 보장 압축기 (오늘 하루 로그인X 100% 무료 개방!) 👉 https://1x2zip.netlify.app"
+      },
+      {
+        num: "8번",
+        name: "🇯🇵 일본 (サッカーtoto 第1488回)",
+        prefix: "08_일본_SportsToto",
+        mp4: "08_일본_SportsToto_Shorts.mp4",
+        title: "サッカーくじ toto 第1488回 2等(13的中) 100%当選保証！広島vs横浜FM·神戸vs東京 #Shorts",
+        desc: `👉 今すぐ100%無料で買い目を圧縮する: https://1x2zip.netlify.app
+
+⚡ サッカーくじ toto 第1488回 (広島vs横浜FM・神戸vsFC東京・G大阪vs鹿島・浦和vsC大阪) & B.LEAGUE バスケ対応！
+192通りをたった24口(-87.5%費用削減)に圧縮し、2等(13試合的中)を100%数学的に保証！
+👍 良いプログラムだと認めていただけたら、チャンネル登録と高評価をぜひお願いします！
+
+#toto #サッカーtoto #toto予想 #toto第1488回 #Jリーグ #WINNER #スポーツくじ #Shorts`,
+        comment: "🎁 24時間限定100%無料開放中(登録不要)！toto第1488回の14試合を今すぐ圧縮 👉 https://1x2zip.netlify.app 👍 良いプログラムだと思ったらチャンネル登録＆高評価お願いします！"
+      },
+      {
+        num: "9번",
+        name: "🇨🇳 중국 (足彩14场 第26152期)",
+        prefix: "09_중국_SportsLottery",
+        mp4: "09_중국_SportsLottery_Shorts.mp4",
+        title: "足彩14场胜负第26152期 二等奖(13场)100%保中！切尔西vs热刺·阿森纳vs埃弗顿 #足彩 #Shorts",
+        desc: `👉 今日100%免费使用足彩缩水神器: https://1x2zip.netlify.app
+
+⚡ 中国体彩足彩14场胜负第26152期 (切尔西vs热刺 · 阿森纳vs埃弗顿 · 上海申花 · 山东泰山) & 篮彩支持！
+将192注复式压缩至仅24注(节省87.5%成本)，二等奖(13场命中)100%数学保中！
+👍 如果您认可这是一款好软件，请一定订阅频道并点赞支持！
+
+#足彩14场 #胜负彩26152期 #足彩缩水 #体育彩票 #任选9场 #英超 #中超 #Shorts`,
+        comment: "🎁 24小时100%免费开放(免登录)！立即压缩足彩14场第26152期复式单 👉 https://1x2zip.netlify.app 👍 认可这款软件的朋友请点赞+订阅！"
+      }
+    ];
+
+    const container = document.getElementById('cardsContainer');
+    ITEMS.forEach((it, idx) => {
+      const card = document.createElement('div');
+      card.className = 'country-card';
+      const t9  = `유튜브_쇼츠_7개국_완성본/${it.prefix}_썸네일.png`;
+      const vUrl = `유튜브_쇼츠_7개국_완성본/${it.mp4}`;
+
+      card.innerHTML = `
+        <div class="country-head">
+          <div class="country-title">${it.num} · ${it.name}</div>
+          <div class="dl-group">
+            <a class="btn-dl mp4" href="${vUrl}" download="${it.mp4}">🎬 영상(${it.mp4})</a>
+            <a class="btn-dl thumb9" href="${t9}" download="${it.prefix}_썸네일.png">🖼️ 썸네일(${it.prefix}_썸네일.png)</a>
+          </div>
+        </div>
+        <div class="card-grid">
+          <div class="media-col">
+            <div class="thumb-box">
+              <img src="${t9}" alt="쇼츠 전용 썸네일">
+              <span>${it.prefix}_썸네일.png</span>
+            </div>
+            <div class="thumb-box">
+              <video src="${vUrl}" controls preload="metadata"></video>
+              <span>${it.mp4}</span>
+            </div>
+          </div>
+          <div>
+            <div class="copy-block">
+              <div class="copy-header">
+                <span class="copy-label">📌 [${it.num}] 제목 (${it.title.length}자 / 100자 이내 안전 통과!)</span>
+                <button class="btn-copy" onclick="copyById('t_${idx}')">📋 ${it.num} 제목 복사</button>
+              </div>
+              <div id="t_${idx}" class="copy-box"></div>
+            </div>
+            <div class="copy-block">
+              <div class="copy-header">
+                <span class="copy-label">📝 [${it.num}] 설명 (Description)</span>
+                <button class="btn-copy" onclick="copyById('d_${idx}')">📋 ${it.num} 설명 복사</button>
+              </div>
+              <div id="d_${idx}" class="copy-box"></div>
+            </div>
+            <div class="copy-block" style="margin-bottom:0;">
+              <div class="copy-header">
+                <span class="copy-label">💬 [${it.num}] 고정 댓글 (Pinned Comment)</span>
+                <button class="btn-copy" onclick="copyById('c_${idx}')">📋 ${it.num} 댓글 복사</button>
+              </div>
+              <div id="c_${idx}" class="copy-box"></div>
+            </div>
+          </div>
+        </div>
+      `;
+      container.appendChild(card);
+      document.getElementById(`t_${idx}`).textContent = it.title;
+      document.getElementById(`d_${idx}`).textContent = it.desc;
+      document.getElementById(`c_${idx}`).textContent = it.comment;
+    });
+
+    function copyById(id) {
+      copyTextRaw(document.getElementById(id).textContent);
+    }
+
+    function copyTextRaw(txt) {
+      navigator.clipboard.writeText(txt).then(() => {
+        const t = document.getElementById('toast');
+        t.style.display = 'block';
+        setTimeout(() => { t.style.display = 'none'; }, 1600);
+      });
+    }
+  </script>
+</body>
+</html>
