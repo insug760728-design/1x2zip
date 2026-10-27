@@ -78,7 +78,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261027_27">
+  <link rel="stylesheet" href="style.css?v=20261028_28">
 <script>
 window.openBulkPasteModal = function(){
   var m = document.getElementById('bulkPasteModal');
@@ -172,6 +172,18 @@ window.closeBulkPasteModal = function(){
     <!-- Left Column: Match Selection Board -->
     <section>
       <div class="section-box">
+        <!-- 3-Sport US Pool Tabs Bar -->
+        <div class="pool-sport-tabs" id="usPoolSportTabs">
+          <button type="button" class="sport-tab-btn active" id="tabSportFootball" onclick="switchUsSport('football')">
+            ?룉 NFL Football Pool
+          </button>
+          <button type="button" class="sport-tab-btn" id="tabSportBasketball" onclick="switchUsSport('basketball')">
+            ?? NBA Basketball Pool
+          </button>
+          <button type="button" class="sport-tab-btn" id="tabSportSoccer" onclick="switchUsSport('soccer')">
+            ??Soccer 1X2 Pool
+          </button>
+        </div>
         <div class="section-header" style="flex-wrap:wrap; gap:10px;">
           <div class="section-title" style="flex-wrap:wrap; gap:10px;">
             <i class="fa-solid fa-list-check" style="color:var(--accent-cyan);"></i>
@@ -335,6 +347,18 @@ window.closeBulkPasteModal = function(){
     <aside>
       <!-- Real-time Stats Card -->
       <div class="section-box">
+        <!-- 3-Sport US Pool Tabs Bar -->
+        <div class="pool-sport-tabs" id="usPoolSportTabs">
+          <button type="button" class="sport-tab-btn active" id="tabSportFootball" onclick="switchUsSport('football')">
+            ?룉 NFL Football Pool
+          </button>
+          <button type="button" class="sport-tab-btn" id="tabSportBasketball" onclick="switchUsSport('basketball')">
+            ?? NBA Basketball Pool
+          </button>
+          <button type="button" class="sport-tab-btn" id="tabSportSoccer" onclick="switchUsSport('soccer')">
+            ??Soccer 1X2 Pool
+          </button>
+        </div>
         <div class="section-header">
           <div class="section-title">
             <i class="fa-solid fa-calculator" style="color:var(--accent-gold);"></i>
@@ -662,6 +686,6 @@ window.closeBulkPasteModal = function(){
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261027_27"></script>
+  <script src="app.js?v=20261028_28"></script>
 </body>
 </html>
