@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="google" content="notranslate">
   <meta http-equiv="Content-Language" content="en, ko, ja, zh, es, it, pt">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
   <meta name="theme-color" content="#0f172a">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -78,7 +78,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261027_26">
+  <link rel="stylesheet" href="style.css?v=20261027_20">
 </head>
 <body translate="no" class="notranslate" data-view-mode="pc">
 
@@ -292,20 +292,53 @@
           <div class="slips-quick-action-bar" style="margin-bottom:14px; display:flex; gap:10px; flex-wrap:wrap;">
             <button type="button" class="btn-execute btn-quick-copy-all" style="padding:14px 20px; font-size:0.92rem; font-weight:900; margin-bottom:0; background:linear-gradient(135deg,#06b6d4,#10b981); color:#fff; border:1px solid #38bdf8; border-radius:10px; flex:1; display:flex; align-items:center; justify-content:center; gap:8px; cursor:pointer; box-shadow:0 4px 15px rgba(6,182,212,0.3);" onclick="copySlipsToClipboard()">
               <i class="fa-solid fa-copy" style="font-size:1.1rem;"></i>
-              <span id="txtBtnQuickCopy">1-Click Copy All Slips (?먰겢由??꾩껜 蹂듭궗)</span>
+              <span id="txtBtnQuickCopy">1-Click Copy All Slips (For Sportsbook App)</span>
             </button>
           </div>
 
         <div class="slips-grade-banner" id="slipsGradeBanner" style="display:none;"></div>
 
+                  <div class="slips-view-selector" id="slipsViewSelector" style="display:flex; justify-content:flex-end; gap:8px; margin-bottom:12px;">
+            <button type="button" class="btn-tool active" id="btnViewList" onclick="switchSlipsDisplayMode('list')" style="font-size:0.78rem;"><i class="fa-solid fa-list-ol"></i> Sportsbook Cards</button>
+            <button type="button" class="btn-tool" id="btnViewOmr" onclick="switchSlipsDisplayMode('omr')" style="font-size:0.78rem;"><i class="fa-solid fa-table-cells"></i> OMR Grid</button>
+          </div>
         <div class="slips-grid" id="slipsGrid">
           <!-- Generated Slips -->
         </div>
 
-        <!-- Match Distribution Matrix -->
-        <div style="margin-top:24px;">
-          <h4 style="margin-bottom:12px; font-size:0.95rem; color:var(--text-muted);"><i class="fa-solid fa-chart-pie"></i> <span id="txtMatrixTitle">Match Pick Distribution Matrix</span></h4>
-          <div style="overflow-x:auto;">
+                <!-- US Betting Summary Card (Replaces Complex Raw Matrix) -->
+        <div class="us-betting-summary-card">
+          <div class="us-summary-header">
+            <span><i class="fa-solid fa-shield-halved" style="color:var(--accent-emerald);"></i> 100% 13/14 Match Coverage</span>
+            <span class="us-summary-patent">US Patent Protected System</span>
+          </div>
+          <div class="us-summary-grid">
+            <div class="us-summary-box">
+              <div class="us-box-label">Standard Combinations</div>
+              <div class="us-box-value" id="usBoxRaw">192 Combos</div>
+            </div>
+            <div class="us-summary-box">
+              <div class="us-box-label">Reduced Slips to Place</div>
+              <div class="us-box-value highlight" id="usBoxSlips">24 Slips</div>
+            </div>
+            <div class="us-summary-box">
+              <div class="us-box-label">Bankroll Savings</div>
+              <div class="us-box-value emerald" id="usBoxSavings">-87.5% ($168 Saved)</div>
+            </div>
+            <div class="us-summary-box">
+              <div class="us-box-label">Compatible Sportsbooks</div>
+              <div class="us-box-value">DraftKings · FanDuel · Bet365</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Optional Collapsible Distribution Matrix for Stats Analysis -->
+        <details class="us-matrix-details" id="matrixDetailsWrap">
+          <summary class="us-matrix-summary">
+            <span><i class="fa-solid fa-chart-pie"></i> Advanced Leg Distribution Matrix (Optional Stats)</span>
+            <span class="us-matrix-toggle-hint">Click to View Table <i class="fa-solid fa-chevron-down"></i></span>
+          </summary>
+          <div style="overflow-x:auto; margin-top:12px;">
             <table class="matrix-table" id="distributionTable">
               <thead>
                 <tr>
@@ -319,10 +352,9 @@
               <tbody id="distributionTbody"></tbody>
             </table>
           </div>
-        </div>
+        </details>
       </div>
 
-      <!-- Saved Combinations (auto-saved on every generation, stored on this device) -->
       <div class="section-box saved-combos-box" id="savedCombosSection">
         <div class="section-header">
           <div class="section-title">
@@ -672,6 +704,6 @@
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261027_26"></script>
+  <script src="app.js?v=20261027_20"></script>
 </body>
 </html>
