@@ -1,11 +1,4 @@
-https://1x2zip.netlify.app/*  https://tokeon.app/:splat  301!
-http://1x2zip.netlify.app/*   https://tokeon.app/:splat  301!
-
-/kr   /kr.html   200
-/jp   /jp.html   200
-/cn   /cn.html   200
-/es   /es.html   200
-/it   /it.html   200
-/br   /br.html   200
-/uk   /uk.html   200
-/us   /us.html   200
+/api/reduce /.netlify/functions/reduce 200
+/kr / 301
+/jp / 301
+/cn / 301
