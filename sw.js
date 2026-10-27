@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gpc-1x2zip-v20261027-26';
+const CACHE_NAME = 'gpc-1x2zip-v20261027-27';
 const ASSETS = [
   './manifest.json',
   './app-icon.svg',
@@ -26,11 +26,17 @@ self.addEventListener('activate', function(event) {
   );
 });
 
+// Clean passthrough for HTML navigations - fixes mobile first-load white screen bug
 self.addEventListener('fetch', function(event) {
   if (event.request.method !== 'GET') return;
+  if (event.request.mode === 'navigate') {
+    return; // Allow native browser navigation without service worker interference
+  }
   event.respondWith(
-    fetch(event.request, { cache: 'no-store' }).catch(function() {
-      return caches.match(event.request);
+    caches.match(event.request).then(function(cached) {
+      return cached || fetch(event.request);
+    }).catch(function() {
+      return fetch(event.request);
     })
   );
 });
