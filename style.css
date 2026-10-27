@@ -2652,3 +2652,6 @@ body[data-view-mode="mobile"] .slips-grid.omr-mode {
 .btn-saved-del:hover { background: rgba(220, 38, 38, 0.3); color: #fff; }
 
 
+
+.patent-footer { display: none !important; }
+.seo-crawl-summary { display: none !important; }
