@@ -78,7 +78,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261027_20">
+  <link rel="stylesheet" href="style.css?v=20261027_30">
 </head>
 <body translate="no" class="notranslate" data-view-mode="pc">
 
@@ -89,11 +89,11 @@
         <i class="fa-solid fa-layer-group brand-icon"></i>
         <div>
           <div class="brand-title">
-            <h1 style="display:inline;font:inherit;margin:0;" id="txtBrandTitle">GLOBAL POOL COMBINATOR</h1>
-            <span class="brand-badge">AI PRO ENGINE</span>
-            <span class="patent-badge" id="txtPatentBadge">🏅 PATENT PENDING (10-2026-0205596)</span>
+            <h1 style="display:inline;font:inherit;margin:0;" id="txtBrandTitle">TOKEON 14-LEG PARLAY REDUCER</h1>
+            <span class="brand-badge" style="background:linear-gradient(135deg, #10b981, #06b6d4); color:#fff; font-weight:900;">100% 13/14 HEDGE</span>
+            <span class="patent-badge" id="txtPatentBadge">🏅 PATENT PROTECTED (KR 10-2026-0205596)</span>
           </div>
-          <div class="brand-sub" id="txtBrandSub">14-Match Soccer Pool 2nd-Prize (13/14) 100% Guarantee Combinator (Patent Pending KR 10-2026-0205596)</div>
+          <div class="brand-sub" id="txtBrandSub">Turn 192 Multi-Picks into 24 Smart Slips with 100% 13/14 Coverage (Sub-Slip & 2nd Prize Guarantee)</div>
         </div>
       </div>
 
@@ -208,14 +208,22 @@
             <span id="txtMatchBoardTitle">🇺🇸 USA 1×2 Pool · 14-Match Selection Board</span>
             <span class="board-round-badge" id="txtBoardRoundBadge">1 × 2</span>
           </div>
-          <div class="section-actions" style="flex-wrap:wrap;">
-            <button type="button" class="btn-tool btn-bulk-paste" id="btnBulkPaste" onclick="openBulkPasteModal()"><i class="fa-solid fa-paste"></i> <span id="txtBulkPasteBtn">Paste 14 Games</span></button>
-            <button type="button" class="btn-tool" id="btnSample192" onclick="loadSamplePreset(192)">⚡ 192 Combos Sample</button>
-            <button type="button" class="btn-tool" id="btnSample768" onclick="loadSamplePreset(768)">🔥 768 Combos Sample</button>
-            <button type="button" class="btn-tool" id="btnSample3456" onclick="loadSamplePreset(3456)">💎 3,456 Combos Sample</button>
-            <button type="button" class="btn-tool" id="btnGenericLegs" onclick="resetToGenericLegs()" style="border-color:var(--accent-cyan); color:var(--accent-cyan);"><i class="fa-solid fa-list-ol"></i> <span>Custom Parlay (Leg 1~14)</span></button>
-            <button type="button" class="btn-tool" id="btnResetPicks" onclick="clearAllPicks()" title="Keep team names, clear 1-X-2 picks only"><i class="fa-solid fa-rotate-left"></i> <span id="txtResetBtn">Reset Picks</span></button>
-              <button type="button" class="btn-tool btn-clear-board" id="btnClearBoard" onclick="clearEntireBoard()" title="Clear team names and picks to blank board"><i class="fa-solid fa-trash-can"></i> <span id="txtClearBoardBtn">Clear Board</span></button>
+                    <div class="hero-instant-action-bar" style="width:100%; margin:8px 0;">
+            <button type="button" class="btn-hero-demo" id="btnSample192" onclick="loadSamplePreset(192)">
+              <i class="fa-solid fa-bolt" style="color:#fde047;"></i>
+              <span>⚡ 192 Combos → 24 Slips (Instant 13/14 Hedge Demo)</span>
+            </button>
+          </div>
+          <div class="section-actions" style="display:flex; flex-wrap:wrap; gap:8px; width:100%; align-items:center;">
+            <button type="button" class="btn-tool" id="btnGenericLegs" onclick="resetToGenericLegs()" style="border-color:#38bdf8; color:#38bdf8; font-weight:700;"><i class="fa-solid fa-list-ol"></i> <span>Custom Parlay (Leg 1~14)</span></button>
+            <button type="button" class="btn-tool btn-bulk-paste" id="btnBulkPaste" onclick="openBulkPasteModal()"><i class="fa-solid fa-paste"></i> <span id="txtBulkPasteBtn">Paste Games</span></button>
+            <button type="button" class="btn-tool" id="btnResetPicks" onclick="clearAllPicks()" title="Clear picks only"><i class="fa-solid fa-rotate-left"></i> <span id="txtResetBtn">Clear Picks</span></button>
+            <select class="btn-tool select-more-combos" onchange="if(this.value){ loadSamplePreset(parseInt(this.value)); this.value=''; }">
+              <option value="" selected>More Combos (768 / 3,456)...</option>
+              <option value="768">🔥 768 Combos Sample (96 Slips)</option>
+              <option value="3456">💎 3,456 Combos Sample (384 Slips)</option>
+            </select>
+            <button type="button" class="btn-tool btn-clear-board" id="btnClearBoard" onclick="clearEntireBoard()" title="Clear team names and picks"><i class="fa-solid fa-trash-can"></i> <span id="txtClearBoardBtn">Clear Board</span></button>
           </div>
         </div>
 
@@ -704,6 +712,6 @@
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261027_20"></script>
+  <script src="app.js?v=20261027_30"></script>
 </body>
 </html>
