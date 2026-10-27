@@ -1,3 +1,4 @@
+/api/reduce /.netlify/functions/reduce 200
 /kr / 301
 /jp / 301
 /cn / 301
