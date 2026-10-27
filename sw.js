@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gpc-1x2zip-v20261027-24';
+const CACHE_NAME = 'gpc-1x2zip-v20261027-25';
 const ASSETS = [
   './manifest.json',
   './app-icon.svg',
