@@ -13,6 +13,27 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/svg+xml" href="app-icon.svg">
   <link rel="apple-touch-icon" href="app-icon.svg">
+  <script>
+  (function(){
+    try {
+      var p = (window.location && window.location.pathname) || '';
+      var isRoot = (p === '/' || p === '' || p === '/index.html' || p.indexOf('/index') === 0);
+      if (isRoot) {
+        var langs = navigator.languages || [navigator.language || ''];
+        var isKorean = false;
+        for (var i = 0; i < langs.length; i++) {
+          if (langs[i] && String(langs[i]).toLowerCase().indexOf('ko') === 0) { isKorean = true; break; }
+        }
+        var tz = '';
+        try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch(e) {}
+        if (tz === 'Asia/Seoul' || tz === 'ROK' || tz.indexOf('Seoul') !== -1) isKorean = true;
+        if (isKorean) {
+          window.location.replace('/kr' + window.location.search + window.location.hash);
+        }
+      }
+    } catch(e) {}
+  })();
+  </script>
     <!-- SEO_HEAD_START -->
   <title>足彩14场缩水软件 | 胜负彩中14保13旋转矩阵在线过滤工具 - TOKEON</title>
   <meta name="description" content="中国体育彩票传统足彩14场胜负游戏在线缩水工具！采用专利覆盖设计旋转矩阵（KR 10-2026-0205596），零人工杀号，复式命中100%数学保证中14保13（二等奖保底），最高节省88.9%投注本金。">
@@ -78,7 +99,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261027_16">
+  <link rel="stylesheet" href="style.css?v=20261027_17">
 </head>
 <body translate="no" class="notranslate" data-view-mode="pc">
 
@@ -624,6 +645,6 @@
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261027_16"></script>
+  <script src="app.js?v=20261027_17"></script>
 </body>
 </html>
