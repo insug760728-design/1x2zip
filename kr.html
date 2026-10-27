@@ -78,7 +78,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261028_30">
+  <link rel="stylesheet" href="style.css?v=20261028_31">
 <script>
 window.openBulkPasteModal = function(){
   var m = document.getElementById('bulkPasteModal');
@@ -172,52 +172,29 @@ window.closeBulkPasteModal = function(){
     <!-- Left Column: Match Selection Board -->
     <section>
       <div class="section-box">
-        <!-- 3-Sport US Pool Tabs Bar -->
-                <!-- US 3-Sport and Round Scroll Selector -->
-        <div class="sports-round-container" id="usPoolSportTabs">
-          <!-- 1. NFL -->
-          <div class="sport-round-row active" id="row_football">
-            <button type="button" class="sport-title-btn" onclick="switchUsSport('football')">
-              <i class="fa-solid fa-football"></i> NFL Football Pool
+                                        <!-- US 1-Line Ultra-Slim Sport & Round Bar -->
+        <div class="sports-round-single-bar" id="usPoolSportTabs">
+          <div class="sport-pill-group">
+            <button type="button" class="sport-pill-btn active" id="pill_soccer" onclick="switchUsSportPill('soccer')">
+              <i class="fa-solid fa-futbol"></i> Soccer
             </button>
-            <div class="sport-round-select-wrap">
-              <select class="sport-round-scroll-select" id="selectRound_football" onchange="onSportRoundSelect('football', this.value)">
-                <option value="US_NFL_W8" selected>Week 8 (Current 쨌 Sunday 14-Game Slate)</option>
-                <option value="US_NFL_W9">Week 9 (Upcoming 쨌 Next Sunday Slate)</option>
-                <option value="US_NFL_W7">Week 7 (Past 쨌 Oct 20 Slate)</option>
-              </select>
-            </div>
+            <button type="button" class="sport-pill-btn" id="pill_football" onclick="switchUsSportPill('football')">
+              <i class="fa-solid fa-football"></i> NFL
+            </button>
+            <button type="button" class="sport-pill-btn" id="pill_basketball" onclick="switchUsSportPill('basketball')">
+              <i class="fa-solid fa-basketball"></i> NBA
+            </button>
           </div>
-
-          <!-- 2. NBA -->
-          <div class="sport-round-row" id="row_basketball">
-            <button type="button" class="sport-title-btn" onclick="switchUsSport('basketball')">
-              <i class="fa-solid fa-basketball"></i> NBA Basketball Pool
-            </button>
-            <div class="sport-round-select-wrap">
-              <select class="sport-round-scroll-select" id="selectRound_basketball" onchange="onSportRoundSelect('basketball', this.value)">
-                <option value="US_BK_1X2" selected>NBA 14-Game Slate (Current 쨌 Open)</option>
-                <option value="US_BK_W2">NBA Week 2 (Upcoming 쨌 Friday Slate)</option>
-              </select>
-            </div>
-          </div>
-
-          <!-- 3. Soccer -->
-          <div class="sport-round-row" id="row_soccer">
-            <button type="button" class="sport-title-btn" onclick="switchUsSport('soccer')">
-              <i class="fa-solid fa-futbol"></i> Soccer 1X2 Pool
-            </button>
-            <div class="sport-round-select-wrap">
-              <select class="sport-round-scroll-select" id="selectRound_soccer" onchange="onSportRoundSelect('soccer', this.value)">
-                <option value="US_1X2" selected>Round 36 (Current 쨌 Weekend 14-Match Slate)</option>
-                <option value="US_SOCCER_R37">Round 37 (Upcoming 쨌 Next Weekend)</option>
-                <option value="US_SOCCER_R35">Round 35 (Past 쨌 MLS Midweek Slate)</option>
-              </select>
-            </div>
+          <div class="round-select-pill-wrap">
+            <select class="single-round-select" id="singleRoundSelect" onchange="onSingleRoundChange(this.value)">
+              <option value="US_1X2" selected>Round 36 (Current - Weekend 14-Match Slate)</option>
+              <option value="US_SOCCER_R37">Round 37 (Upcoming - Next Weekend)</option>
+              <option value="US_SOCCER_R35">Round 35 (Past - MLS Midweek Slate)</option>
+            </select>
           </div>
         </div>
 
-        <!-- Round Selector & Live Auto-Update Control Bar -->
+          <!-- Round Selector & Live Auto-Update Control Bar -->
         <div class="round-control-bar notranslate" id="roundControlBar" translate="no" style="display:none !important;">
           <div class="round-select-wrap" style="flex:1; min-width:220px;">
             <select id="roundSelect" class="round-select" onchange="onRoundChange(this.value)" style="width:100%; font-size:0.84rem; font-weight:700; background:#1e293b; color:#f8fafc; border:1px solid rgba(56,189,248,0.4); border-radius:8px; padding:7px 10px;"></select>
@@ -360,8 +337,7 @@ window.closeBulkPasteModal = function(){
     <aside>
       <!-- Real-time Stats Card -->
       <div class="section-box">
-        <!-- 3-Sport US Pool Tabs Bar -->
-        
+                
         <div class="section-header">
           <div class="section-title">
             <i class="fa-solid fa-calculator" style="color:var(--accent-gold);"></i>
@@ -689,6 +665,6 @@ window.closeBulkPasteModal = function(){
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261028_30"></script>
+  <script src="app.js?v=20261028_31"></script>
 </body>
 </html>
