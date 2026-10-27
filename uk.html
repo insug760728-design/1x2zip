@@ -78,7 +78,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261028_31">
+  <link rel="stylesheet" href="style.css?v=20261028_32">
 <script>
 window.openBulkPasteModal = function(){
   var m = document.getElementById('bulkPasteModal');
@@ -173,23 +173,22 @@ window.closeBulkPasteModal = function(){
     <section>
       <div class="section-box">
                                         <!-- US 1-Line Ultra-Slim Sport & Round Bar -->
+                <!-- US 1-Line Ultra-Slim Sport & Round Bar -->
         <div class="sports-round-single-bar" id="usPoolSportTabs">
           <div class="sport-pill-group">
-            <button type="button" class="sport-pill-btn active" id="pill_soccer" onclick="switchUsSportPill('soccer')">
+            <button type="button" class="sport-pill-btn active" id="pill_soccer" onclick="selectSportMode('soccer')">
               <i class="fa-solid fa-futbol"></i> Soccer
             </button>
-            <button type="button" class="sport-pill-btn" id="pill_football" onclick="switchUsSportPill('football')">
+            <button type="button" class="sport-pill-btn" id="pill_football" onclick="selectSportMode('football')">
               <i class="fa-solid fa-football"></i> NFL
             </button>
-            <button type="button" class="sport-pill-btn" id="pill_basketball" onclick="switchUsSportPill('basketball')">
+            <button type="button" class="sport-pill-btn" id="pill_basketball" onclick="selectSportMode('basketball')">
               <i class="fa-solid fa-basketball"></i> NBA
             </button>
           </div>
           <div class="round-select-pill-wrap">
             <select class="single-round-select" id="singleRoundSelect" onchange="onSingleRoundChange(this.value)">
-              <option value="US_1X2" selected>Round 36 (Current - Weekend 14-Match Slate)</option>
-              <option value="US_SOCCER_R37">Round 37 (Upcoming - Next Weekend)</option>
-              <option value="US_SOCCER_R35">Round 35 (Past - MLS Midweek Slate)</option>
+              <option value="US_1X2" selected>Round 36</option>
             </select>
           </div>
         </div>
@@ -665,6 +664,6 @@ window.closeBulkPasteModal = function(){
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261028_31"></script>
+  <script src="app.js?v=20261028_32"></script>
 </body>
 </html>
