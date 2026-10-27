@@ -2655,3 +2655,49 @@ body[data-view-mode="mobile"] .slips-grid.omr-mode {
 
 .patent-footer { display: none !important; }
 .seo-crawl-summary { display: none !important; }
+
+/* Country Quick Switcher Bar */
+.country-quick-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  overflow-x: auto;
+  padding: 2px 0 10px;
+  margin-bottom: 6px;
+  scrollbar-width: thin;
+  scrollbar-color: #334155 #0f172a;
+}
+.country-quick-bar::-webkit-scrollbar {
+  height: 4px;
+}
+.country-quick-bar::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+.btn-country-pill {
+  padding: 7px 14px;
+  border-radius: 8px;
+  background: #0f172a;
+  border: 1.5px solid rgba(255, 255, 255, 0.14);
+  color: #94a3b8;
+  font-size: 0.84rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.15s ease;
+}
+.btn-country-pill:hover {
+  border-color: var(--accent-cyan);
+  color: #fff;
+  background: #17253b;
+}
+.btn-country-pill.active {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.35), rgba(16, 185, 129, 0.3));
+  border-color: var(--accent-cyan);
+  color: #fff;
+  font-weight: 900;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
+}
