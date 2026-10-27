@@ -78,7 +78,16 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261028_sports">
+  <link rel="stylesheet" href="style.css?v=20261028_mobfix">
+  <script>
+    (function(){
+      try{
+        var v=localStorage.getItem('tokeon_view_mode');
+        if(!v){v=(window.innerWidth<=820||/Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent||''))?'mobile':'pc';}
+        document.documentElement.setAttribute('data-view-mode',v);
+      }catch(_e){}
+    })();
+  </script>
 </head>
 <body translate="no" class="notranslate" data-view-mode="pc">
 
@@ -97,7 +106,7 @@
         </div>
       </div>
 
-                        <div class="header-controls">
+                              <div class="header-controls">
         <!-- 1. Country / League Pool Dropdown Selector -->
         <div class="top-scroll-select-wrap">
           <select id="countrySelect" class="top-select-scroll country-select-highlight" onchange="selectCountryPool(this.value)">
@@ -112,11 +121,20 @@
           </select>
         </div>
 
+        <!-- 2. Dual Front-End: Phone / PC Mode Switcher Button -->
+        <div class="top-scroll-select-wrap">
+          <button type="button" class="btn-dual-view" id="btnViewModeToggle" onclick="toggleDualViewMode()" title="Switch PC / Mobile Screen Mode">
+            <i class="fa-solid fa-mobile-screen-button" id="iconViewMode"></i>
+            <span id="txtViewModeBtn">&#x1F4F1; &#xd578;&#xb4dc;&#xd3f0; &#xd654;&#xba74;</span>
+          </button>
+        </div>
+
         <select id="sportSelect" style="display:none;"></select>
         <select id="matchCountSelect" style="display:none;"></select>
         <select id="notationSelect" style="display:none;"></select>
         <select id="langSelect" style="display:none;"></select>
 
+        <!-- 3. Google Sign-In & 1-Time Checkout -->
         <div class="header-auth-box" id="headerAuthBox">
           <button type="button" class="btn-google-header" id="btnHeaderGoogleLogin" onclick="openAuthPayModal()">
             <svg class="google-g-icon" viewBox="0 0 24 24" width="16" height="16">
@@ -544,6 +562,6 @@
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261028_sports"></script>
+  <script src="app.js?v=20261028_mobfix"></script>
 </body>
 </html>

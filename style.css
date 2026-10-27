@@ -2806,3 +2806,104 @@ body[data-view-mode="mobile"] .slips-grid.omr-mode {
   font-weight: 900;
   box-shadow: 0 0 10px rgba(16, 185, 129, 0.3);
 }
+
+
+/* Universal Mobile Card & Sticky Bar Architecture */
+@media (max-width: 820px) {
+  body {
+    padding-bottom: 92px !important;
+    overflow-x: hidden;
+  }
+  .main-container {
+    max-width: 100% !important;
+    grid-template-columns: 1fr !important;
+    margin: 10px auto !important;
+    padding: 0 10px !important;
+    gap: 12px !important;
+  }
+  .match-table,
+  .match-table tbody {
+    display: block !important;
+    width: 100% !important;
+  }
+  .match-row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 10px 12px !important;
+    margin-bottom: 10px !important;
+    border-radius: 12px !important;
+    gap: 8px !important;
+  }
+  .match-cell {
+    padding: 0 !important;
+    display: block !important;
+  }
+  .match-seq {
+    width: auto !important;
+    min-width: auto !important;
+    max-width: none !important;
+    font-size: 0.85rem !important;
+    background: rgba(245, 158, 11, 0.16) !important;
+    border: 1px solid rgba(245, 158, 11, 0.45) !important;
+    color: #fde047 !important;
+    padding: 2px 8px !important;
+    border-radius: 6px !important;
+    order: 1 !important;
+  }
+  .actual-result-cell {
+    width: auto !important;
+    min-width: auto !important;
+    max-width: none !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    order: 2 !important;
+    margin-left: auto !important;
+  }
+  .hit-check-tag {
+    display: inline-block !important;
+    margin-top: 0 !important;
+  }
+  .match-row > td:nth-child(2) {
+    width: 100% !important;
+    order: 3 !important;
+  }
+  .match-info {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+    width: 100% !important;
+    margin-top: 2px !important;
+  }
+  .team-input {
+    flex: 1 !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    font-size: 0.88rem !important;
+    padding: 6px 8px !important;
+    background: rgba(15, 23, 42, 0.65) !important;
+    border: 1px solid rgba(255, 255, 255, 0.07) !important;
+  }
+  .match-row > td:nth-child(3) {
+    width: 100% !important;
+    order: 4 !important;
+    margin-top: 2px !important;
+  }
+  .pick-btn-group {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .pick-btn {
+    width: 100% !important;
+    height: 42px !important;
+    font-size: 0.95rem !important;
+  }
+  .mobile-sticky-bar {
+    display: flex !important;
+  }
+}
