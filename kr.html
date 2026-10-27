@@ -78,7 +78,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261027_25">
+  <link rel="stylesheet" href="style.css?v=20261027_26">
 </head>
 <body translate="no" class="notranslate" data-view-mode="pc">
 
@@ -214,7 +214,8 @@
             <button type="button" class="btn-tool" id="btnSample768" onclick="loadSamplePreset(768)">🔥 768 Combos Sample</button>
             <button type="button" class="btn-tool" id="btnSample3456" onclick="loadSamplePreset(3456)">💎 3,456 Combos Sample</button>
             <button type="button" class="btn-tool" id="btnGenericLegs" onclick="resetToGenericLegs()" style="border-color:var(--accent-cyan); color:var(--accent-cyan);"><i class="fa-solid fa-list-ol"></i> <span>Custom Parlay (Leg 1~14)</span></button>
-            <button type="button" class="btn-tool" id="btnResetPicks" onclick="clearAllPicks()"><i class="fa-solid fa-rotate-left"></i> <span id="txtResetBtn">Reset</span></button>
+            <button type="button" class="btn-tool" id="btnResetPicks" onclick="clearAllPicks()" title="Keep team names, clear 1-X-2 picks only"><i class="fa-solid fa-rotate-left"></i> <span id="txtResetBtn">Reset Picks</span></button>
+              <button type="button" class="btn-tool btn-clear-board" id="btnClearBoard" onclick="clearEntireBoard()" title="Clear team names and picks to blank board"><i class="fa-solid fa-trash-can"></i> <span id="txtClearBoardBtn">Clear Board</span></button>
           </div>
         </div>
 
@@ -671,6 +672,6 @@
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261027_25"></script>
+  <script src="app.js?v=20261027_26"></script>
 </body>
 </html>

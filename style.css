@@ -3141,3 +3141,14 @@ body[data-view-mode="mobile"] .patent-footer-inner .seo-crawl-links a {
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(6, 182, 212, 0.45) !important;
 }
+
+/* Clear Board Danger Button */
+.btn-tool.btn-clear-board {
+  border-color: rgba(239, 68, 68, 0.45) !important;
+  color: #fca5a5 !important;
+}
+.btn-tool.btn-clear-board:hover {
+  background: rgba(239, 68, 68, 0.22) !important;
+  color: #ffffff !important;
+  border-color: #ef4444 !important;
+}
