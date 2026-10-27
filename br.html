@@ -13,27 +13,6 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/svg+xml" href="app-icon.svg">
   <link rel="apple-touch-icon" href="app-icon.svg">
-  <script>
-  (function(){
-    try {
-      var p = (window.location && window.location.pathname) || '';
-      var isRoot = (p === '/' || p === '' || p === '/index.html' || p.indexOf('/index') === 0);
-      if (isRoot) {
-        var langs = navigator.languages || [navigator.language || ''];
-        var isKorean = false;
-        for (var i = 0; i < langs.length; i++) {
-          if (langs[i] && String(langs[i]).toLowerCase().indexOf('ko') === 0) { isKorean = true; break; }
-        }
-        var tz = '';
-        try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ''; } catch(e) {}
-        if (tz === 'Asia/Seoul' || tz === 'ROK' || tz.indexOf('Seoul') !== -1) isKorean = true;
-        if (isKorean) {
-          window.location.replace('/kr' + window.location.search + window.location.hash);
-        }
-      }
-    } catch(e) {}
-  })();
-  </script>
     <!-- SEO_HEAD_START -->
   <title>Desdobramento e Fechamento Loteca 13 Pontos 100% Garantido Online - TOKEON</title>
   <meta name="description" content="Planilha e gerador online de fechamento matemático para a Loteca Caixa (14 jogos). Reduza duplos e triplos economizando até 88,9% com garantia matemática 100% para 13 pontos!">
@@ -99,7 +78,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261027_17">
+  <link rel="stylesheet" href="style.css?v=20261027_18">
 </head>
 <body translate="no" class="notranslate" data-view-mode="pc">
 
@@ -645,6 +624,6 @@
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261027_17"></script>
+  <script src="app.js?v=20261027_18"></script>
 </body>
 </html>
