@@ -3510,3 +3510,78 @@ body[data-view-mode="mobile"] .patent-footer-inner .seo-crawl-links a {
   border-color: rgba(56, 189, 248, 0.8);
   box-shadow: 0 4px 15px rgba(2, 132, 199, 0.4);
 }
+
+/* US 3-Sport and Round Scroll Selector */
+.sports-round-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+.sport-round-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 6px 10px;
+  transition: all 0.2s ease;
+}
+.sport-round-row.active {
+  border-color: rgba(56, 189, 248, 0.8);
+  background: rgba(14, 116, 144, 0.2);
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.25);
+}
+.sport-title-btn {
+  flex: 0 0 auto;
+  min-width: 175px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: rgba(30, 41, 59, 0.8);
+  color: #94a3b8;
+  font-size: 0.88rem;
+  font-weight: 700;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  text-align: left;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+.sport-round-row.active .sport-title-btn {
+  background: linear-gradient(135deg, #0284c7, #06b6d4);
+  color: #ffffff;
+  font-weight: 800;
+  border-color: rgba(56, 189, 248, 0.8);
+}
+.sport-round-select-wrap {
+  flex: 1;
+}
+.sport-round-scroll-select {
+  width: 100%;
+  padding: 8px 12px;
+  background: #1e293b;
+  color: #f8fafc;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+}
+.sport-round-scroll-select:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
+}
+@media (max-width: 640px) {
+  .sport-round-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .sport-title-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

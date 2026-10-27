@@ -78,7 +78,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261028_29">
+  <link rel="stylesheet" href="style.css?v=20261028_30">
 <script>
 window.openBulkPasteModal = function(){
   var m = document.getElementById('bulkPasteModal');
@@ -173,36 +173,47 @@ window.closeBulkPasteModal = function(){
     <section>
       <div class="section-box">
         <!-- 3-Sport US Pool Tabs Bar -->
-        <div class="pool-sport-tabs" id="usPoolSportTabs">
-          <button type="button" class="sport-tab-btn active" id="tabSportFootball" onclick="switchUsSport('football')">
-            <i class="fa-solid fa-football"></i> NFL Football Pool
-          </button>
-          <button type="button" class="sport-tab-btn" id="tabSportBasketball" onclick="switchUsSport('basketball')">
-            <i class="fa-solid fa-basketball"></i> NBA Basketball Pool
-          </button>
-          <button type="button" class="sport-tab-btn" id="tabSportSoccer" onclick="switchUsSport('soccer')">
-            <i class="fa-solid fa-futbol"></i> Soccer 1X2 Pool
-          </button>
-        </div>
-        <!-- 3-Sport US Pool Tabs Bar -->
-        
-        <div class="section-header" style="flex-wrap:wrap; gap:10px;">
-          <div class="section-title" style="flex-wrap:wrap; gap:10px;">
-            <i class="fa-solid fa-list-check" style="color:var(--accent-cyan);"></i>
-            <span id="txtMatchBoardTitle">🇺🇸 USA 1×2 Pool · 14-Match Selection Board</span>
-            <span class="board-round-badge" id="txtBoardRoundBadge">1 × 2</span>
-          </div>
-                              <div class="hero-instant-action-bar" style="width:100%; margin:8px 0;">
-            <button type="button" class="btn-hero-demo" id="btnSample192" onclick="loadSamplePreset(192)">
-              <i class="fa-solid fa-bolt" style="color:#fde047;"></i>
-              <span>⚡ 192 Combos → 24 Slips (Instant 13/14 1X2 Hedge)</span>
+                <!-- US 3-Sport and Round Scroll Selector -->
+        <div class="sports-round-container" id="usPoolSportTabs">
+          <!-- 1. NFL -->
+          <div class="sport-round-row active" id="row_football">
+            <button type="button" class="sport-title-btn" onclick="switchUsSport('football')">
+              <i class="fa-solid fa-football"></i> NFL Football Pool
             </button>
+            <div class="sport-round-select-wrap">
+              <select class="sport-round-scroll-select" id="selectRound_football" onchange="onSportRoundSelect('football', this.value)">
+                <option value="US_NFL_W8" selected>Week 8 (Current 쨌 Sunday 14-Game Slate)</option>
+                <option value="US_NFL_W9">Week 9 (Upcoming 쨌 Next Sunday Slate)</option>
+                <option value="US_NFL_W7">Week 7 (Past 쨌 Oct 20 Slate)</option>
+              </select>
+            </div>
           </div>
-          <div class="section-actions" style="display:none !important;">
-            <button type="button" class="btn-tool" id="btnGenericLegs" onclick="resetToGenericLegs()" style="border-color:#38bdf8; color:#38bdf8; font-weight:700;"><i class="fa-solid fa-list-ol"></i> <span>Custom 14-Legs</span></button>
-            <button type="button" class="btn-tool btn-bulk-paste" id="btnBulkPaste" onclick="openBulkPasteModal()"><i class="fa-solid fa-paste"></i> <span>Paste Games</span></button>
-            <button type="button" class="btn-tool" id="btnResetPicks" onclick="clearAllPicks()" title="Clear picks only"><i class="fa-solid fa-rotate-left"></i> <span>Clear Picks</span></button>
-            <button type="button" class="btn-tool btn-clear-board" id="btnClearBoard" onclick="clearEntireBoard()" title="Clear team names and picks"><i class="fa-solid fa-trash-can"></i> <span>Clear Board</span></button>
+
+          <!-- 2. NBA -->
+          <div class="sport-round-row" id="row_basketball">
+            <button type="button" class="sport-title-btn" onclick="switchUsSport('basketball')">
+              <i class="fa-solid fa-basketball"></i> NBA Basketball Pool
+            </button>
+            <div class="sport-round-select-wrap">
+              <select class="sport-round-scroll-select" id="selectRound_basketball" onchange="onSportRoundSelect('basketball', this.value)">
+                <option value="US_BK_1X2" selected>NBA 14-Game Slate (Current 쨌 Open)</option>
+                <option value="US_BK_W2">NBA Week 2 (Upcoming 쨌 Friday Slate)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- 3. Soccer -->
+          <div class="sport-round-row" id="row_soccer">
+            <button type="button" class="sport-title-btn" onclick="switchUsSport('soccer')">
+              <i class="fa-solid fa-futbol"></i> Soccer 1X2 Pool
+            </button>
+            <div class="sport-round-select-wrap">
+              <select class="sport-round-scroll-select" id="selectRound_soccer" onchange="onSportRoundSelect('soccer', this.value)">
+                <option value="US_1X2" selected>Round 36 (Current 쨌 Weekend 14-Match Slate)</option>
+                <option value="US_SOCCER_R37">Round 37 (Upcoming 쨌 Next Weekend)</option>
+                <option value="US_SOCCER_R35">Round 35 (Past 쨌 MLS Midweek Slate)</option>
+              </select>
+            </div>
           </div>
         </div>
 
@@ -678,6 +689,6 @@ window.closeBulkPasteModal = function(){
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261028_29"></script>
+  <script src="app.js?v=20261028_30"></script>
 </body>
 </html>
