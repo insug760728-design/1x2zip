@@ -3499,24 +3499,72 @@ body[data-view-mode="mobile"] .pick-type-badge,
 }
 .pick-btn-group {
   display: flex !important;
-  gap: 4px !important;
-  justify-content: flex-end !important;
+  gap: 5px !important;
+  justify-content: center !important;
 }
-.pick-btn {
-  width: 36px !important;
+
+/* Pick Button Normal Unselected State */
+.pick-btn,
+body .pick-btn,
+body[data-view-mode="mobile"] .pick-btn {
+  width: 38px !important;
   height: 34px !important;
   border-radius: 6px !important;
-  border: 1.5px solid var(--border-color) !important;
-  background: #0f172a !important;
-  color: var(--text-muted) !important;
-  font-size: 0.88rem !important;
+  border: 1.5px solid var(--border-color);
+  background: #0f172a;
+  color: #94a3b8;
+  font-size: 0.92rem !important;
   font-weight: 900 !important;
   cursor: pointer !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
   padding: 0 !important;
+  transition: all 0.12s ease !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  touch-action: manipulation !important;
 }
+
+/* Home (1) Selected */
+.pick-btn.selected,
+.pick-btn.active-1,
+body .pick-btn.selected,
+body .pick-btn.active-1,
+body[data-view-mode="mobile"] .pick-btn.selected,
+body[data-view-mode="mobile"] .pick-btn.active-1 {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8) !important;
+  border-color: #60a5fa !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(37, 99, 235, 0.6) !important;
+}
+
+/* Draw (X) Selected */
+.pick-btn.selected.draw,
+.pick-btn.active-X,
+body .pick-btn.selected.draw,
+body .pick-btn.active-X,
+body[data-view-mode="mobile"] .pick-btn.selected.draw,
+body[data-view-mode="mobile"] .pick-btn.active-X {
+  background: linear-gradient(135deg, #d97706, #b45309) !important;
+  border-color: #fbbf24 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(217, 119, 6, 0.6) !important;
+}
+
+/* Away (2) Selected */
+.pick-btn.selected.away,
+.pick-btn.active-2,
+body .pick-btn.selected.away,
+body .pick-btn.active-2,
+body[data-view-mode="mobile"] .pick-btn.selected.away,
+body[data-view-mode="mobile"] .pick-btn.active-2 {
+  background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+  border-color: #f87171 !important;
+  color: #ffffff !important;
+  box-shadow: 0 0 12px rgba(220, 38, 38, 0.6) !important;
+}
+
 .actual-result-cell {
   width: 48px !important;
   min-width: 48px !important;
