@@ -1,36 +1,17 @@
-const CACHE_NAME = 'gpc-1x2zip-v20261028_pool_modal';
-const ASSETS = [
-  './manifest.json',
-  './app-icon.svg',
-  './og-banner.png'
-];
-
-self.addEventListener('install', function(event) {
+const CACHE_NAME = 'gpc-1x2zip-20261028_fix_screen_open';
+self.addEventListener('install', function(e) {
   self.skipWaiting();
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(function(cache) {
-      return cache.addAll(ASSETS).catch(function() {});
-    })
-  );
 });
-
-self.addEventListener('activate', function(event) {
-  event.waitUntil(
+self.addEventListener('activate', function(e) {
+  e.waitUntil(
     caches.keys().then(function(keys) {
-      return Promise.all(
-        keys.filter(function(k) { return k !== CACHE_NAME; }).map(function(k) { return caches.delete(k); })
-      );
+      return Promise.all(keys.map(function(k) { return caches.delete(k); }));
     }).then(function() {
       return self.clients.claim();
     })
   );
 });
-
-self.addEventListener('fetch', function(event) {
-  if (event.request.method !== 'GET') return;
-  event.respondWith(
-    fetch(event.request, { cache: 'no-store' }).catch(function() {
-      return caches.match(event.request);
-    })
-  );
+self.addEventListener('fetch', function(e) {
+  if (e.request.method !== 'GET') return;
+  e.respondWith(fetch(e.request, { cache: 'no-store' }).catch(function() { return caches.match(e.request); }));
 });

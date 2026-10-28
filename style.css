@@ -3531,3 +3531,15 @@ body[data-view-mode="mobile"] .pick-type-badge,
   border-radius: 4px !important;
   line-height: 1.2 !important;
 }
+
+
+#poolSelectModal {
+  z-index: 99999 !important;
+  display: none;
+}
+#poolSelectModal.active {
+  display: flex !important;
+}
+.pool-modal-sheet {
+  z-index: 100000 !important;
+}

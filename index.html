@@ -61,7 +61,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261028_pool_modal">
+  <link rel="stylesheet" href="style.css?v=20261028_fix_screen_open">
     <script>
     (function(){
       var isMobile = (window.innerWidth <= 820) || (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(navigator.userAgent || ''));
@@ -451,7 +451,7 @@
   </div>
 
   <script>
-    // Inline failsafe handlers ensuring modal window (李? opens instantly on mobile/desktop
+    // Fail-safe global handlers for pool modal and dual-view screen toggle
     function openPoolSelectModal() {
       var m = document.getElementById('poolSelectModal');
       if (m) {
@@ -468,8 +468,37 @@
         document.body.style.overflow = '';
       }
     }
+    function selectPoolOption(cc, sp, label) {
+      if (typeof window.selectCountryPool === 'function') {
+        window.selectCountryPool(cc);
+      }
+      var flagEl = document.getElementById('btnPoolFlag');
+      var titleEl = document.getElementById('btnPoolTitle');
+      var flags = {KR:'\uD83C\uDDF0\uD83C\uDDF7', JP:'\uD83C\uDDEF\uD83C\uDDF5', CN:'\uD83C\uDDE8\uD83C\uDDF3', US:'\uD83C\uDDFA\uD83C\uDDF8', UK:'\uD83C\uDDEC\uD83C\uDDE7', ES:'\uD83C\uDDEA\uD83C\uDDF8', IT:'\uD83C\uDDEE\uD83C\uDDF9', BR:'\uD83C\uDDE7\uD83C\uDDF7'};
+      if (flagEl && flags[cc]) flagEl.textContent = flags[cc];
+      if (titleEl && label) titleEl.textContent = label;
+      closePoolSelectModal();
+    }
+    function toggleDualViewMode() {
+      var cur = document.body.getAttribute('data-view-mode') || document.documentElement.getAttribute('data-view-mode') || 'pc';
+      var next = (cur === 'pc') ? 'mobile' : 'pc';
+      document.body.setAttribute('data-view-mode', next);
+      document.documentElement.setAttribute('data-view-mode', next);
+      try { localStorage.setItem('tokeon_view_mode', next); } catch(_e) {}
+      var txt = document.getElementById('txtViewModeBtn');
+      var icon = document.getElementById('iconViewMode');
+      if (next === 'mobile') {
+        if (txt) txt.textContent = '\uD83D\uDCBB PC \uD654\uBA74';
+        if (icon) icon.className = 'fa-solid fa-laptop';
+      } else {
+        if (txt) txt.textContent = '\uD83D\uDCF1 \uD578\uB4DC\uD3F0 \uD654\uBA74';
+        if (icon) icon.className = 'fa-solid fa-mobile-screen-button';
+      }
+    }
     window.openPoolSelectModal = openPoolSelectModal;
     window.closePoolSelectModal = closePoolSelectModal;
+    window.selectPoolOption = selectPoolOption;
+    window.toggleDualViewMode = toggleDualViewMode;
   </script>
 
   <!-- Unified Google Login & Card Payment Modal -->
@@ -670,6 +699,6 @@
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261028_pool_modal"></script>
+  <script src="app.js?v=20261028_fix_screen_open"></script>
 </body>
 </html>
