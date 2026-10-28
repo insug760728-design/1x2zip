@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gpc-1x2zip-20261028_free3_final';
+const CACHE_NAME = 'gpc-1x2zip-20261028_payflow_v1';
 self.addEventListener('install', function(e) {
   self.skipWaiting();
 });
