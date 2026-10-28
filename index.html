@@ -61,7 +61,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261028_single_btn">
+  <link rel="stylesheet" href="style.css?v=20261028_pool_modal">
     <script>
     (function(){
       var isMobile = (window.innerWidth <= 820) || (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(navigator.userAgent || ''));
@@ -142,44 +142,18 @@
     <!-- Left Column: Match Selection Board -->
     <section>
       <div class="section-box">
-                                                <!-- 1 Single Prominent Dropdown Button for Country & Pool Selection -->
+                                                <!-- 1 Single Prominent Trigger Button to Open Pool Selection Modal Window (李? -->
         <div class="single-pool-select-wrap notranslate" translate="no">
-          <div class="custom-pool-select-box">
-            <i class="fa-solid fa-globe pool-select-icon"></i>
-            <select id="singlePoolSelect" class="single-pool-native-select" onchange="onSinglePoolSelectChange(this.value)">
-              <optgroup label="&#x1F1F0;&#x1F1F7; &#xd55c;&#xad6d; (Korea Sports Toto)">
-                <option value="KR:soccer" selected>&#x1F1F0;&#x1F1F7; &#xd55c;&#xad6d; &middot; &#xcd95;&#xad6c;&#xd1a0;&#xd1a0; &#xc2b9;&#xbb34;&#xd328; (14&#xacbd;&#xae30; &middot; &#xbc1c;&#xb9e4;&#xc911;)</option>
-                <option value="KR:basketball">&#x1F3C0; &#xd55c;&#xad6d; &middot; &#xb18d;&#xad6c;&#xd1a0;&#xd1a0; &#xc2b9;5&#xd328; (14&#xacbd;&#xae30; &middot; &#xbc1c;&#xb9e4;&#xc911;)</option>
-                <option value="KR:football">&#x1F3C8; &#xd55c;&#xad6d; &middot; &#xbbf8;&#xc2dd;&#xcd95;&#xad6c; &#xc2b9;3&#xd328; (NFL 14&#xacbd;&#xae30;)</option>
-              </optgroup>
-              <optgroup label="&#x1F1EF;&#x1F1F5; &#x65e5;&#x672c; (Japan Sports Toto)">
-                <option value="JP:soccer">&#x1F1EF;&#x1F1F5; &#x65e5;&#x672c; &middot; &#x30b5;&#x30c3;&#x30ab;&#x30fc; toto 1X2 (14&#xacbd;&#xae30; &middot; &#xbc1c;&#xb9e4;&#xc911;)</option>
-                <option value="JP:basketball">&#x1F3C0; &#x65e5;&#x672c; &middot; &#x30d0;&#x30b9;&#x30b1; NBA 1-5-2 (14&#xacbd;&#xae30;)</option>
-              </optgroup>
-              <optgroup label="&#x1F1E8;&#x1F1F3; &#x4e2d;&#x56fd; (China Sports Lottery)">
-                <option value="CN:soccer">&#x1F1E8;&#x1F1F3; &#x4e2d;&#x56fd; &middot; &#x8db3;&#x7403;&#x80dc;&#x8d1f;&#x5f69; 14 (14&#xacbd;&#xae30; &middot; &#xbc1c;&#xb9e4;&#xc911;)</option>
-                <option value="CN:basketball">&#x1F3C0; &#x4e2d;&#x56fd; &middot; &#x7bee;&#x7403;&#x80dc;&#x8d1f; 14 (14&#xacbd;&#xae30;)</option>
-              </optgroup>
-              <optgroup label="&#x1F1FA;&#x1F1F8; USA (&#xbbf8;&#xad6d; MLS &amp; Pro Sports)">
-                <option value="US:soccer">&#x1F1FA;&#x1F1F8; USA &middot; MLS 1X2 Soccer Pool (14-Match)</option>
-                <option value="US:basketball">&#x1F3C0; USA &middot; NBA Basketball W-5-L (14-Match)</option>
-                <option value="US:football">&#x1F3C8; USA &middot; NFL Football W-3-L (14-Match)</option>
-              </optgroup>
-              <optgroup label="&#x1F1EC;&#x1F1E7; UK (&#xc601;&#xad6d; Football Pools)">
-                <option value="UK:soccer">&#x1F1EC;&#x1F1E7; UK &middot; Football Pools 1X2 (15-Match)</option>
-              </optgroup>
-              <optgroup label="&#x1F1EA;&#x1F1F8; Espa&ntilde;a (&#xc2a4;&#xd398;&#xc778; La Quiniela)">
-                <option value="ES:soccer">&#x1F1EA;&#x1F1F8; Espa&ntilde;a &middot; La Quiniela 1X2 (15-Match)</option>
-              </optgroup>
-              <optgroup label="&#x1F1EE;&#x1F1F9; Italia (&#xc774;&#xd0c8;&#xb9ac;&#xc544; Totocalcio)">
-                <option value="IT:soccer">&#x1F1EE;&#x1F1F9; Italia &middot; Totocalcio 1X2 (14-Match)</option>
-              </optgroup>
-              <optgroup label="&#x1F1E7;&#x1F1F7; Brasil (&#xbe0c;&#xb77c;&#xc9c8; Loteca Caixa)">
-                <option value="BR:soccer">&#x1F1E7;&#x1F1F7; Brasil &middot; Loteca Caixa 1X2 (14-Match)</option>
-              </optgroup>
-            </select>
-            <i class="fa-solid fa-chevron-down pool-select-arrow"></i>
-          </div>
+          <button type="button" class="btn-single-pool-trigger" id="btnSinglePoolTrigger" onclick="openPoolSelectModal()">
+            <div class="pool-trigger-left">
+              <span class="pool-trigger-flag" id="btnPoolFlag">&#x1F1F0;&#x1F1F7;</span>
+              <span class="pool-trigger-title" id="btnPoolTitle">&#xd55c;&#xad6d; &middot; &#xcd95;&#xad6c;&#xd1a0;&#xd1a0; &#xc2b9;&#xbb34;&#xd328; (14&#xacbd;&#xae30;)</span>
+            </div>
+            <div class="pool-trigger-right">
+              <span class="pool-trigger-badge">&#xad6d;&#xac00;&middot;&#xc885;&#xba90;&#xc120;&#xd0dd;</span>
+              <i class="fa-solid fa-chevron-down pool-trigger-arrow"></i>
+            </div>
+          </button>
         </div>
 
         <div class="section-header" style="flex-direction:column; align-items:stretch; gap:10px;">
@@ -346,6 +320,157 @@
       </div>
     </aside>
   </main>
+
+    <!-- Dedicated Country & Sports Pool Modal Window (援?? 諛?寃쎄린 ?좏깮 李? -->
+  <div class="modal-overlay notranslate" id="poolSelectModal" translate="no" onclick="if(event.target===this) closePoolSelectModal()">
+    <div class="modal-content pool-modal-sheet">
+      <div class="pool-modal-header">
+        <div class="pool-modal-title">
+          <i class="fa-solid fa-earth-americas" style="color:var(--accent-cyan); font-size:1.15rem;"></i>
+          <span>&#xad6d;&#xac00; &#xbc0f; &#xd1a0;&#xd1a0; &#xd480; &#xc885;&#xba90; &#xc120;&#xd0dd;</span>
+        </div>
+        <button type="button" class="modal-close-btn" onclick="closePoolSelectModal()" title="Close">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="pool-modal-scroll-area">
+        <!-- 1. Korea -->
+        <div class="pool-country-group">
+          <div class="pool-group-label">&#x1F1F0;&#x1F1F7; &#xb300;&#xd55c;&#xbbfc;&#xad6d; (Korea Sports Toto)</div>
+          <div class="pool-grid">
+            <button type="button" class="pool-option-card active" data-pool="KR:soccer" onclick="selectPoolOption('KR', 'soccer', '&#x1F1F0;&#x1F1F7; &#xd55c;&#xad6d; &middot; &#xcd95;&#xad6c;&#xd1a0;&#xd1a0; &#xc2b9;&#xbb34;&#xd328; (14&#xacbd;&#xae30;)')">
+              <span class="pool-opt-name">&#x26bd; &#xcd95;&#xad6c;&#xd1a0;&#xd1a0; &#xc2b9;&#xbb34;&#xd328;</span>
+              <span class="pool-opt-info">14&#xacbd;&#xae30; &middot; &#xbc1c;&#xb9e4;&#xc911;</span>
+            </button>
+            <button type="button" class="pool-option-card" data-pool="KR:basketball" onclick="selectPoolOption('KR', 'basketball', '&#x1F3C0; &#xd55c;&#xad6d; &middot; &#xb18d;&#xad6c;&#xd1a0;&#xd1a0; &#xc2b9;5&#xd328; (14&#xacbd;&#xae30;)')">
+              <span class="pool-opt-name">&#x1F3C0; &#xb18d;&#xad6c;&#xd1a0;&#xd1a0; &#xc2b9;5&#xd328;</span>
+              <span class="pool-opt-info">14&#xacbd;&#xae30; &middot; &#xbc1c;&#xb9e4;&#xc911;</span>
+            </button>
+            <button type="button" class="pool-option-card" data-pool="KR:football" onclick="selectPoolOption('KR', 'football', '&#x1F3C8; &#xd55c;&#xad6d; &middot; &#xbbf8;&#xc2dd;&#xcd95;&#xad6c; &#xc2b9;3&#xd328; (NFL 14&#xacbd;&#xae30;)')">
+              <span class="pool-opt-name">&#x1F3C8; &#xbbf8;&#xc2dd;&#xcd95;&#xad6c; &#xc2b9;3&#xd328;</span>
+              <span class="pool-opt-info">NFL 14&#xacbd;&#xae30;</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 2. Japan -->
+        <div class="pool-country-group">
+          <div class="pool-group-label">&#x1F1EF;&#x1F1F5; &#x65e5;&#x672c; (Japan Sports Toto)</div>
+          <div class="pool-grid">
+            <button type="button" class="pool-option-card" data-pool="JP:soccer" onclick="selectPoolOption('JP', 'soccer', '&#x1F1EF;&#x1F1F5; &#x65e5;&#x672c; &middot; &#x30b5;&#x30c3;&#x30ab;&#x30fc; toto 1X2 (14&#xacbd;&#xae30;)')">
+              <span class="pool-opt-name">&#x26bd; &#x30b5;&#x30c3;&#x30ab;&#x30fc; toto 1X2</span>
+              <span class="pool-opt-info">14&#xacbd;&#xae30; &middot; &#xbc1c;&#xb9e4;&#xc911;</span>
+            </button>
+            <button type="button" class="pool-option-card" data-pool="JP:basketball" onclick="selectPoolOption('JP', 'basketball', '&#x1F3C0; &#x65e5;&#x672c; &middot; &#x30d0;&#x30b9;&#x30b1; NBA 1-5-2 (14&#xacbd;&#xae30;)')">
+              <span class="pool-opt-name">&#x1F3C0; &#x30d0;&#x30b9;&#x30b1; NBA 1-5-2</span>
+              <span class="pool-opt-info">14&#xacbd;&#xae30;</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 3. China -->
+        <div class="pool-country-group">
+          <div class="pool-group-label">&#x1F1E8;&#x1F1F3; &#x4e2d;&#x56fd; (China Sports Lottery)</div>
+          <div class="pool-grid">
+            <button type="button" class="pool-option-card" data-pool="CN:soccer" onclick="selectPoolOption('CN', 'soccer', '&#x1F1E8;&#x1F1F3; &#x4e2d;&#x56fd; &middot; &#x8db3;&#x7403;&#x80dc;&#x8d1f;&#x5f69; 14 (14&#xacbd;&#xae30;)')">
+              <span class="pool-opt-name">&#x26bd; &#x8db3;&#x7403;&#x80dc;&#x8d1f;&#x5f69; 14</span>
+              <span class="pool-opt-info">14&#xacbd;&#xae30; &middot; &#xbc1c;&#xb9e4;&#xc911;</span>
+            </button>
+            <button type="button" class="pool-option-card" data-pool="CN:basketball" onclick="selectPoolOption('CN', 'basketball', '&#x1F3C0; &#x4e2d;&#x56fd; &middot; &#x7bee;&#x7403;&#x80dc;&#x8d1f; 14 (14&#xacbd;&#xae30;)')">
+              <span class="pool-opt-name">&#x1F3C0; &#x7bee;&#x7403;&#x80dc;&#x8d1f; 14</span>
+              <span class="pool-opt-info">14&#xacbd;&#xae30;</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 4. USA -->
+        <div class="pool-country-group">
+          <div class="pool-group-label">&#x1F1FA;&#x1F1F8; USA (&#xbbf8;&#xad6d; MLS &amp; Pro Sports)</div>
+          <div class="pool-grid">
+            <button type="button" class="pool-option-card" data-pool="US:soccer" onclick="selectPoolOption('US', 'soccer', '&#x1F1FA;&#x1F1F8; USA &middot; MLS 1X2 Soccer Pool (14-Match)')">
+              <span class="pool-opt-name">&#x26bd; MLS 1X2 Soccer Pool</span>
+              <span class="pool-opt-info">14-Match</span>
+            </button>
+            <button type="button" class="pool-option-card" data-pool="US:basketball" onclick="selectPoolOption('US', 'basketball', '&#x1F3C0; USA &middot; NBA Basketball W-5-L (14-Match)')">
+              <span class="pool-opt-name">&#x1F3C0; NBA Basketball W-5-L</span>
+              <span class="pool-opt-info">14-Match</span>
+            </button>
+            <button type="button" class="pool-option-card" data-pool="US:football" onclick="selectPoolOption('US', 'football', '&#x1F3C8; USA &middot; NFL Football W-3-L (14-Match)')">
+              <span class="pool-opt-name">&#x1F3C8; NFL Football W-3-L</span>
+              <span class="pool-opt-info">14-Match</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 5. UK -->
+        <div class="pool-country-group">
+          <div class="pool-group-label">&#x1F1EC;&#x1F1E7; UK (&#xc601;&#xad6d; Football Pools)</div>
+          <div class="pool-grid">
+            <button type="button" class="pool-option-card" data-pool="UK:soccer" onclick="selectPoolOption('UK', 'soccer', '&#x1F1EC;&#x1F1E7; UK &middot; Football Pools 1X2 (15-Match)')">
+              <span class="pool-opt-name">&#x26bd; Football Pools 1X2</span>
+              <span class="pool-opt-info">15-Match</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 6. Spain -->
+        <div class="pool-country-group">
+          <div class="pool-group-label">&#x1F1EA;&#x1F1F8; Espa&ntilde;a (&#xc2a4;&#xd398;&#xc778; La Quiniela)</div>
+          <div class="pool-grid">
+            <button type="button" class="pool-option-card" data-pool="ES:soccer" onclick="selectPoolOption('ES', 'soccer', '&#x1F1EA;&#x1F1F8; Espa&ntilde;a &middot; La Quiniela 1X2 (15-Match)')">
+              <span class="pool-opt-name">&#x26bd; La Quiniela 1X2</span>
+              <span class="pool-opt-info">15-Match</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 7. Italy -->
+        <div class="pool-country-group">
+          <div class="pool-group-label">&#x1F1EE;&#x1F1F9; Italia (&#xc774;&#xd0c8;&#xb9ac;&#xc544; Totocalcio)</div>
+          <div class="pool-grid">
+            <button type="button" class="pool-option-card" data-pool="IT:soccer" onclick="selectPoolOption('IT', 'soccer', '&#x1F1EE;&#x1F1F9; Italia &middot; Totocalcio 1X2 (14-Match)')">
+              <span class="pool-opt-name">&#x26bd; Totocalcio 1X2</span>
+              <span class="pool-opt-info">14-Match</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 8. Brazil -->
+        <div class="pool-country-group">
+          <div class="pool-group-label">&#x1F1E7;&#x1F1F7; Brasil (&#xbe0c;&#xb77c;&#xc9c8; Loteca Caixa)</div>
+          <div class="pool-grid">
+            <button type="button" class="pool-option-card" data-pool="BR:soccer" onclick="selectPoolOption('BR', 'soccer', '&#x1F1E7;&#x1F1F7; Brasil &middot; Loteca Caixa 1X2 (14-Match)')">
+              <span class="pool-opt-name">&#x26bd; Loteca Caixa 1X2</span>
+              <span class="pool-opt-info">14-Match</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Inline failsafe handlers ensuring modal window (李? opens instantly on mobile/desktop
+    function openPoolSelectModal() {
+      var m = document.getElementById('poolSelectModal');
+      if (m) {
+        m.style.setProperty('display', 'flex', 'important');
+        m.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+    function closePoolSelectModal() {
+      var m = document.getElementById('poolSelectModal');
+      if (m) {
+        m.style.setProperty('display', 'none', 'important');
+        m.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+    window.openPoolSelectModal = openPoolSelectModal;
+    window.closePoolSelectModal = closePoolSelectModal;
+  </script>
 
   <!-- Unified Google Login & Card Payment Modal -->
   <div class="modal-overlay notranslate" id="authPayModal" translate="no">
@@ -545,6 +670,6 @@
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261028_single_btn"></script>
+  <script src="app.js?v=20261028_pool_modal"></script>
 </body>
 </html>

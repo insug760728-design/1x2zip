@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gpc-1x2zip-v20261028_single_btn';
+const CACHE_NAME = 'gpc-1x2zip-v20261028_pool_modal';
 const ASSETS = [
   './manifest.json',
   './app-icon.svg',

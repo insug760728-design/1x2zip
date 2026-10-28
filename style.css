@@ -2941,7 +2941,7 @@ body[data-view-mode="mobile"] .match-table,
   body .match-table {
     display: table !important;
     width: 100% !important;
-    table-layout: fixed !important;
+    table-layout: auto !important;
     border-collapse: separate !important;
     border-spacing: 0 3px !important;
     margin: 0 !important;
@@ -3159,7 +3159,7 @@ body[data-view-mode="mobile"] .pick-type-badge,
   .match-table {
     display: table !important;
     width: 100% !important;
-    table-layout: fixed !important;
+    table-layout: auto !important;
     border-collapse: separate !important;
     border-spacing: 0 3px !important;
     margin: 0 !important;
@@ -3263,62 +3263,171 @@ body[data-view-mode="mobile"] .pick-type-badge,
 }
 
 
-/* ==================== SINGLE POOL SELECTOR BUTTON (1-Button Scroll/Dropdown) ==================== */
+/* ==================== SINGLE POOL SELECTOR TRIGGER & MODAL WINDOW (李? ==================== */
 .single-pool-select-wrap {
   width: 100%;
   margin-bottom: 12px;
 }
-.custom-pool-select-box {
-  position: relative;
+.btn-single-pool-trigger {
   width: 100%;
   display: flex;
   align-items: center;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.25), rgba(16, 185, 129, 0.2));
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.32), rgba(16, 185, 129, 0.28));
   border: 1.5px solid var(--accent-cyan);
-  border-radius: 10px;
-  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.22);
+  border-radius: 12px;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(56, 189, 248, 0.25);
   transition: all 0.2s ease;
   box-sizing: border-box;
 }
-.custom-pool-select-box:hover {
+.btn-single-pool-trigger:hover,
+.btn-single-pool-trigger:active {
   border-color: #38bdf8;
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.35), rgba(16, 185, 129, 0.28));
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.42), rgba(16, 185, 129, 0.35));
+  transform: translateY(-1px);
 }
-.pool-select-icon {
-  position: absolute;
-  left: 14px;
-  font-size: 1.05rem;
-  color: var(--accent-cyan);
-  pointer-events: none;
+.pool-trigger-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
 }
-.single-pool-native-select {
-  width: 100%;
-  padding: 12px 38px 12px 42px;
-  background: transparent;
-  color: #fff;
-  font-size: 0.92rem;
+.pool-trigger-flag {
+  font-size: 1.3rem;
+  line-height: 1;
+}
+.pool-trigger-title {
+  color: #ffffff;
+  font-size: 0.94rem;
   font-weight: 800;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  box-sizing: border-box;
+  letter-spacing: -0.2px;
 }
-.single-pool-native-select option,
-.single-pool-native-select optgroup {
-  background: #0f172a;
-  color: #f8fafc;
-  font-size: 0.9rem;
-  font-weight: 700;
+.pool-trigger-right {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-.pool-select-arrow {
-  position: absolute;
-  right: 14px;
+.pool-trigger-badge {
+  font-size: 0.72rem;
+  font-weight: 800;
+  background: rgba(56, 189, 248, 0.2);
+  color: var(--accent-cyan);
+  padding: 3px 8px;
+  border-radius: 6px;
+  border: 1px solid rgba(56, 189, 248, 0.35);
+  white-space: nowrap;
+}
+.pool-trigger-arrow {
   font-size: 0.85rem;
   color: var(--accent-cyan);
-  pointer-events: none;
+}
+
+/* Pool Modal Window (李? Sheet */
+.pool-modal-sheet {
+  width: 95%;
+  max-width: 560px;
+  max-height: 85vh;
+  background: #0f172a;
+  border: 1.5px solid var(--accent-cyan);
+  border-radius: 16px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.85), 0 0 30px rgba(56, 189, 248, 0.3);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  animation: modalFadeIn 0.2s ease-out;
+}
+.pool-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  background: rgba(15, 23, 42, 0.98);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.pool-modal-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05rem;
+  font-weight: 900;
+  color: #f8fafc;
+}
+.pool-modal-scroll-area {
+  padding: 14px 16px;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-height: calc(85vh - 65px);
+}
+.pool-country-group {
+  background: rgba(30, 41, 59, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+.pool-group-label {
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: var(--accent-cyan);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.pool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 8px;
+}
+@media (max-width: 480px) {
+  .pool-grid {
+    grid-template-columns: 1fr;
+  }
+}
+.pool-option-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  background: rgba(15, 23, 42, 0.8);
+  border: 1.5px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  color: #f8fafc;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.2s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+.pool-option-card:hover,
+.pool-option-card:active {
+  border-color: var(--accent-cyan);
+  background: rgba(56, 189, 248, 0.18);
+}
+.pool-option-card.active {
+  border-color: #38bdf8;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.35), rgba(16, 185, 129, 0.3));
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.35);
+}
+.pool-opt-name {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+.pool-opt-info {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent-gold);
+  background: rgba(245, 158, 11, 0.15);
+  padding: 2px 6px;
+  border-radius: 4px;
+  white-space: nowrap;
 }
 
 /* ==================== UNIVERSAL MATCH TABLE (PC & Mobile Identical, Full Team Visibility) ==================== */
