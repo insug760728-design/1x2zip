@@ -3095,3 +3095,169 @@ body[data-view-mode="mobile"] .pick-type-badge,
     line-height: 1.2 !important;
   }
 }
+
+/* ==================== 100% NATIVE MOBILE VIEWPORT RULES (<= 820px) ==================== */
+@media (max-width: 820px) {
+  html, body {
+    max-width: 100% !important;
+    overflow-x: hidden !important;
+  }
+  body {
+    padding-bottom: calc(92px + env(safe-area-inset-bottom, 0px)) !important;
+  }
+  header {
+    padding: 10px 12px !important;
+  }
+  .header-container {
+    gap: 8px !important;
+  }
+  .brand-title {
+    font-size: 1.05rem !important;
+  }
+  .main-container {
+    max-width: 100% !important;
+    width: 100% !important;
+    grid-template-columns: 1fr !important;
+    margin: 8px auto !important;
+    padding: 0 8px !important;
+    gap: 10px !important;
+    box-sizing: border-box !important;
+  }
+  .main-container > section,
+  .main-container > aside {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  aside {
+    position: static !important;
+    top: auto !important;
+  }
+  .section-box {
+    padding: 12px 10px !important;
+    border-radius: 10px !important;
+    margin-bottom: 12px !important;
+  }
+  .mobile-sticky-bar {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    z-index: 1000 !important;
+    background: rgba(11, 19, 43, 0.98) !important;
+    border-top: 1.5px solid rgba(56, 189, 248, 0.5) !important;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px)) !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Compact Single-Row Mobile Match Table */
+  .match-table {
+    display: table !important;
+    width: 100% !important;
+    table-layout: fixed !important;
+    border-collapse: separate !important;
+    border-spacing: 0 3px !important;
+    margin: 0 !important;
+  }
+  .match-table tbody {
+    display: table-row-group !important;
+  }
+  .match-row {
+    display: table-row !important;
+    height: 30px !important;
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: 6px !important;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+  }
+  .match-cell {
+    display: table-cell !important;
+    vertical-align: middle !important;
+    padding: 2px 3px !important;
+  }
+  .match-seq {
+    width: 28px !important;
+    min-width: 28px !important;
+    max-width: 32px !important;
+    font-size: 0.74rem !important;
+    font-weight: 800 !important;
+    text-align: center !important;
+    padding: 2px 0 !important;
+    color: var(--accent-gold) !important;
+    background: transparent !important;
+    border: none !important;
+  }
+  .match-row > td:nth-child(2) {
+    width: auto !important;
+    overflow: hidden !important;
+    padding: 2px 4px !important;
+  }
+  .match-info {
+    display: flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    width: 100% !important;
+  }
+  .team-input {
+    flex: 1 !important;
+    min-width: 0 !important;
+    height: 24px !important;
+    font-size: 0.74rem !important;
+    padding: 1px 4px !important;
+    background: rgba(15, 23, 42, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    border-radius: 4px !important;
+    color: #f1f5f9 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  .match-vs {
+    font-size: 0.65rem !important;
+    color: #64748b !important;
+    font-weight: 800 !important;
+  }
+  .match-row > td:nth-child(3) {
+    width: 110px !important;
+    min-width: 110px !important;
+    max-width: 110px !important;
+    padding: 2px 2px !important;
+  }
+  .pick-btn-group {
+    display: flex !important;
+    gap: 3px !important;
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .pick-btn {
+    flex: 1 !important;
+    min-width: 0 !important;
+    width: 33px !important;
+    height: 25px !important;
+    padding: 0 !important;
+    border-radius: 5px !important;
+    font-size: 0.76rem !important;
+    font-weight: 900 !important;
+    line-height: 25px !important;
+  }
+  .actual-result-cell {
+    width: 44px !important;
+    min-width: 44px !important;
+    max-width: 48px !important;
+    text-align: center !important;
+    padding: 2px 2px !important;
+  }
+  .pick-type-badge {
+    display: inline-block !important;
+    font-size: 0.65rem !important;
+    padding: 2px 4px !important;
+    border-radius: 4px !important;
+    line-height: 1.2 !important;
+  }
+}
