@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gpc-1x2zip-20261028_pools_updated';
+const CACHE_NAME = 'gpc-1x2zip-20261029_fix_matches_view';
 self.addEventListener('install', function(e) {
   self.skipWaiting();
 });
