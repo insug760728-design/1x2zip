@@ -61,7 +61,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261028_mobile_pure">
+  <link rel="stylesheet" href="style.css?v=20261028_single_btn">
     <script>
     (function(){
       var isMobile = (window.innerWidth <= 820) || (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(navigator.userAgent || ''));
@@ -142,48 +142,44 @@
     <!-- Left Column: Match Selection Board -->
     <section>
       <div class="section-box">
-                                        <!-- 1. Horizontal Scrollable 8-Country Bar -->
-        <div class="country-scroll-bar notranslate" translate="no">
-          <button type="button" class="country-chip" data-country="KR" onclick="selectCountryPool('KR')">
-            <span>&#x1F1F0;&#x1F1F7;</span> <span>&#xd55c;&#xad6d;</span>
-          </button>
-          <button type="button" class="country-chip" data-country="JP" onclick="selectCountryPool('JP')">
-            <span>&#x1F1EF;&#x1F1F5;</span> <span>&#x65e5;&#x672c;</span>
-          </button>
-          <button type="button" class="country-chip" data-country="CN" onclick="selectCountryPool('CN')">
-            <span>&#x1F1E8;&#x1F1F3;</span> <span>&#x4e2d;&#x56fd;</span>
-          </button>
-          <button type="button" class="country-chip active" data-country="US" onclick="selectCountryPool('US')">
-            <span>&#x1F1FA;&#x1F1F8;</span> <span>USA</span>
-          </button>
-          <button type="button" class="country-chip" data-country="UK" onclick="selectCountryPool('UK')">
-            <span>&#x1F1EC;&#x1F1E7;</span> <span>UK</span>
-          </button>
-          <button type="button" class="country-chip" data-country="ES" onclick="selectCountryPool('ES')">
-            <span>&#x1F1EA;&#x1F1F8;</span> <span>Spain</span>
-          </button>
-          <button type="button" class="country-chip" data-country="IT" onclick="selectCountryPool('IT')">
-            <span>&#x1F1EE;&#x1F1F9;</span> <span>Italy</span>
-          </button>
-          <button type="button" class="country-chip" data-country="BR" onclick="selectCountryPool('BR')">
-            <span>&#x1F1E7;&#x1F1F7;</span> <span>Brazil</span>
-          </button>
-        </div>
-
-        <!-- 2. Horizontal Scrollable Sports for Selected Country -->
-        <div class="sport-scroll-bar notranslate" translate="no">
-          <button type="button" class="sport-chip active" data-sport="soccer" onclick="selectSportMode('soccer')">
-            <i class="fa-solid fa-futbol"></i> <span id="lblSportSoccer">&#xcd95;&#xad6c; &#xc2b9;&#xbb34;&#xd328; (14M)</span>
-          </button>
-          <button type="button" class="sport-chip" data-sport="basketball" onclick="selectSportMode('basketball')">
-            <i class="fa-solid fa-basketball"></i> <span id="lblSportBasket">&#xb18d;&#xad6c; &#xc2b9;5&#xd328; (14M)</span>
-          </button>
-          <button type="button" class="sport-chip" data-sport="football" onclick="selectSportMode('football')">
-            <i class="fa-solid fa-football"></i> <span id="lblSportFootball">&#xbbf8;&#xc2dd;&#xcd95;&#xad6c; &#xc2b9;3&#xd328; (NFL)</span>
-          </button>
-          <button type="button" class="sport-chip" data-sport="hockey" onclick="selectSportMode('hockey')">
-            <i class="fa-solid fa-hockey-puck"></i> <span id="lblSportHockey">&#xc544;&#xc774;&#xc2a4;&#xd558;&#xd0a4; 1X2 (NHL)</span>
-          </button>
+                                                <!-- 1 Single Prominent Dropdown Button for Country & Pool Selection -->
+        <div class="single-pool-select-wrap notranslate" translate="no">
+          <div class="custom-pool-select-box">
+            <i class="fa-solid fa-globe pool-select-icon"></i>
+            <select id="singlePoolSelect" class="single-pool-native-select" onchange="onSinglePoolSelectChange(this.value)">
+              <optgroup label="&#x1F1F0;&#x1F1F7; &#xd55c;&#xad6d; (Korea Sports Toto)">
+                <option value="KR:soccer" selected>&#x1F1F0;&#x1F1F7; &#xd55c;&#xad6d; &middot; &#xcd95;&#xad6c;&#xd1a0;&#xd1a0; &#xc2b9;&#xbb34;&#xd328; (14&#xacbd;&#xae30; &middot; &#xbc1c;&#xb9e4;&#xc911;)</option>
+                <option value="KR:basketball">&#x1F3C0; &#xd55c;&#xad6d; &middot; &#xb18d;&#xad6c;&#xd1a0;&#xd1a0; &#xc2b9;5&#xd328; (14&#xacbd;&#xae30; &middot; &#xbc1c;&#xb9e4;&#xc911;)</option>
+                <option value="KR:football">&#x1F3C8; &#xd55c;&#xad6d; &middot; &#xbbf8;&#xc2dd;&#xcd95;&#xad6c; &#xc2b9;3&#xd328; (NFL 14&#xacbd;&#xae30;)</option>
+              </optgroup>
+              <optgroup label="&#x1F1EF;&#x1F1F5; &#x65e5;&#x672c; (Japan Sports Toto)">
+                <option value="JP:soccer">&#x1F1EF;&#x1F1F5; &#x65e5;&#x672c; &middot; &#x30b5;&#x30c3;&#x30ab;&#x30fc; toto 1X2 (14&#xacbd;&#xae30; &middot; &#xbc1c;&#xb9e4;&#xc911;)</option>
+                <option value="JP:basketball">&#x1F3C0; &#x65e5;&#x672c; &middot; &#x30d0;&#x30b9;&#x30b1; NBA 1-5-2 (14&#xacbd;&#xae30;)</option>
+              </optgroup>
+              <optgroup label="&#x1F1E8;&#x1F1F3; &#x4e2d;&#x56fd; (China Sports Lottery)">
+                <option value="CN:soccer">&#x1F1E8;&#x1F1F3; &#x4e2d;&#x56fd; &middot; &#x8db3;&#x7403;&#x80dc;&#x8d1f;&#x5f69; 14 (14&#xacbd;&#xae30; &middot; &#xbc1c;&#xb9e4;&#xc911;)</option>
+                <option value="CN:basketball">&#x1F3C0; &#x4e2d;&#x56fd; &middot; &#x7bee;&#x7403;&#x80dc;&#x8d1f; 14 (14&#xacbd;&#xae30;)</option>
+              </optgroup>
+              <optgroup label="&#x1F1FA;&#x1F1F8; USA (&#xbbf8;&#xad6d; MLS &amp; Pro Sports)">
+                <option value="US:soccer">&#x1F1FA;&#x1F1F8; USA &middot; MLS 1X2 Soccer Pool (14-Match)</option>
+                <option value="US:basketball">&#x1F3C0; USA &middot; NBA Basketball W-5-L (14-Match)</option>
+                <option value="US:football">&#x1F3C8; USA &middot; NFL Football W-3-L (14-Match)</option>
+              </optgroup>
+              <optgroup label="&#x1F1EC;&#x1F1E7; UK (&#xc601;&#xad6d; Football Pools)">
+                <option value="UK:soccer">&#x1F1EC;&#x1F1E7; UK &middot; Football Pools 1X2 (15-Match)</option>
+              </optgroup>
+              <optgroup label="&#x1F1EA;&#x1F1F8; Espa&ntilde;a (&#xc2a4;&#xd398;&#xc778; La Quiniela)">
+                <option value="ES:soccer">&#x1F1EA;&#x1F1F8; Espa&ntilde;a &middot; La Quiniela 1X2 (15-Match)</option>
+              </optgroup>
+              <optgroup label="&#x1F1EE;&#x1F1F9; Italia (&#xc774;&#xd0c8;&#xb9ac;&#xc544; Totocalcio)">
+                <option value="IT:soccer">&#x1F1EE;&#x1F1F9; Italia &middot; Totocalcio 1X2 (14-Match)</option>
+              </optgroup>
+              <optgroup label="&#x1F1E7;&#x1F1F7; Brasil (&#xbe0c;&#xb77c;&#xc9c8; Loteca Caixa)">
+                <option value="BR:soccer">&#x1F1E7;&#x1F1F7; Brasil &middot; Loteca Caixa 1X2 (14-Match)</option>
+              </optgroup>
+            </select>
+            <i class="fa-solid fa-chevron-down pool-select-arrow"></i>
+          </div>
         </div>
 
         <div class="section-header" style="flex-direction:column; align-items:stretch; gap:10px;">
@@ -549,6 +545,6 @@
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261028_mobile_pure"></script>
+  <script src="app.js?v=20261028_single_btn"></script>
 </body>
 </html>
