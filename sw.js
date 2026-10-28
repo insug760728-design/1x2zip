@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gpc-1x2zip-20261028_fix_picks_selection';
+const CACHE_NAME = 'gpc-1x2zip-20261028_free3_generator';
 self.addEventListener('install', function(e) {
   self.skipWaiting();
 });
