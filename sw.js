@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gpc-1x2zip-20261030_pure_free';
+const CACHE_NAME = 'gpc-1x2zip-20261031_sec_shield';
 self.addEventListener('install', function(e) {
   self.skipWaiting();
 });
