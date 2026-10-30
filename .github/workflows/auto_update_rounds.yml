@@ -1,0 +1,31 @@
+name: Auto-Sync 8-Country 14-Match Schedules
+
+on:
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync-rounds:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Fetch latest ESPN 14-match schedules
+        run: node scripts/auto_update_official_rounds.js
+
+      - name: Commit and push if updated
+        run: |
+          git config user.name "TOKEON Auto-Sync Bot"
+          git config user.email "bot@tokeon.app"
+          git add official_rounds.json
+          git diff --staged --quiet || (git commit -m "chore: auto-sync 8-country 14-match schedules from ESPN" && git push)
