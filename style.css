@@ -3591,3 +3591,66 @@ body[data-view-mode="mobile"] .pick-btn.active-2 {
 .pool-modal-sheet {
   z-index: 100000 !important;
 }
+
+/* ==================== 1/HOME, X/DRAW, 2/AWAY DUAL-LABEL PICK BUTTONS ==================== */
+.pick-btn,
+body .pick-btn,
+body[data-view-mode="mobile"] .pick-btn {
+  width: 46px !important;
+  height: 36px !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1px !important;
+  padding: 2px 1px !important;
+  line-height: 1 !important;
+}
+
+.pick-btn .pick-main {
+  display: block !important;
+  font-size: 0.84rem !important;
+  font-weight: 900 !important;
+  line-height: 1.05 !important;
+  pointer-events: none !important;
+}
+
+.pick-btn .pick-sub {
+  display: block !important;
+  font-size: 0.5rem !important;
+  font-weight: 800 !important;
+  line-height: 1 !important;
+  opacity: 0.85 !important;
+  letter-spacing: -0.01em !important;
+  pointer-events: none !important;
+}
+
+.pick-btn.selected .pick-sub,
+.pick-btn.active-1 .pick-sub,
+.pick-btn.active-X .pick-sub,
+.pick-btn.active-2 .pick-sub {
+  opacity: 1 !important;
+  color: #ffffff !important;
+}
+
+@media (max-width: 820px) {
+  body .match-row > td:nth-child(3),
+  body[data-view-mode="mobile"] .match-row > td:nth-child(3) {
+    width: 132px !important;
+    min-width: 132px !important;
+    max-width: 136px !important;
+    padding: 2px 2px !important;
+  }
+  body .pick-btn,
+  body[data-view-mode="mobile"] .pick-btn {
+    width: 40px !important;
+    height: 33px !important;
+  }
+  body .pick-btn .pick-main,
+  body[data-view-mode="mobile"] .pick-btn .pick-main {
+    font-size: 0.78rem !important;
+  }
+  body .pick-btn .pick-sub,
+  body[data-view-mode="mobile"] .pick-btn .pick-sub {
+    font-size: 0.46rem !important;
+  }
+}
