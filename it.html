@@ -19,6 +19,7 @@
   <meta name="keywords" content="sistema ridotto totocalcio, riduttore totocalcio online, totocalcio garanzia n-1, sistemi totocalcio 14 partite, sviluppo doppie triple 1x2, colonne ridotte totocalcio, TOKEON">
   <link rel="canonical" href="https://tokeon.app/it">
   <link rel="alternate" hreflang="x-default" href="https://tokeon.app/">
+  <link rel="alternate" hreflang="ko" href="https://tokeon.app/kr">
   <link rel="alternate" hreflang="ja" href="https://tokeon.app/jp">
   <link rel="alternate" hreflang="zh-Hans" href="https://tokeon.app/cn">
   <link rel="alternate" hreflang="es" href="https://tokeon.app/es">
@@ -77,7 +78,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261030_us_first_v2">
+  <link rel="stylesheet" href="style.css?v=20261030_pure_free">
     <script>
     (function(){
       var isMobile = (window.innerWidth <= 820) || (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(navigator.userAgent || ''));
@@ -113,12 +114,12 @@
         <!-- 1. Country / League Pool Dropdown Selector -->
         <div class="top-scroll-select-wrap">
           <select id="countrySelect" class="top-select-scroll country-select-highlight" onchange="selectCountryPool(this.value)">
-            <option value="US" id="optCountry_US">&#x1F1FA;&#x1F1F8; USA 1X2 (14M)</option>
+            <option value="US" id="optCountry_US" selected>&#x1F1FA;&#x1F1F8; USA 1X2 (14M)</option>
             <option value="UK" id="optCountry_UK">&#x1F1EC;&#x1F1E7; UK Pools (14M)</option>
             <option value="CN" id="optCountry_CN">&#x1F1E8;&#x1F1F3; &#x4e2d;&#x56fd; (China 14M)</option>
             <option value="JP" id="optCountry_JP">&#x1F1EF;&#x1F1F5; &#x65e5;&#x672c; (toto 14M)</option>
             <option value="ES" id="optCountry_ES">&#x1F1EA;&#x1F1F8; Spain Quiniela (14M)</option>
-            <option value="IT" id="optCountry_IT" selected>&#x1F1EE;&#x1F1F9; Italy Totocalcio (14M)</option>
+            <option value="IT" id="optCountry_IT">&#x1F1EE;&#x1F1F9; Italy Totocalcio (14M)</option>
             <option value="BR" id="optCountry_BR">&#x1F1E7;&#x1F1F7; Brazil Loteca (14M)</option>
           </select>
         </div>
@@ -135,19 +136,6 @@
         <select id="matchCountSelect" style="display:none;"></select>
         <select id="notationSelect" style="display:none;"></select>
         <select id="langSelect" style="display:none;"></select>
-
-        <!-- 3. Google Sign-In & 1-Time Checkout -->
-        <div class="header-auth-box" id="headerAuthBox">
-          <button type="button" class="btn-google-header" id="btnHeaderGoogleLogin" onclick="openAuthPayModal()">
-            <svg class="google-g-icon" viewBox="0 0 24 24" width="16" height="16">
-              <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
-              <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.6l3.7 2.9c2.2-2 3.7-5 3.7-8.7z"/>
-              <path fill="#FBBC05" d="M5.3 14.8c-.2-.8-.4-1.8-.4-2.8s.2-2 .4-2.8L1.6 6.4C.6 8.4 0 10.6 0 12s.6 3.6 1.6 5.6l3.7-2.8z"/>
-              <path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.1-6.7-5l-3.7 2.8C3.5 19.9 7.4 23 12 23z"/>
-            </svg>
-            <span id="txtHeaderGoogleBtn">Sign In</span>
-          </button>
-        </div>
       </div>
     </div>
   </header>
@@ -498,145 +486,6 @@
     window.toggleDualViewMode = toggleDualViewMode;
   </script>
 
-  <!-- Unified Google Login & Card Payment Modal -->
-  <div class="modal-overlay notranslate" id="authPayModal" translate="no">
-    <div class="modal-content auth-pay-modal">
-      <button type="button" class="modal-close-btn" onclick="closeAuthPayModal()">
-        <i class="fa-solid fa-xmark"></i>
-      </button>
-
-      <div class="modal-brand-head">
-        <span class="patent-badge" id="txtModalPatentTag">🏅 PATENT PENDING (10-2026-0205596)</span>
-        <h3 id="txtModalTitle">Google Sign-In & 3-Tier 1-Time Checkout</h3>
-        <p id="txtModalSub">No monthly subscription! Ultra-low 3-tier 1-time pricing by combo volume: $3 (≤192 combos) · $6 (193–768 combos) · $9 (769+ heavy combos).</p>
-      </div>
-
-      <!-- STEP 1: Google Login Box -->
-      <div class="auth-step-box" id="modalStepGoogle">
-        <div class="step-label-row">
-          <span class="step-num-badge" id="txtStep1Badge">STEP 1</span>
-          <strong id="txtStep1Title">One-Click Google Sign-In</strong>
-          <span class="step-done-tag" id="step1DoneTag" style="display:none;">✅ Signed In</span>
-        </div>
-
-        <!-- Logged out view -->
-        <div id="googleLoginActionArea">
-          <div class="google-email-input-row">
-            <input type="email" id="inputGoogleEmail" class="google-email-input" placeholder="Enter your Google email (e.g. name@gmail.com)" autocomplete="email">
-            <button type="button" class="btn-google-signin-main" id="btnModalGoogleSignin" onclick="handleGoogleSignIn()">
-              <svg viewBox="0 0 24 24" width="18" height="18">
-                <path fill="#EA4335" d="M12 5c1.6 0 3 .6 4.1 1.7l3.1-3.1C17.3 1.8 14.8 1 12 1 7.4 1 3.5 3.6 1.6 7.4l3.7 2.8C6.2 7.2 8.9 5 12 5z"/>
-                <path fill="#4285F4" d="M23.5 12.3c0-.8-.1-1.6-.2-2.3H12v4.5h6.5c-.3 1.5-1.1 2.8-2.4 3.6l3.7 2.9c2.2-2 3.7-5 3.7-8.7z"/>
-                <path fill="#FBBC05" d="M5.3 14.8c-.2-.8-.4-1.8-.4-2.8s.2-2 .4-2.8L1.6 6.4C.6 8.4 0 10.6 0 12s.6 3.6 1.6 5.6l3.7-2.8z"/>
-                <path fill="#34A853" d="M12 23c3.2 0 6-1.1 8-3l-3.7-2.9c-1.1.7-2.5 1.2-4.3 1.2-3.1 0-5.8-2.1-6.7-5l-3.7 2.8C3.5 19.9 7.4 23 12 23z"/>
-              </svg>
-              <span id="txtBtnContinueGoogle">Sign in with Google</span>
-            </button>
-          </div>
-          <div style="font-size:0.74rem; color:var(--text-sub); margin-top:6px;" id="txtGoogleHint">
-            * Instant Google account linking with zero complex registration.
-          </div>
-        </div>
-
-        <!-- Logged in summary -->
-        <div class="logged-in-bar" id="modalLoggedInBar" style="display:none;">
-          <div style="display:flex; align-items:center; gap:8px;">
-            <i class="fa-brands fa-google" style="color:#38bdf8;"></i>
-            <strong id="txtModalLoggedEmail">user@gmail.com</strong>
-            <span class="user-pass-badge" id="txtModalPassStatus">Free Account</span>
-          </div>
-          <button type="button" class="btn-tool" style="padding:3px 8px; font-size:0.72rem;" onclick="handleGoogleLogout()" id="txtBtnSwitchAccount">Switch Account</button>
-        </div>
-      </div>
-
-      <!-- STEP 2: Plan Selection + Card Payment Box -->
-      <div class="auth-step-box" id="modalStepPayment">
-        <div class="step-label-row">
-          <span class="step-num-badge gold" id="txtStep2Badge">STEP 2</span>
-          <strong id="txtStep2Title">3-Tier 1-Time Extraction Pass (Consumed After 1 Extraction)</strong>
-        </div>
-
-        <!-- Three Tiered 1-Time Extraction Plans ($3 <=192 / $6 <=768 / $9 769+ combos) -->
-        <div class="plan-cards-grid">
-          <div class="plan-card selected" id="planCardTier3" onclick="selectPaymentPlan('tier3')">
-            <div class="plan-title" id="txtPlanTier3Title">⚡ 192-Combo 1-Time Pass</div>
-            <div class="plan-price" id="txtPlanTier3Price">$3.00 <small>/ 1-Time (≤192)</small></div>
-            <div class="plan-desc" id="txtPlanTier3Desc">For 1 to 192 raw combinations · Unlocks 1 extraction & TXT/CSV export (1 use)</div>
-          </div>
-
-          <div class="plan-card" id="planCardTier6" onclick="selectPaymentPlan('tier6')">
-            <span class="plan-recommend-ribbon" id="txtPlanRibbon6">POPULAR · ≤768</span>
-            <div class="plan-title" id="txtPlanTier6Title">🔥 768-Combo 1-Time Pass</div>
-            <div class="plan-price" id="txtPlanTier6Price">$6.00 <small>/ 1-Time (≤768)</small></div>
-            <div class="plan-desc" id="txtPlanTier6Desc">For 193 to 768 raw combinations · Unlocks 1 extraction & TXT/CSV export (1 use)</div>
-          </div>
-
-          <div class="plan-card" id="planCardTier9" onclick="selectPaymentPlan('tier9')">
-            <span class="plan-recommend-ribbon" id="txtPlanRibbon9">3,456+ HEAVY</span>
-            <div class="plan-title" id="txtPlanTier9Title">💎 Unlimited Heavy 1-Time Pass</div>
-            <div class="plan-price" id="txtPlanTier9Price">$9.00 <small>/ 1-Time (769+)</small></div>
-            <div class="plan-desc" id="txtPlanTier9Desc">For 769+ raw combinations (3,456+ combos) · Unlocks 1 heavy extraction & export</div>
-          </div>
-        </div>
-
-        <!-- Credit/Debit Card Form -->
-        <div class="card-checkout-form">
-          <div class="card-brands-row">
-            <span id="txtSupportedCardsLbl" style="font-size:0.76rem; color:var(--text-muted); font-weight:700;">💳 Global Cards Accepted:</span>
-            <div class="card-icons-list">
-              <i class="fa-brands fa-cc-visa" title="Visa"></i>
-              <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
-              <i class="fa-brands fa-cc-amex" title="AMEX"></i>
-              <i class="fa-brands fa-cc-jcb" title="JCB"></i>
-              <span class="kr-card-tag" id="txtKrCardTag">All Credit/Debit</span>
-            </div>
-          </div>
-
-          <div id="cardManualInputsBox" style="display:none;">
-            <div class="card-input-group">
-              <label id="lblCardNumber">Card Number</label>
-              <div class="card-num-wrap">
-                <i class="fa-regular fa-credit-card card-input-icon"></i>
-                <input type="text" id="inputCardNumber" class="card-input" placeholder="0000 0000 0000 0000" maxlength="19" oninput="formatCardNumberInput(this)">
-              </div>
-            </div>
-
-            <div class="card-input-row-2">
-              <div class="card-input-group">
-                <label id="lblCardExpiry">Expiry (MM/YY)</label>
-                <input type="text" id="inputCardExpiry" class="card-input" placeholder="MM/YY" maxlength="5" oninput="formatCardExpiryInput(this)">
-              </div>
-              <div class="card-input-group">
-                <label id="lblCardCvc">CVC / CVV</label>
-                <input type="password" id="inputCardCvc" class="card-input" placeholder="•••" maxlength="4">
-              </div>
-              <div class="card-input-group">
-                <label id="lblCardHolder">Cardholder Name</label>
-                <input type="text" id="inputCardHolder" class="card-input" placeholder="JOHN DOE">
-              </div>
-            </div>
-          </div>
-
-                    <button type="button" class="btn-pay-submit" id="btnSubmitCardPay" onclick="processCardPayment()" style="background:linear-gradient(135deg,#10b981,#059669); font-size:1rem; padding:15px; font-weight:900;">
-            <i class="fa-solid fa-lock"></i>
-            <span id="txtBtnPaySubmit">Pay $3.00 & Unlock 1-Time Slips Now</span>
-          </button>
-
-          <div style="text-align:center; margin-top:10px;">
-            <button type="button" class="btn-tool" style="width:100%; justify-content:center; font-size:0.78rem; padding:6px 12px; border-color:#38bdf8; color:#38bdf8; font-weight:700;" onclick="finalizeVerifiedPayment()">
-              <i class="fa-solid fa-circle-check"></i> Already Completed Payment? Click to Unlock Immediately
-            </button>
-          </div>
-
-          <div class="security-ssl-note" id="txtSecuritySslNote">
-            <i class="fa-solid fa-shield-halved" style="color:var(--accent-emerald);"></i>
-            <span>256-Bit SSL Encrypted Checkout · No recurring subscription · Pass is consumed after 1 extraction.</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- One-Click PC & Mobile App Install Guide Modal -->
   <div class="modal-overlay notranslate" id="appInstallModal" translate="no">
     <div class="modal-content auth-pay-modal" style="max-width:560px;">
@@ -700,8 +549,6 @@
   </div>
 
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
-
-  <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261030_us_first_v2"></script>
+  <script src="app.js?v=20261030_pure_free"></script>
 </body>
 </html>
