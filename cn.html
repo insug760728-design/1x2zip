@@ -19,7 +19,6 @@
   <meta name="keywords" content="足彩14场缩水, 足彩缩水软件, 胜负彩中14保13, 14场旋转矩阵, 传统足彩过滤工具, 足彩复式缩水计算器, 体彩14场胜负彩在线缩水, TOKEON">
   <link rel="canonical" href="https://tokeon.app/cn">
   <link rel="alternate" hreflang="x-default" href="https://tokeon.app/">
-  <link rel="alternate" hreflang="ko" href="https://tokeon.app/kr">
   <link rel="alternate" hreflang="ja" href="https://tokeon.app/jp">
   <link rel="alternate" hreflang="zh-Hans" href="https://tokeon.app/cn">
   <link rel="alternate" hreflang="es" href="https://tokeon.app/es">
@@ -78,7 +77,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261030_home_away_v1">
+  <link rel="stylesheet" href="style.css?v=20261030_us_first_v2">
     <script>
     (function(){
       var isMobile = (window.innerWidth <= 820) || (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(navigator.userAgent || ''));
@@ -114,10 +113,10 @@
         <!-- 1. Country / League Pool Dropdown Selector -->
         <div class="top-scroll-select-wrap">
           <select id="countrySelect" class="top-select-scroll country-select-highlight" onchange="selectCountryPool(this.value)">
-            <option value="JP" id="optCountry_JP">&#x1F1EF;&#x1F1F5; &#x65e5;&#x672c; (toto 14M)</option>
-            <option value="CN" id="optCountry_CN">&#x1F1E8;&#x1F1F3; &#x4e2d;&#x56fd; (China 14M)</option>
-            <option value="US" id="optCountry_US" selected>&#x1F1FA;&#x1F1F8; USA 1X2 (14M)</option>
+            <option value="US" id="optCountry_US">&#x1F1FA;&#x1F1F8; USA 1X2 (14M)</option>
             <option value="UK" id="optCountry_UK">&#x1F1EC;&#x1F1E7; UK Pools (14M)</option>
+            <option value="CN" id="optCountry_CN" selected>&#x1F1E8;&#x1F1F3; &#x4e2d;&#x56fd; (China 14M)</option>
+            <option value="JP" id="optCountry_JP">&#x1F1EF;&#x1F1F5; &#x65e5;&#x672c; (toto 14M)</option>
             <option value="ES" id="optCountry_ES">&#x1F1EA;&#x1F1F8; Spain Quiniela (14M)</option>
             <option value="IT" id="optCountry_IT">&#x1F1EE;&#x1F1F9; Italy Totocalcio (14M)</option>
             <option value="BR" id="optCountry_BR">&#x1F1E7;&#x1F1F7; Brazil Loteca (14M)</option>
@@ -486,10 +485,10 @@
       var txt = document.getElementById('txtViewModeBtn');
       var icon = document.getElementById('iconViewMode');
       if (next === 'mobile') {
-        if (txt) txt.textContent = '\uD83D\uDCBB PC \uD654\uBA74';
+        if (txt) txt.textContent = '\uD83D\uDCBB PC View';
         if (icon) icon.className = 'fa-solid fa-laptop';
       } else {
-        if (txt) txt.textContent = '\uD83D\uDCF1 \uD578\uB4DC\uD3F0 \uD654\uBA74';
+        if (txt) txt.textContent = '\uD83D\uDCF1 Mobile View';
         if (icon) icon.className = 'fa-solid fa-mobile-screen-button';
       }
     }
@@ -703,6 +702,6 @@
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261030_home_away_v1"></script>
+  <script src="app.js?v=20261030_us_first_v2"></script>
 </body>
 </html>
