@@ -78,7 +78,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261030_auto_schedule_sync">
+  <link rel="stylesheet" href="style.css?v=20261030_no_kr_pool">
     <script>
     (function(){
       var isMobile = (window.innerWidth <= 820) || (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(navigator.userAgent || ''));
@@ -114,7 +114,6 @@
         <!-- 1. Country / League Pool Dropdown Selector -->
         <div class="top-scroll-select-wrap">
           <select id="countrySelect" class="top-select-scroll country-select-highlight" onchange="selectCountryPool(this.value)">
-            <option value="KR" id="optCountry_KR">&#x1F1F0;&#x1F1F7; &#xd55c;&#xad6d; (Korea 14M)</option>
             <option value="JP" id="optCountry_JP">&#x1F1EF;&#x1F1F5; &#x65e5;&#x672c; (toto 14M)</option>
             <option value="CN" id="optCountry_CN">&#x1F1E8;&#x1F1F3; &#x4e2d;&#x56fd; (China 14M)</option>
             <option value="US" id="optCountry_US" selected>&#x1F1FA;&#x1F1F8; USA 1X2 (14M)</option>
@@ -415,25 +414,6 @@
           </div>
         </div>
 
-        <!-- 6. South Korea -->
-        <div class="pool-country-group">
-          <div class="pool-group-label">&#x1F1F0;&#x1F1F7; South Korea (Sports Toto)</div>
-          <div class="pool-grid">
-            <button type="button" class="pool-option-card" data-pool="KR:soccer" onclick="selectPoolOption('KR', 'soccer', '&#x1F1F0;&#x1F1F7; South Korea &middot; Soccer Toto 1X2 (14-Match)')">
-              <span class="pool-opt-name">&#x26bd; &#xcd95;&#xad6c;&#xd1a0;&#xd1a0; &#xc2b9;&#xbb34;&#xd328;</span>
-              <span class="pool-opt-info">14-Match &middot; Active</span>
-            </button>
-            <button type="button" class="pool-option-card" data-pool="KR:basketball" onclick="selectPoolOption('KR', 'basketball', '&#x1F3C0; South Korea &middot; Basketball W-5-L (14-Match)')">
-              <span class="pool-opt-name">&#x1F3C0; &#xb18d;&#xad6c;&#xd1a0;&#xd1a0; &#xc2b9;5&#xd328;</span>
-              <span class="pool-opt-info">14-Match &middot; Active</span>
-            </button>
-            <button type="button" class="pool-option-card" data-pool="KR:football" onclick="selectPoolOption('KR', 'football', '&#x1F3C8; South Korea &middot; NFL Football (14-Match)')">
-              <span class="pool-opt-name">&#x1F3C8; &#xbbf8;&#xc2dd;&#xcd95;&#xad6c; &#xc2b9;3&#xd328;</span>
-              <span class="pool-opt-info">NFL 14-Match</span>
-            </button>
-          </div>
-        </div>
-
         <!-- 7. Japan -->
         <div class="pool-country-group">
           <div class="pool-group-label">&#x1F1EF;&#x1F1F5; Japan (Sports Toto)</div>
@@ -723,6 +703,6 @@
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
 
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
-  <script src="app.js?v=20261030_auto_schedule_sync"></script>
+  <script src="app.js?v=20261030_no_kr_pool"></script>
 </body>
 </html>

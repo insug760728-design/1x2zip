@@ -5,16 +5,13 @@ const path = require('path');
 const TARGET_CONFIGS = [
   { sport: 'soccer', country: 'US', prefix: 'soccer/', leagues: ['usa.1', 'eng.1', 'esp.1', 'ita.1'], badgePrefix: 'Auto Round ' },
   { sport: 'soccer', country: 'UK', prefix: 'soccer/', leagues: ['eng.1', 'eng.2'], badgePrefix: 'Matchday Auto ' },
-  { sport: 'soccer', country: 'KR', prefix: 'soccer/', leagues: ['eng.1', 'esp.1'], badgePrefix: '축구 승무패 자동회차 ' },
   { sport: 'soccer', country: 'JP', prefix: 'soccer/', leagues: ['jpn.1', 'eng.1'], badgePrefix: 'toto 自動対象回 ' },
   { sport: 'soccer', country: 'CN', prefix: 'soccer/', leagues: ['eng.1', 'esp.1', 'ita.1', 'ger.1'], badgePrefix: '足彩14场 自动期 ' },
   { sport: 'soccer', country: 'ES', prefix: 'soccer/', leagues: ['esp.1', 'eng.1'], badgePrefix: 'La Quiniela Auto ' },
   { sport: 'soccer', country: 'IT', prefix: 'soccer/', leagues: ['ita.1', 'eng.1'], badgePrefix: 'Totocalcio Auto ' },
   { sport: 'soccer', country: 'BR', prefix: 'soccer/', leagues: ['bra.1', 'eng.1', 'esp.1', 'ita.1'], badgePrefix: 'Loteca Auto ' },
   { sport: 'basketball', country: 'US', prefix: 'basketball/', leagues: ['nba'], badgePrefix: 'NBA Pool ' },
-  { sport: 'basketball', country: 'KR', prefix: 'basketball/', leagues: ['nba'], badgePrefix: '농구 승5패 ' },
-  { sport: 'football', country: 'US', prefix: 'football/', leagues: ['nfl'], badgePrefix: 'NFL Pool ' },
-  { sport: 'football', country: 'KR', prefix: 'football/', leagues: ['nfl'], badgePrefix: 'NFL 승3패 ' }
+  { sport: 'football', country: 'US', prefix: 'football/', leagues: ['nfl'], badgePrefix: 'NFL Pool ' }
 ];
 
 function ymd(ms) {
@@ -42,6 +39,8 @@ async function main() {
   try {
     current = JSON.parse(fs.readFileSync(outPath, 'utf8'));
   } catch (_e) {}
+
+  current.rounds = (current.rounds || []).filter(r => r && r.country !== 'KR');
 
   const now = Date.now();
   const days = [];

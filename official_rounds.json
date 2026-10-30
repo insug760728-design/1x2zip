@@ -1,6 +1,6 @@
 {
-  "version": "2026-10-30-v2",
-  "description": "TOKEON Official Published 14-Match Pool Rounds Registry (Auto-Synced with ESPN Official Scoreboards across US, KR, UK, IT, ES, BR, JP, CN)",
+  "version": "2026-10-30-v3",
+  "description": "TOKEON Official Published 14-Match Pool Rounds Registry (Auto-Synced with ESPN Official Scoreboards across US, UK, IT, ES, BR, JP, CN)",
   "rounds": [
     {
       "sport": "soccer",
@@ -28,34 +28,6 @@
         { "home": "Tottenham Hotspur", "away": "Crystal Palace", "league": "Premier League", "date": "Oct 31 13:30", "status": "OPEN" },
         { "home": "AC Milan", "away": "Inter Milan", "league": "Serie A", "date": "Oct 31 15:45", "status": "OPEN" },
         { "home": "Liverpool", "away": "Arsenal", "league": "Premier League", "date": "Nov 1 11:30", "status": "OPEN" }
-      ]
-    },
-    {
-      "sport": "soccer",
-      "country": "KR",
-      "id": "260065",
-      "roundNum": 260065,
-      "badge": "26년 65회차 (발매중)",
-      "label": "축구토토 승무패 65회차 · EPL / 라리가 정규 14경기 (10.31~11.02)",
-      "deadline": "10.31 (토) 21:20 마감",
-      "isPast": false,
-      "isUpcoming": false,
-      "statusTag": "발매중",
-      "matches": [
-        { "home": "첼시", "away": "맨체스터 유나이티드", "league": "EPL", "date": "10.31 21:30", "status": "OPEN" },
-        { "home": "본머스", "away": "리즈 유나이티드", "league": "EPL", "date": "11.01 00:00", "status": "OPEN" },
-        { "home": "브렌트퍼드", "away": "노팅엄 포레스트", "league": "EPL", "date": "11.01 00:00", "status": "OPEN" },
-        { "home": "코번트리 시티", "away": "선덜랜드", "league": "EPL", "date": "11.01 00:00", "status": "OPEN" },
-        { "home": "헐 시티", "away": "입스위치 타운", "league": "EPL", "date": "11.01 00:00", "status": "OPEN" },
-        { "home": "맨체스터 시티", "away": "브라이턴", "league": "EPL", "date": "11.01 00:00", "status": "OPEN" },
-        { "home": "토트넘 홋스퍼", "away": "크리스털 팰리스", "league": "EPL", "date": "11.01 02:30", "status": "OPEN" },
-        { "home": "세비야", "away": "오사수나", "league": "라리가", "date": "11.01 00:15", "status": "OPEN" },
-        { "home": "셀타 비고", "away": "레알 베티스", "league": "라리가", "date": "11.01 02:30", "status": "OPEN" },
-        { "home": "아틀레티코 마드리드", "away": "마요르카", "league": "라리가", "date": "11.01 05:00", "status": "OPEN" },
-        { "home": "바르셀로나", "away": "알라베스", "league": "라리가", "date": "11.01 22:00", "status": "OPEN" },
-        { "home": "애스턴 빌라", "away": "풀럼", "league": "EPL", "date": "11.01 23:00", "status": "OPEN" },
-        { "home": "리버풀", "away": "아스널", "league": "EPL", "date": "11.02 01:30", "status": "OPEN" },
-        { "home": "아틀레틱 빌바오", "away": "레알 소시에다드", "league": "라리가", "date": "11.02 02:30", "status": "OPEN" }
       ]
     },
     {
