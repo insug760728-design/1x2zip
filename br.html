@@ -78,7 +78,7 @@
   </script>
   <!-- SEO_HEAD_END -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css?v=20261031_sec_shield">
+  <link rel="stylesheet" href="style.css?v=20261031_lemon_card_v1">
     <script>
     (function(){
       var isMobile = (window.innerWidth <= 820) || (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Mobile/i.test(navigator.userAgent || ''));
@@ -136,6 +136,22 @@
         <select id="matchCountSelect" style="display:none;"></select>
         <select id="notationSelect" style="display:none;"></select>
         <select id="langSelect" style="display:none;"></select>
+
+        <!-- 3. 1-Click Card Pass & Google Sign-In -->
+        <div class="header-auth-box" id="headerAuthBox">
+          <button type="button" class="btn-google-header" id="btnHeaderGoogleLogin" onclick="openAuthPayModal()" style="background:linear-gradient(135deg,#10b981,#059669); color:#fff; border:1px solid rgba(255,255,255,0.25); font-weight:800;">
+            <i class="fa-regular fa-credit-card" style="margin-right:4px;"></i>
+            <span id="txtHeaderGoogleBtn">Card Pass ($3/$6/$9)</span>
+          </button>
+          <div class="user-profile-pill" id="userProfilePill" style="display:none;" onclick="openAuthPayModal()">
+            <span class="user-avatar-circle" id="userAvatarLetter">U</span>
+            <span class="user-email-short" id="txtUserEmail">user@gmail.com</span>
+            <span class="user-pass-badge" id="txtUserPassBadge">Free</span>
+            <button type="button" class="btn-header-pay-pass" id="btnHeaderPayPass" onclick="event.stopPropagation(); openAuthPayModal();">
+              <i class="fa-regular fa-credit-card"></i> <span id="txtBtnHeaderPay">Card Pass</span>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -486,6 +502,130 @@
     window.toggleDualViewMode = toggleDualViewMode;
   </script>
 
+  <!-- Unified 1-Click Card Payment & Optional Google Login Modal (Lemon Squeezy) -->
+  <div class="modal-overlay notranslate" id="authPayModal" translate="no" onclick="if(event.target===this) closeAuthPayModal()">
+    <div class="modal-content auth-pay-modal">
+      <button type="button" class="modal-close-btn" onclick="closeAuthPayModal()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-brand-head">
+        <span class="patent-badge" id="txtModalPatentTag">?룆 PATENT PENDING (10-2026-0205596)</span>
+        <h3 id="txtModalTitle">??1-Click Card Checkout &amp; Unlock Slips</h3>
+        <p id="txtModalSub">Instant Lemon Squeezy Checkout 쨌 Visa, Mastercard, AMEX, Apple Pay &amp; Google Pay 쨌 No recurring subscription.</p>
+      </div>
+
+      <!-- STEP 1 (Top Priority): Plan Selection + Card Payment Box -->
+      <div class="auth-step-box" id="modalStepPayment">
+        <div class="step-label-row">
+          <span class="step-num-badge gold" id="txtStep2Badge">SELECT PASS</span>
+          <strong id="txtStep2Title">3-Tier 1-Time Extraction Pass (Consumed After 1 Extraction)</strong>
+        </div>
+
+        <!-- Three Tiered 1-Time Extraction Plans ($3 <=192 / $6 <=768 / $9 769+ combos) -->
+        <div class="plan-cards-grid">
+          <div class="plan-card selected" id="planCardTier3" onclick="selectPaymentPlan('tier3')">
+            <div class="plan-title" id="txtPlanTier3Title">??192-Combo 1-Time Pass</div>
+            <div class="plan-price" id="txtPlanTier3Price">$3.00 <small>/ 1-Time (??92)</small></div>
+            <div class="plan-desc" id="txtPlanTier3Desc">For 1 to 192 raw combinations 쨌 Unlocks 1 extraction &amp; TXT/CSV export (1 use)</div>
+          </div>
+
+          <div class="plan-card" id="planCardTier6" onclick="selectPaymentPlan('tier6')">
+            <span class="plan-recommend-ribbon" id="txtPlanRibbon6">POPULAR 쨌 ??68</span>
+            <div class="plan-title" id="txtPlanTier6Title">?뵦 768-Combo 1-Time Pass</div>
+            <div class="plan-price" id="txtPlanTier6Price">$6.00 <small>/ 1-Time (??68)</small></div>
+            <div class="plan-desc" id="txtPlanTier6Desc">For 193 to 768 raw combinations 쨌 Unlocks 1 extraction &amp; TXT/CSV export (1 use)</div>
+          </div>
+
+          <div class="plan-card" id="planCardTier9" onclick="selectPaymentPlan('tier9')">
+            <span class="plan-recommend-ribbon" id="txtPlanRibbon9">3,456+ HEAVY</span>
+            <div class="plan-title" id="txtPlanTier9Title">?뭿 Unlimited Heavy 1-Time Pass</div>
+            <div class="plan-price" id="txtPlanTier9Price">$9.00 <small>/ 1-Time (769+)</small></div>
+            <div class="plan-desc" id="txtPlanTier9Desc">For 769+ raw combinations (3,456+ combos) 쨌 Unlocks 1 heavy extraction &amp; export</div>
+          </div>
+        </div>
+
+        <!-- Credit/Debit Card Form -->
+        <div class="card-checkout-form">
+          <div class="card-brands-row">
+            <span id="txtSupportedCardsLbl" style="font-size:0.76rem; color:var(--text-muted); font-weight:700;">?뮩 Global Cards Accepted:</span>
+            <div class="card-icons-list">
+              <i class="fa-brands fa-cc-visa" title="Visa"></i>
+              <i class="fa-brands fa-cc-mastercard" title="Mastercard"></i>
+              <i class="fa-brands fa-cc-amex" title="AMEX"></i>
+              <i class="fa-brands fa-cc-jcb" title="JCB"></i>
+              <i class="fa-brands fa-cc-apple-pay" title="Apple Pay"></i>
+              <span class="kr-card-tag" id="txtKrCardTag">All Credit/Debit</span>
+            </div>
+          </div>
+
+          <div id="cardManualInputsBox" style="display:none;">
+            <div class="card-input-group">
+              <label id="lblCardNumber">Card Number</label>
+              <div class="card-num-wrap">
+                <i class="fa-regular fa-credit-card card-input-icon"></i>
+                <input type="text" id="inputCardNumber" class="card-input" placeholder="0000 0000 0000 0000" maxlength="19" oninput="formatCardNumberInput(this)">
+              </div>
+            </div>
+
+            <div class="card-input-row-2">
+              <div class="card-input-group">
+                <label id="lblCardExpiry">Expiry (MM/YY)</label>
+                <input type="text" id="inputCardExpiry" class="card-input" placeholder="MM/YY" maxlength="5" oninput="formatCardExpiryInput(this)">
+              </div>
+              <div class="card-input-group">
+                <label id="lblCardCvc">CVC / CVV</label>
+                <input type="password" id="inputCardCvc" class="card-input" placeholder="?™™? maxlength="4">
+              </div>
+              <div class="card-input-group">
+                <label id="lblCardHolder">Cardholder Name</label>
+                <input type="text" id="inputCardHolder" class="card-input" placeholder="JOHN DOE">
+              </div>
+            </div>
+          </div>
+
+          <button type="button" class="btn-pay-submit" id="btnSubmitCardPay" onclick="processCardPayment()" style="background:linear-gradient(135deg,#10b981,#059669); font-size:1rem; padding:15px; font-weight:900;">
+            <i class="fa-solid fa-credit-card"></i>
+            <span id="txtBtnPaySubmit">??Instant 1-Click Pay $3.00 &amp; Unlock Slips</span>
+          </button>
+
+          <!-- Optional Google Account Sync Box -->
+          <div class="auth-step-box" id="modalStepGoogle" style="margin-top:12px; padding:10px 14px; background:rgba(15,23,42,0.5); border:1px dashed rgba(255,255,255,0.12); border-radius:10px;">
+            <div class="step-label-row" style="margin-bottom:6px;">
+              <span class="step-num-badge" id="txtStep1Badge" style="background:rgba(56,189,248,0.2); color:#38bdf8; font-size:0.68rem; padding:1px 6px;">OPTIONAL</span>
+              <strong id="txtStep1Title" style="font-size:0.8rem; color:#94a3b8;">Receipt Email / Google Link (Optional)</strong>
+              <span class="step-done-tag" id="step1DoneTag" style="display:none; font-size:0.72rem;">??Linked</span>
+            </div>
+
+            <div id="googleLoginActionArea">
+              <div class="google-email-input-row">
+                <input type="email" id="inputGoogleEmail" class="google-email-input" placeholder="Enter email for receipt (optional)" autocomplete="email" style="height:32px; font-size:0.8rem;">
+                <button type="button" class="btn-google-signin-main" id="btnModalGoogleSignin" onclick="handleGoogleSignIn()" style="height:32px; font-size:0.78rem; padding:0 10px;">
+                  <span id="txtBtnContinueGoogle">Save Email</span>
+                </button>
+              </div>
+              <div style="font-size:0.7rem; color:var(--text-sub); margin-top:4px;" id="txtGoogleHint">* You can pay directly with card above without signing in.</div>
+            </div>
+
+            <div class="logged-in-bar" id="modalLoggedInBar" style="display:none; padding:4px 0;">
+              <div style="display:flex; align-items:center; gap:8px;">
+                <i class="fa-brands fa-google" style="color:#38bdf8;"></i>
+                <strong id="txtModalLoggedEmail" style="font-size:0.78rem;">user@gmail.com</strong>
+                <span class="user-pass-badge" id="txtModalPassStatus" style="font-size:0.7rem;">Free</span>
+              </div>
+              <button type="button" class="btn-tool" style="padding:2px 6px; font-size:0.68rem;" onclick="handleGoogleLogout()" id="txtBtnSwitchAccount">Switch</button>
+            </div>
+          </div>
+
+          <div class="security-ssl-note" id="txtSecuritySslNote" style="margin-top:10px;">
+            <i class="fa-solid fa-shield-halved" style="color:var(--accent-emerald);"></i>
+            <span>256-Bit SSL Encrypted Checkout via Lemon Squeezy 쨌 No recurring subscription 쨌 Pass is consumed after 1 extraction.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- One-Click PC & Mobile App Install Guide Modal -->
   <div class="modal-overlay notranslate" id="appInstallModal" translate="no">
     <div class="modal-content auth-pay-modal" style="max-width:560px;">
@@ -549,6 +689,7 @@
   </div>
 
   <div id="shareToast" class="share-toast" role="status" aria-live="polite"></div>
-  <script src="app.js?v=20261031_sec_shield"></script>
+  <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+  <script src="app.js?v=20261031_lemon_card_v1"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'gpc-1x2zip-20261031_sec_shield';
+const CACHE_NAME = 'gpc-1x2zip-20261031_lemon_card_v1';
 self.addEventListener('install', function(e) {
   self.skipWaiting();
 });
