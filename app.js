@@ -19,19 +19,19 @@ if (isNaN(window._usUser.vvipUntil)) window._usUser.vvipUntil = 0;
 
 // Selected Package in Store Modal
 window._selectedUsPkg = {
-  id: 'key5',
-  title: 'Starter Pack (5 Keys)',
-  price: 9.99,
-  keys: 5,
-  vvipDays: 0
+  id: 'vvip90',
+  title: '3-Month Free Pass',
+  price: 89,
+  keys: 0,
+  vvipDays: 90
 };
 
 // LemonSqueezy Checkout Links
 var US_LEMON_LINKS = {
   key5: 'https://1x2zip.lemonsqueezy.com/checkout/buy/0dfcb6fa-9499-4138-8049-bd66cf07ea9b',
-  key20: 'https://1x2zip.lemonsqueezy.com/checkout/buy/901279ef-c625-4452-910b-8892b4aa6e25',
-  key50: 'https://1x2zip.lemonsqueezy.com/checkout/buy/7d307645-4c60-470c-80e6-29cc7729d89c',
-  key100: 'https://1x2zip.lemonsqueezy.com/checkout/buy/40eb5e1a-f73f-4c26-845b-3a14eb088eb4',
+  key15: 'https://1x2zip.lemonsqueezy.com/checkout/buy/901279ef-c625-4452-910b-8892b4aa6e25',
+  key30: 'https://1x2zip.lemonsqueezy.com/checkout/buy/7d307645-4c60-470c-80e6-29cc7729d89c',
+  key70: 'https://1x2zip.lemonsqueezy.com/checkout/buy/40eb5e1a-f73f-4c26-845b-3a14eb088eb4',
   vvip30: 'https://1x2zip.lemonsqueezy.com/checkout/buy/40eb5e1a-f73f-4c26-845b-3a14eb088eb4',
   vvip90: 'https://1x2zip.lemonsqueezy.com/checkout/buy/7d307645-4c60-470c-80e6-29cc7729d89c',
   vvip180: 'https://1x2zip.lemonsqueezy.com/checkout/buy/7d307645-4c60-470c-80e6-29cc7729d89c',
@@ -1879,7 +1879,9 @@ function updateUsHeaderStatus() {
 window.openKeyChargeModal = function(tab) {
   var modal = document.getElementById('keyChargeModal');
   if (modal) modal.style.display = 'flex';
-  switchChargeModalTab(tab || 'key');
+  var mKeyEl = document.getElementById('modalMyKeyCount');
+  if (mKeyEl) mKeyEl.textContent = isUsVvipActive() ? 'VVIP' : String(window._usUser.keys);
+  switchChargeModalTab(tab || 'vvip');
 };
 
 window.closeKeyChargeModal = function() {
@@ -1892,19 +1894,22 @@ window.switchChargeModalTab = function(tab) {
   var vvipTab = document.getElementById('chargeTabVvipContent');
   var bKey = document.getElementById('tabBtnChargeKey');
   var bVvip = document.getElementById('tabBtnChargeVvip');
+  var hTitle = document.getElementById('chargeModalHeaderTitle');
 
-  if (tab === 'vvip') {
-    if (keyTab) keyTab.style.display = 'none';
-    if (vvipTab) vvipTab.style.display = 'block';
-    if (bVvip) { bVvip.style.borderColor = '#f59e0b'; bVvip.style.background = 'rgba(245,158,11,0.22)'; bVvip.style.color = '#fde047'; }
-    if (bKey) { bKey.style.borderColor = '#475569'; bKey.style.background = '#1e293b'; bKey.style.color = '#cbd5e1'; }
-    selectUsPackage('vvip30', 'VVIP 1-Month Unlimited Pass (50% OFF)', 99, 0, 30);
-  } else {
+  if (tab === 'key') {
     if (keyTab) keyTab.style.display = 'block';
     if (vvipTab) vvipTab.style.display = 'none';
-    if (bKey) { bKey.style.borderColor = '#f59e0b'; bKey.style.background = 'rgba(245,158,11,0.22)'; bKey.style.color = '#fde047'; }
-    if (bVvip) { bVvip.style.borderColor = '#475569'; bVvip.style.background = '#1e293b'; bVvip.style.color = '#cbd5e1'; }
-    selectUsPackage('key5', 'Starter Pack (5 Keys)', 9.99, 5, 0);
+    if (hTitle) hTitle.textContent = 'Small Key Top-Up';
+    if (bKey) { bKey.style.border = '2px solid #fde047'; bKey.style.background = 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)'; bKey.style.color = '#0f172a'; }
+    if (bVvip) { bVvip.style.border = '1px solid #334155'; bVvip.style.background = '#1e293b'; bVvip.style.color = '#94a3b8'; }
+    selectUsPackage('key15', '15 Keys (Value)', 14.90, 15, 0);
+  } else {
+    if (keyTab) keyTab.style.display = 'none';
+    if (vvipTab) vvipTab.style.display = 'block';
+    if (hTitle) hTitle.textContent = 'VVIP Unlimited Free Pass';
+    if (bVvip) { bVvip.style.border = '2px solid #fde047'; bVvip.style.background = 'linear-gradient(135deg, #1d4ed8 0%, #2563eb 45%, #3b82f6 100%)'; bVvip.style.color = '#ffffff'; }
+    if (bKey) { bKey.style.border = '1px solid #334155'; bKey.style.background = '#1e293b'; bKey.style.color = '#94a3b8'; }
+    selectUsPackage('vvip90', '3-Month Free Pass', 89, 0, 90);
   }
 };
 
@@ -1912,16 +1917,21 @@ window.selectUsPackage = function(id, title, price, keys, vvipDays) {
   window._selectedUsPkg = { id: id, title: title, price: price, keys: keys, vvipDays: vvipDays };
   var allCards = document.querySelectorAll('.us-price-card');
   for (var i = 0; i < allCards.length; i++) {
-    allCards[i].style.borderColor = '#334155';
+    var cid = allCards[i].id || '';
+    allCards[i].style.border = cid.indexOf('vvip') > -1 ? '1.5px solid #93c5fd' : '1.5px solid #475569';
+    allCards[i].style.boxShadow = cid.indexOf('vvip') > -1 ? '0 4px 12px rgba(37,99,235,0.45)' : 'none';
   }
   var targetCard = document.getElementById('pkgCard_' + id);
-  if (targetCard) targetCard.style.borderColor = '#fde047';
+  if (targetCard) {
+    targetCard.style.border = '2.2px solid #fde047';
+    targetCard.style.boxShadow = '0 0 16px rgba(253,224,71,0.55)';
+  }
 
   var titleEl = document.getElementById('selectedUsPkgTitle');
   var btnTxtEl = document.getElementById('btnUsCheckoutText');
   var pStr = price % 1 === 0 ? price + '.00' : price.toFixed(2);
   if (titleEl) titleEl.textContent = title + ' — $' + pStr;
-  if (btnTxtEl) btnTxtEl.textContent = 'Pay $' + pStr + ' & Instant Unlock (Visa / Master / Apple Pay)';
+  if (btnTxtEl) btnTxtEl.textContent = '[' + title + ' · $' + pStr + '] Instant Unlock';
 };
 
 window.checkoutSelectedUsPackage = function() {
@@ -2020,7 +2030,7 @@ window.logoutUsMember = function() {
 var DEFAULT_US_REVIEWS = [
   { author: 'VegasSharp88', badge: 'NBA Parlay', text: 'Hit 10/11 on my NBA spread parlay — missed Lakers by 1 pt and still cashed $1,420 thanks to the 64-slip N-1 wheel!' },
   { author: 'MiamiKing305', badge: 'MLS 14-Match', text: 'Used the 48 Slips ($48) Golden Wheel on MLS Week 35. Hit 14/14 1st Prize + six 13/14 2nd Prize slips!' },
-  { author: 'GridironPro', badge: 'NFL Sunday', text: 'Chiefs Over + Ravens ML + 49ers -6.5 locked in. The VVIP 50% OFF pass ($99) paid for itself in one Sunday.' },
+  { author: 'GridironPro', badge: 'NFL Sunday', text: 'Chiefs Over + Ravens ML + 49ers -6.5 locked in. The VVIP 50% OFF pass ($39) paid for itself in one Sunday.' },
   { author: 'HoopsSniper', badge: 'NBA W5L', text: 'Phoenix vs Lakers landed on 4-point margin (5) and the AI Double (W/5) caught it dead on.' }
 ];
 

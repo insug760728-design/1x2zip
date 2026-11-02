@@ -352,7 +352,7 @@
             <span style="font-size:0.72rem; color:#dbeafe; font-weight:700;">USA VVIP Unlimited Free Pass</span>
           </div>
           <div style="font-size:1rem; font-weight:900; line-height:1.35; margin-bottom:6px;">
-            Unlimited 24/36/48/64/96 Slip Generation <strong style="color:#fde047;">$99/mo (Was $199)</strong>
+            Unlimited 24/36/48/64/96 Slip Generation <strong style="color:#fde047;">$39/mo (Was $78)</strong>
           </div>
           <div style="display:flex; justify-content:space-between; align-items:center; font-size:0.74rem; color:#e0f2fe;">
             <span>Zero Key Deduction · NBA/NFL/MLB/NHL/MLS</span>
@@ -403,126 +403,125 @@
 
   <!-- ==================== MODAL 1: KEY TOP-UP & 50% OFF VVIP UNLIMITED PASS (#keyChargeModal) ==================== -->
   <div id="keyChargeModal" class="modal-overlay-bg" onclick="if(event.target===this)closeKeyChargeModal()">
-    <div class="modal-card-box" style="max-width:580px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; padding-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.12);">
-        <div>
-          <span style="background:linear-gradient(135deg,#f59e0b,#d97706); color:#0f172a; font-size:0.68rem; font-weight:900; padding:2px 8px; border-radius:999px;">TOKEON US OFFICIAL STORE</span>
-          <h3 style="font-size:1.15rem; font-weight:900; color:#ffffff; margin-top:4px;">🔑 Key Top-Up &amp; 👑 VVIP 50% OFF Free Pass</h3>
+    <div class="modal-card-box" style="max-width:460px; padding:14px;">
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid rgba(245,158,11,0.3);">
+        <div style="display:flex; align-items:center; gap:6px; font-weight:900; color:#ffffff; font-size:0.95rem;">
+          <i class="fa-solid fa-crown" style="color:#fde047; text-shadow:0 0 8px rgba(245,158,11,0.7);"></i>
+          <span id="chargeModalHeaderTitle" style="color:#fde047;">VVIP Unlimited Free Pass</span>
+          <span style="background:rgba(245,158,11,0.18); border:1px solid #f59e0b; border-radius:999px; padding:1px 8px; font-size:0.72rem; color:#fde047; font-weight:800;">
+            Keys: <strong id="modalMyKeyCount" style="color:#fff;">3</strong>
+          </span>
         </div>
-        <button type="button" onclick="closeKeyChargeModal()" style="background:#dc2626; color:#fff; border:none; width:32px; height:32px; border-radius:8px; font-weight:900; cursor:pointer;">✕</button>
+        <button type="button" onclick="closeKeyChargeModal()" style="background:#dc2626; color:#fff; border:none; width:30px; height:30px; border-radius:7px; font-weight:900; cursor:pointer;">✕</button>
       </div>
 
-      <!-- Modal Mode Tabs: Key Packs vs VVIP 50% OFF Pass -->
-      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:14px;">
-        <button type="button" id="tabBtnChargeKey" onclick="switchChargeModalTab('key')" style="padding:10px; border-radius:10px; border:2px solid #f59e0b; background:rgba(245,158,11,0.2); color:#fde047; font-size:0.86rem; font-weight:900; cursor:pointer;">
-          🔑 Key Packs ($9.99~)
+      <!-- Modal Mode Tabs: VVIP Unlimited Free Pass (Default Priority) vs Small Key Top-Up -->
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:10px;">
+        <button type="button" id="tabBtnChargeVvip" onclick="switchChargeModalTab('vvip')" style="height:38px; border-radius:8px; border:2px solid #fde047; background:linear-gradient(135deg, #1d4ed8 0%, #2563eb 45%, #3b82f6 100%); color:#ffffff; font-size:0.80rem; font-weight:900; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:5px; box-shadow:0 4px 14px rgba(37,99,235,0.55);">
+          <i class="fa-solid fa-crown" style="color:#fde047;"></i> <span>VVIP Unlimited Pass</span>
         </button>
-        <button type="button" id="tabBtnChargeVvip" onclick="switchChargeModalTab('vvip')" style="padding:10px; border-radius:10px; border:2px solid #475569; background:#1e293b; color:#cbd5e1; font-size:0.86rem; font-weight:900; cursor:pointer;">
-          👑 VVIP Unlimited (🔥50% OFF)
+        <button type="button" id="tabBtnChargeKey" onclick="switchChargeModalTab('key')" style="height:38px; border-radius:8px; border:1px solid #334155; background:#1e293b; color:#94a3b8; font-size:0.80rem; font-weight:900; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:5px;">
+          <i class="fa-solid fa-key" style="color:#fde047;"></i> <span>Small Key Top-Up</span>
         </button>
       </div>
 
-      <!-- TAB 1: KEY PACKS -->
-      <div id="chargeTabKeyContent">
-        <div style="font-size:0.78rem; color:#cbd5e1; margin-bottom:10px; background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.3); padding:8px 10px; border-radius:8px;">
-          💡 Keys <b>never expire</b>. Usage per generation: <b>24 Slips (1 Key)</b> · <b>36 Slips (2 Keys)</b> · <b>48 Slips (3 Keys)</b> · <b>64 Slips (2 Keys)</b> · <b>96 Slips (3 Keys)</b>.
+      <!-- TAB 1 (DEFAULT): VVIP UNLIMITED FREE PASS (50% OFF HALF-PRICE — $39 / $89 / $149 / $249) -->
+      <div id="chargeTabVvipContent">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:9px 7px; margin-top:4px; margin-bottom:10px;">
+          <div class="us-price-card" id="pkgCard_vvip30" onclick="selectUsPackage('vvip30', '1-Month Free Pass', 39, 0, 30)" style="position:relative; padding:11px 6px 8px 6px; border-radius:10px; cursor:pointer; text-align:center; background:linear-gradient(135deg, #1e40af 0%, #1d4ed8 50%, #2563eb 100%); border:1.5px solid #93c5fd; box-shadow:0 4px 12px rgba(37,99,235,0.45);">
+            <span style="position:absolute; top:-8px; right:8px; padding:1.5px 7px; font-size:0.61rem; font-weight:900; border-radius:999px; background:linear-gradient(135deg, #0284c7, #2563eb); color:#fff; border:1px solid #fde047;">🔥 50% OFF</span>
+            <div style="font-size:0.83rem; font-weight:900; color:#ffffff; margin-bottom:2px;"><i class="fa-solid fa-crown" style="color:#fde047; font-size:0.72rem;"></i> 1-Month Pass</div>
+            <div style="font-size:0.65rem; color:#dbeafe; font-weight:700;"><span style="text-decoration:line-through; opacity:0.85;">Was $78</span> · <span style="color:#fef08a; font-weight:800;">$1.30 / day</span></div>
+            <div style="font-size:1.05rem; font-weight:900; color:#fde047; margin-top:2px;">$39.00</div>
+          </div>
+
+          <div class="us-price-card" id="pkgCard_vvip90" onclick="selectUsPackage('vvip90', '3-Month Free Pass', 89, 0, 90)" style="position:relative; padding:11px 6px 8px 6px; border-radius:10px; cursor:pointer; text-align:center; background:linear-gradient(135deg, #1d4ed8 0%, #2563eb 40%, #3b82f6 100%); border:2.2px solid #fde047; box-shadow:0 0 16px rgba(37,99,235,0.85);">
+            <span style="position:absolute; top:-8px; right:8px; padding:1.5px 7px; font-size:0.61rem; font-weight:900; border-radius:999px; background:linear-gradient(135deg, #f59e0b, #ea580c); color:#fff; border:1px solid #fde047;">👑 BEST · 50%</span>
+            <div style="font-size:0.83rem; font-weight:900; color:#ffffff; margin-bottom:2px;"><i class="fa-solid fa-crown" style="color:#fde047; font-size:0.72rem;"></i> 3-Month Pass</div>
+            <div style="font-size:0.65rem; color:#dbeafe; font-weight:700;"><span style="text-decoration:line-through; opacity:0.85;">Was $178</span> · <span style="color:#fef08a; font-weight:800;">$29 / mo</span></div>
+            <div style="font-size:1.05rem; font-weight:900; color:#fde047; margin-top:2px;">$89.00</div>
+          </div>
+
+          <div class="us-price-card" id="pkgCard_vvip180" onclick="selectUsPackage('vvip180', '6-Month Free Pass', 149, 0, 180)" style="position:relative; padding:11px 6px 8px 6px; border-radius:10px; cursor:pointer; text-align:center; background:linear-gradient(135deg, #1e40af 0%, #1d4ed8 50%, #2563eb 100%); border:1.5px solid #93c5fd; box-shadow:0 4px 12px rgba(37,99,235,0.45);">
+            <span style="position:absolute; top:-8px; right:8px; padding:1.5px 7px; font-size:0.61rem; font-weight:900; border-radius:999px; background:linear-gradient(135deg, #0284c7, #2563eb); color:#fff; border:1px solid #fde047;">💎 50% OFF</span>
+            <div style="font-size:0.83rem; font-weight:900; color:#ffffff; margin-bottom:2px;"><i class="fa-solid fa-crown" style="color:#fde047; font-size:0.72rem;"></i> 6-Month Pass</div>
+            <div style="font-size:0.65rem; color:#dbeafe; font-weight:700;"><span style="text-decoration:line-through; opacity:0.85;">Was $298</span> · <span style="color:#fef08a; font-weight:800;">$24 / mo</span></div>
+            <div style="font-size:1.05rem; font-weight:900; color:#fde047; margin-top:2px;">$149.00</div>
+          </div>
+
+          <div class="us-price-card" id="pkgCard_vvip365" onclick="selectUsPackage('vvip365', '12-Month Free Pass', 249, 0, 365)" style="position:relative; padding:11px 6px 8px 6px; border-radius:10px; cursor:pointer; text-align:center; background:linear-gradient(135deg, #1e40af 0%, #1d4ed8 50%, #2563eb 100%); border:1.5px solid #93c5fd; box-shadow:0 4px 12px rgba(37,99,235,0.45);">
+            <span style="position:absolute; top:-8px; right:8px; padding:1.5px 7px; font-size:0.61rem; font-weight:900; border-radius:999px; background:linear-gradient(135deg, #0284c7, #2563eb); color:#fff; border:1px solid #fde047;">🏆 50% OFF</span>
+            <div style="font-size:0.83rem; font-weight:900; color:#ffffff; margin-bottom:2px;"><i class="fa-solid fa-crown" style="color:#fde047; font-size:0.72rem;"></i> 12-Month Pass</div>
+            <div style="font-size:0.65rem; color:#dbeafe; font-weight:700;"><span style="text-decoration:line-through; opacity:0.85;">Was $498</span> · <span style="color:#fef08a; font-weight:800;">$20 / mo</span></div>
+            <div style="font-size:1.05rem; font-weight:900; color:#fde047; margin-top:2px;">$249.00</div>
+          </div>
         </div>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:14px;">
-          <div class="us-price-card" id="pkgCard_key5" onclick="selectUsPackage('key5', 'Starter Pack (5 Keys)', 9.99, 5, 0)" style="background:#1e293b; border:2px solid #38bdf8; border-radius:10px; padding:12px; cursor:pointer;">
-            <div style="font-size:0.74rem; color:#94a3b8; font-weight:800;">⚡ Starter Pack</div>
-            <div style="font-size:1.05rem; font-weight:900; color:#ffffff; margin:3px 0;">🔑 5 Keys</div>
-            <div style="font-size:1.25rem; font-weight:900; color:#fde047;">$9.99</div>
-            <div style="font-size:0.68rem; color:#38bdf8; font-weight:700;">$1.98 / key · No Expiration</div>
-          </div>
 
-          <div class="us-price-card" id="pkgCard_key20" onclick="selectUsPackage('key20', 'Pro Pack (20 Keys)', 29, 20, 0)" style="background:#1e293b; border:2px solid #334155; border-radius:10px; padding:12px; cursor:pointer;">
-            <div style="font-size:0.74rem; color:#34d399; font-weight:800;">🔥 Pro Pack (27% OFF)</div>
-            <div style="font-size:1.05rem; font-weight:900; color:#ffffff; margin:3px 0;">🔑 20 Keys</div>
-            <div style="font-size:1.25rem; font-weight:900; color:#fde047;">$29.00</div>
-            <div style="font-size:0.68rem; color:#a7f3d0; font-weight:700;">$1.45 / key · Most Flexible</div>
+        <!-- VVIP Exclusive Perks Banner (Identical to tokeon.kr) -->
+        <div style="background:linear-gradient(90deg, rgba(29,78,216,0.35) 0%, rgba(37,99,235,0.28) 100%); border:1.5px solid #60a5fa; border-radius:8px; padding:8px 10px; margin-bottom:10px;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:3px;">
+            <span style="color:#fde047; font-size:0.78rem; font-weight:900;"><i class="fa-solid fa-crown"></i> VVIP Exclusive 3-Point Perks</span>
+            <span style="color:#93c5fd; font-size:0.70rem; font-weight:800;">Unlimited Free Pass</span>
           </div>
-
-          <div class="us-price-card" id="pkgCard_key50" onclick="selectUsPackage('key50', 'Popular Pack (50 Keys)', 59, 50, 0)" style="background:#1e293b; border:2px solid #334155; border-radius:10px; padding:12px; cursor:pointer; position:relative;">
-            <span style="position:absolute; top:-8px; right:8px; background:#f59e0b; color:#0f172a; font-size:0.62rem; font-weight:900; padding:1px 6px; border-radius:999px;">BEST SELLER</span>
-            <div style="font-size:0.74rem; color:#fbbf24; font-weight:800;">⭐ Popular Pack (41% OFF)</div>
-            <div style="font-size:1.05rem; font-weight:900; color:#ffffff; margin:3px 0;">🔑 50 Keys</div>
-            <div style="font-size:1.25rem; font-weight:900; color:#fde047;">$59.00</div>
-            <div style="font-size:0.68rem; color:#fde68a; font-weight:700;">$1.18 / key · Heavy Syndicate</div>
-          </div>
-
-          <div class="us-price-card" id="pkgCard_key100" onclick="selectUsPackage('key100', 'Hot Deal Pack (100 Keys)', 99, 100, 0)" style="background:#1e293b; border:2px solid #334155; border-radius:10px; padding:12px; cursor:pointer;">
-            <div style="font-size:0.74rem; color:#f43f5e; font-weight:800;">💎 Hot Deal (50% OFF)</div>
-            <div style="font-size:1.05rem; font-weight:900; color:#ffffff; margin:3px 0;">🔑 100 Keys</div>
-            <div style="font-size:1.25rem; font-weight:900; color:#fde047;">$99.00</div>
-            <div style="font-size:0.68rem; color:#fda4af; font-weight:700;">$0.99 / key · Lowest Unit Cost</div>
+          <div style="display:flex; flex-direction:column; gap:2px; font-size:0.73rem; color:#f1f5f9; line-height:1.4;">
+            <div><i class="fa-solid fa-check" style="color:#38bdf8;"></i> <b>Unlimited All-Sport Slips</b>: MLS 1X2 · NBA W5L · US Parlay (0 Keys Used)</div>
+            <div><i class="fa-solid fa-check" style="color:#38bdf8;"></i> <b>100% Key Preservation</b>: Existing Keys remain safe in your account</div>
+            <div><i class="fa-solid fa-check" style="color:#38bdf8;"></i> <b>Gold Crown VIP Badge</b> &amp; 24/7 Instant Priority Access</div>
           </div>
         </div>
       </div>
 
-      <!-- TAB 2: VVIP UNLIMITED FREE PASS (50% OFF HALF-PRICE EVENT) -->
-      <div id="chargeTabVvipContent" style="display:none;">
-        <div style="font-size:0.78rem; color:#fef08a; margin-bottom:10px; background:linear-gradient(135deg,rgba(245,158,11,0.22),rgba(220,38,38,0.22)); border:1.5px solid #f59e0b; padding:9px 11px; border-radius:8px; font-weight:800;">
-          🎉 <b>50% OFF HALF-PRICE EVENT APPLIED!</b> Generate unlimited 24/36/48/64/96 slips across MLS, NBA, NFL, MLB &amp; NHL with <b>0 Key deduction</b>!
+      <!-- TAB 2: SMALL KEY TOP-UP (5 / 15 / 30 / 70 KEYS — $5.90 / $14.90 / $24.90 / $49.00) -->
+      <div id="chargeTabKeyContent" style="display:none;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:9px 7px; margin-top:4px; margin-bottom:10px;">
+          <div class="us-price-card" id="pkgCard_key5" onclick="selectUsPackage('key5', '5 Keys (Starter)', 5.90, 5, 0)" style="position:relative; padding:11px 6px 8px 6px; border-radius:10px; cursor:pointer; text-align:center; background:#1e293b; border:1.5px solid #475569;">
+            <span style="position:absolute; top:-8px; right:8px; padding:1.5px 7px; font-size:0.61rem; font-weight:900; border-radius:999px; background:#0284c7; color:#fff; border:1px solid #38bdf8;">🌱 Starter · 76% OFF</span>
+            <div style="font-size:0.86rem; font-weight:900; color:#ffffff; margin-bottom:2px;">🔑 5 Keys</div>
+            <div style="font-size:0.65rem; color:#cbd5e1; font-weight:700;"><span style="text-decoration:line-through; opacity:0.8;">Was $25</span> · <span style="color:#38bdf8; font-weight:800;">$1.18 / Key</span></div>
+            <div style="font-size:1.05rem; font-weight:900; color:#fde047; margin-top:2px;">$5.90</div>
+          </div>
+
+          <div class="us-price-card" id="pkgCard_key15" onclick="selectUsPackage('key15', '15 Keys (Value)', 14.90, 15, 0)" style="position:relative; padding:11px 6px 8px 6px; border-radius:10px; cursor:pointer; text-align:center; background:#1e293b; border:2.2px solid #fde047;">
+            <span style="position:absolute; top:-8px; right:8px; padding:1.5px 7px; font-size:0.61rem; font-weight:900; border-radius:999px; background:#10b981; color:#022c22; border:1px solid #fde047;">👍 Value · 80% OFF</span>
+            <div style="font-size:0.86rem; font-weight:900; color:#ffffff; margin-bottom:2px;">🔑 15 Keys</div>
+            <div style="font-size:0.65rem; color:#cbd5e1; font-weight:700;"><span style="text-decoration:line-through; opacity:0.8;">Was $75</span> · <span style="color:#34d399; font-weight:800;">$0.99 / Key</span></div>
+            <div style="font-size:1.05rem; font-weight:900; color:#fde047; margin-top:2px;">$14.90</div>
+          </div>
+
+          <div class="us-price-card" id="pkgCard_key30" onclick="selectUsPackage('key30', '30 Keys (Popular)', 24.90, 30, 0)" style="position:relative; padding:11px 6px 8px 6px; border-radius:10px; cursor:pointer; text-align:center; background:#1e293b; border:1.5px solid #475569;">
+            <span style="position:absolute; top:-8px; right:8px; padding:1.5px 7px; font-size:0.61rem; font-weight:900; border-radius:999px; background:#f59e0b; color:#0f172a; border:1px solid #fde047;">🔥 Popular · 83% OFF</span>
+            <div style="font-size:0.86rem; font-weight:900; color:#ffffff; margin-bottom:2px;">🔑 30 Keys</div>
+            <div style="font-size:0.65rem; color:#cbd5e1; font-weight:700;"><span style="text-decoration:line-through; opacity:0.8;">Was $150</span> · <span style="color:#fde047; font-weight:800;">$0.83 / Key</span></div>
+            <div style="font-size:1.05rem; font-weight:900; color:#fde047; margin-top:2px;">$24.90</div>
+          </div>
+
+          <div class="us-price-card" id="pkgCard_key70" onclick="selectUsPackage('key70', '70 Keys (Hot Deal)', 49.00, 70, 0)" style="position:relative; padding:11px 6px 8px 6px; border-radius:10px; cursor:pointer; text-align:center; background:#1e293b; border:1.5px solid #475569;">
+            <span style="position:absolute; top:-8px; right:8px; padding:1.5px 7px; font-size:0.61rem; font-weight:900; border-radius:999px; background:#e11d48; color:#fff; border:1px solid #fde047;">⚡ Hot Deal · 86% OFF</span>
+            <div style="font-size:0.86rem; font-weight:900; color:#ffffff; margin-bottom:2px;">🔑 70 Keys</div>
+            <div style="font-size:0.65rem; color:#cbd5e1; font-weight:700;"><span style="text-decoration:line-through; opacity:0.8;">Was $350</span> · <span style="color:#fda4af; font-weight:800;">$0.70 / Key</span></div>
+            <div style="font-size:1.05rem; font-weight:900; color:#fde047; margin-top:2px;">$49.00</div>
+          </div>
         </div>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:14px;">
-          <div class="us-price-card" id="pkgCard_vvip30" onclick="selectUsPackage('vvip30', 'VVIP 1-Month Unlimited Pass (50% OFF)', 99, 0, 30)" style="background:#1e293b; border:2px solid #f59e0b; border-radius:10px; padding:12px; cursor:pointer;">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-size:0.74rem; color:#fbbf24; font-weight:900;">👑 1 Month Unlimited</span>
-              <span style="background:#dc2626; color:#fff; font-size:0.62rem; font-weight:900; padding:1px 6px; border-radius:999px;">50% OFF</span>
-            </div>
-            <div style="font-size:0.76rem; color:#94a3b8; text-decoration:line-through; margin-top:4px;">Regular $199</div>
-            <div style="font-size:1.35rem; font-weight:900; color:#fde047;">$99.00</div>
-            <div style="font-size:0.68rem; color:#6ee7b7; font-weight:800;">30 Days Unlimited · $3.30/day</div>
-          </div>
-
-          <div class="us-price-card" id="pkgCard_vvip90" onclick="selectUsPackage('vvip90', 'VVIP 3-Month Unlimited Pass (50% OFF)', 249, 0, 90)" style="background:#1e293b; border:2px solid #334155; border-radius:10px; padding:12px; cursor:pointer; position:relative;">
-            <span style="position:absolute; top:-8px; right:8px; background:#f59e0b; color:#0f172a; font-size:0.62rem; font-weight:900; padding:1px 6px; border-radius:999px;">MOST POPULAR</span>
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-size:0.74rem; color:#38bdf8; font-weight:900;">👑 3 Months Unlimited</span>
-              <span style="background:#dc2626; color:#fff; font-size:0.62rem; font-weight:900; padding:1px 6px; border-radius:999px;">50% OFF</span>
-            </div>
-            <div style="font-size:0.76rem; color:#94a3b8; text-decoration:line-through; margin-top:4px;">Regular $499</div>
-            <div style="font-size:1.35rem; font-weight:900; color:#fde047;">$249.00</div>
-            <div style="font-size:0.68rem; color:#6ee7b7; font-weight:800;">90 Days Unlimited · $2.76/day</div>
-          </div>
-
-          <div class="us-price-card" id="pkgCard_vvip180" onclick="selectUsPackage('vvip180', 'VVIP 6-Month Unlimited Pass (50% OFF)', 449, 0, 180)" style="background:#1e293b; border:2px solid #334155; border-radius:10px; padding:12px; cursor:pointer;">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-size:0.74rem; color:#c084fc; font-weight:900;">💎 6 Months Unlimited</span>
-              <span style="background:#dc2626; color:#fff; font-size:0.62rem; font-weight:900; padding:1px 6px; border-radius:999px;">50% OFF</span>
-            </div>
-            <div style="font-size:0.76rem; color:#94a3b8; text-decoration:line-through; margin-top:4px;">Regular $899</div>
-            <div style="font-size:1.35rem; font-weight:900; color:#fde047;">$449.00</div>
-            <div style="font-size:0.68rem; color:#6ee7b7; font-weight:800;">180 Days Unlimited · $2.49/day</div>
-          </div>
-
-          <div class="us-price-card" id="pkgCard_vvip365" onclick="selectUsPackage('vvip365', 'VVIP 1-Year Unlimited Pass (50% OFF)', 799, 0, 365)" style="background:#1e293b; border:2px solid #334155; border-radius:10px; padding:12px; cursor:pointer;">
-            <div style="display:flex; justify-content:space-between; align-items:center;">
-              <span style="font-size:0.74rem; color:#fde047; font-weight:900;">🏆 1 Year Unlimited</span>
-              <span style="background:#dc2626; color:#fff; font-size:0.62rem; font-weight:900; padding:1px 6px; border-radius:999px;">50% OFF</span>
-            </div>
-            <div style="font-size:0.76rem; color:#94a3b8; text-decoration:line-through; margin-top:4px;">Regular $1,599</div>
-            <div style="font-size:1.35rem; font-weight:900; color:#fde047;">$799.00</div>
-            <div style="font-size:0.68rem; color:#6ee7b7; font-weight:800;">365 Days Unlimited · $2.18/day</div>
-          </div>
+        <div style="font-size:0.74rem; color:#cbd5e1; margin-bottom:10px; background:rgba(56,189,248,0.1); border:1px solid rgba(56,189,248,0.3); padding:7px 10px; border-radius:8px;">
+          💡 Keys <b>never expire</b>. 24 Slips = <b>1 Key</b> · 36/64 Slips = <b>2 Keys</b> · 48/96 Slips = <b>3 Keys</b>.
         </div>
       </div>
 
       <!-- Selected Package Checkout Box -->
-      <div style="background:#111827; border:1.5px solid #38bdf8; border-radius:11px; padding:12px; margin-bottom:12px;">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
-          <span style="font-size:0.82rem; color:#94a3b8; font-weight:800;">Selected Plan:</span>
-          <span id="selectedUsPkgTitle" style="font-size:0.92rem; color:#fde047; font-weight:900;">Starter Pack (5 Keys) — $9.99</span>
+      <div style="background:#111827; border:1.5px solid #38bdf8; border-radius:10px; padding:10px; margin-bottom:10px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:7px;">
+          <span style="font-size:0.78rem; color:#94a3b8; font-weight:800;">Selected Plan:</span>
+          <span id="selectedUsPkgTitle" style="font-size:0.88rem; color:#fde047; font-weight:900;">3-Month Free Pass — $89.00</span>
         </div>
-        <button type="button" onclick="checkoutSelectedUsPackage()" style="width:100%; padding:13px; border-radius:9px; border:1.5px solid #fde047; background:linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%); color:#ffffff; font-size:0.96rem; font-weight:900; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.45);">
-          <i class="fa-solid fa-credit-card"></i> <span id="btnUsCheckoutText">Pay $9.99 &amp; Instant Unlock (Visa / Master / Apple Pay)</span>
+        <button type="button" onclick="checkoutSelectedUsPackage()" style="width:100%; height:42px; border-radius:9px; border:1.5px solid #93c5fd; background:linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #3b82f6 100%); color:#ffffff; font-size:0.88rem; font-weight:900; cursor:pointer; box-shadow:0 4px 14px rgba(37,99,235,0.55); display:flex; align-items:center; justify-content:center; gap:6px;">
+          <i class="fa-solid fa-bolt" style="color:#fde047;"></i> <span id="btnUsCheckoutText">[3-Month Free Pass · $89.00] Instant Unlock</span>
         </button>
       </div>
 
       <!-- Promo / VIP Activation Code Box -->
       <div style="display:flex; gap:6px; align-items:center;">
-        <input type="text" id="inpUsPromoCode" placeholder="Have a VIP / Promo Code? Enter here..." style="flex:1; padding:9px 11px; border-radius:8px; border:1px solid #475569; background:#1e293b; color:#fff; font-size:0.8rem; font-weight:700;">
-        <button type="button" onclick="redeemUsPromoCode()" style="padding:9px 14px; border-radius:8px; border:1px solid #f59e0b; background:#f59e0b; color:#0f172a; font-size:0.8rem; font-weight:900; cursor:pointer;">Redeem</button>
+        <input type="text" id="inpUsPromoCode" placeholder="Have a Coupon / VIP Code? Enter here..." style="flex:1; height:32px; padding:0 10px; border-radius:7px; border:1px solid #475569; background:#1e293b; color:#fff; font-size:0.78rem; font-weight:700;">
+        <button type="button" onclick="redeemUsPromoCode()" style="height:32px; padding:0 12px; border-radius:7px; border:none; background:#6366f1; color:#ffffff; font-size:0.76rem; font-weight:900; cursor:pointer;">Redeem</button>
       </div>
     </div>
   </div>
