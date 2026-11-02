@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tokeon-us-20261102_v2';
+const CACHE_NAME = 'tokeon-us-20261102_us_fortress_v2';
 self.addEventListener('install', function(e) {
   self.skipWaiting();
 });
