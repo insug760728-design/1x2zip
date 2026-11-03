@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tokeon-us-20261103_patent14_v1';
+const CACHE_NAME = 'tokeon-us-20261103_clean_ui_v2';
 self.addEventListener('install', function(e) {
   self.skipWaiting();
 });
