@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tokeon-us-20261103_clean_ui_v2';
+const CACHE_NAME = 'tokeon-us-20261104_betman_10m';
 self.addEventListener('install', function(e) {
   self.skipWaiting();
 });
