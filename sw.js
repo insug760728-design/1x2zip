@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tokeon-us-20261106_us_espn_live_v4';
+const CACHE_NAME = 'tokeon-us-20261107_us_fortress_v5';
 self.addEventListener('install', function(e) {
   self.skipWaiting();
 });
