@@ -1,5 +1,5 @@
 {
-  "version": "2026-10-30-v3",
+  "version": "2026-11-06T22:27:30.461Z",
   "description": "TOKEON Official Published 14-Match Pool Rounds Registry (Auto-Synced with ESPN Official Scoreboards across US, UK, IT, ES, BR, JP, CN)",
   "rounds": [
     {
@@ -14,20 +14,104 @@
       "isUpcoming": false,
       "statusTag": "Active",
       "matches": [
-        { "home": "Charlotte FC", "away": "Orlando City SC", "league": "MLS", "date": "Oct 31 19:00", "status": "OPEN" },
-        { "home": "FC Cincinnati", "away": "Philadelphia Union", "league": "MLS", "date": "Oct 31 19:30", "status": "OPEN" },
-        { "home": "Columbus Crew", "away": "D.C. United", "league": "MLS", "date": "Oct 31 19:30", "status": "OPEN" },
-        { "home": "New York City FC", "away": "CF Montréal", "league": "MLS", "date": "Oct 31 19:30", "status": "OPEN" },
-        { "home": "LA Galaxy", "away": "Austin FC", "league": "MLS", "date": "Oct 31 22:30", "status": "OPEN" },
-        { "home": "Vancouver Whitecaps", "away": "Seattle Sounders FC", "league": "MLS", "date": "Oct 31 22:30", "status": "OPEN" },
-        { "home": "Atlanta United FC", "away": "Toronto FC", "league": "MLS", "date": "Nov 1 16:00", "status": "OPEN" },
-        { "home": "Nashville SC", "away": "Red Bull New York", "league": "MLS", "date": "Nov 1 18:00", "status": "OPEN" },
-        { "home": "New England Revolution", "away": "Inter Miami CF", "league": "MLS", "date": "Nov 1 18:15", "status": "OPEN" },
-        { "home": "LAFC", "away": "Minnesota United FC", "league": "MLS", "date": "Nov 1 21:00", "status": "OPEN" },
-        { "home": "Chelsea", "away": "Manchester United", "league": "Premier League", "date": "Oct 31 08:30", "status": "OPEN" },
-        { "home": "Tottenham Hotspur", "away": "Crystal Palace", "league": "Premier League", "date": "Oct 31 13:30", "status": "OPEN" },
-        { "home": "AC Milan", "away": "Inter Milan", "league": "Serie A", "date": "Oct 31 15:45", "status": "OPEN" },
-        { "home": "Liverpool", "away": "Arsenal", "league": "Premier League", "date": "Nov 1 11:30", "status": "OPEN" }
+        {
+          "home": "Charlotte FC",
+          "away": "Orlando City SC",
+          "league": "MLS",
+          "date": "Oct 31 19:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "FC Cincinnati",
+          "away": "Philadelphia Union",
+          "league": "MLS",
+          "date": "Oct 31 19:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Columbus Crew",
+          "away": "D.C. United",
+          "league": "MLS",
+          "date": "Oct 31 19:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "New York City FC",
+          "away": "CF Montréal",
+          "league": "MLS",
+          "date": "Oct 31 19:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "LA Galaxy",
+          "away": "Austin FC",
+          "league": "MLS",
+          "date": "Oct 31 22:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Vancouver Whitecaps",
+          "away": "Seattle Sounders FC",
+          "league": "MLS",
+          "date": "Oct 31 22:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Atlanta United FC",
+          "away": "Toronto FC",
+          "league": "MLS",
+          "date": "Nov 1 16:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Nashville SC",
+          "away": "Red Bull New York",
+          "league": "MLS",
+          "date": "Nov 1 18:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "New England Revolution",
+          "away": "Inter Miami CF",
+          "league": "MLS",
+          "date": "Nov 1 18:15",
+          "status": "OPEN"
+        },
+        {
+          "home": "LAFC",
+          "away": "Minnesota United FC",
+          "league": "MLS",
+          "date": "Nov 1 21:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Chelsea",
+          "away": "Manchester United",
+          "league": "Premier League",
+          "date": "Oct 31 08:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Tottenham Hotspur",
+          "away": "Crystal Palace",
+          "league": "Premier League",
+          "date": "Oct 31 13:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "AC Milan",
+          "away": "Inter Milan",
+          "league": "Serie A",
+          "date": "Oct 31 15:45",
+          "status": "OPEN"
+        },
+        {
+          "home": "Liverpool",
+          "away": "Arsenal",
+          "league": "Premier League",
+          "date": "Nov 1 11:30",
+          "status": "OPEN"
+        }
       ]
     },
     {
@@ -42,20 +126,888 @@
       "isUpcoming": false,
       "statusTag": "販売中",
       "matches": [
-        { "home": "ファジアーノ岡山", "away": "FC東京", "league": "J1リーグ", "date": "10.31 14:00", "status": "OPEN" },
-        { "home": "京都サンガ", "away": "清水エスパルス", "league": "J1リーグ", "date": "10.31 14:00", "status": "OPEN" },
-        { "home": "水戸ホーリーホック", "away": "サンフレッチェ広島", "league": "J1リーグ", "date": "10.31 14:00", "status": "OPEN" },
-        { "home": "鹿島アントラーズ", "away": "セレッソ大阪", "league": "J1リーグ", "date": "10.31 15:00", "status": "OPEN" },
-        { "home": "ヴィッセル神戸", "away": "名古屋グランパス", "league": "J1リーグ", "date": "10.31 15:00", "status": "OPEN" },
-        { "home": "柏レイソル", "away": "浦和レッズ", "league": "J1リーグ", "date": "10.31 16:00", "status": "OPEN" },
-        { "home": "横浜F・マリノス", "away": "川崎フロンターレ", "league": "J1リーグ", "date": "11.01 13:00", "status": "OPEN" },
-        { "home": "ジェフ千葉", "away": "アビスパ福岡", "league": "J1リーグ", "date": "11.01 14:00", "status": "OPEN" },
-        { "home": "V・ファーレン長崎", "away": "東京ヴェルディ", "league": "J1リーグ", "date": "11.01 14:00", "status": "OPEN" },
-        { "home": "FC町田ゼルビア", "away": "ガンバ大阪", "league": "J1リーグ", "date": "11.01 15:00", "status": "OPEN" },
-        { "home": "チェルシー", "away": "マンチェスター・U", "league": "プレミア", "date": "10.31 21:30", "status": "OPEN" },
-        { "home": "ボーンマス", "away": "リーズ", "league": "プレミア", "date": "11.01 00:00", "status": "OPEN" },
-        { "home": "トッテナム", "away": "クリスタル・パレス", "league": "プレミア", "date": "11.01 02:30", "status": "OPEN" },
-        { "home": "リヴァプール", "away": "アーセナル", "league": "プレミア", "date": "11.02 01:30", "status": "OPEN" }
+        {
+          "home": "ファジアーノ岡山",
+          "away": "FC東京",
+          "league": "J1リーグ",
+          "date": "10.31 14:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "京都サンガ",
+          "away": "清水エスパルス",
+          "league": "J1リーグ",
+          "date": "10.31 14:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "水戸ホーリーホック",
+          "away": "サンフレッチェ広島",
+          "league": "J1リーグ",
+          "date": "10.31 14:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "鹿島アントラーズ",
+          "away": "セレッソ大阪",
+          "league": "J1リーグ",
+          "date": "10.31 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "ヴィッセル神戸",
+          "away": "名古屋グランパス",
+          "league": "J1リーグ",
+          "date": "10.31 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "柏レイソル",
+          "away": "浦和レッズ",
+          "league": "J1リーグ",
+          "date": "10.31 16:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "横浜F・マリノス",
+          "away": "川崎フロンターレ",
+          "league": "J1リーグ",
+          "date": "11.01 13:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "ジェフ千葉",
+          "away": "アビスパ福岡",
+          "league": "J1リーグ",
+          "date": "11.01 14:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "V・ファーレン長崎",
+          "away": "東京ヴェルディ",
+          "league": "J1リーグ",
+          "date": "11.01 14:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "FC町田ゼルビア",
+          "away": "ガンバ大阪",
+          "league": "J1リーグ",
+          "date": "11.01 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "チェルシー",
+          "away": "マンチェスター・U",
+          "league": "プレミア",
+          "date": "10.31 21:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "ボーンマス",
+          "away": "リーズ",
+          "league": "プレミア",
+          "date": "11.01 00:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "トッテナム",
+          "away": "クリスタル・パレス",
+          "league": "プレミア",
+          "date": "11.01 02:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "リヴァプール",
+          "away": "アーセナル",
+          "league": "プレミア",
+          "date": "11.02 01:30",
+          "status": "OPEN"
+        }
+      ]
+    },
+    {
+      "sport": "soccer",
+      "country": "UK",
+      "id": "UK_SOC_20261106",
+      "roundNum": 20261106,
+      "badge": "Matchday Auto (11.06)",
+      "label": "Matchday Auto 14-Match Official Slate (20261106)",
+      "deadline": "11.06 Auto-Sync",
+      "isPast": false,
+      "isUpcoming": false,
+      "statusTag": "Active",
+      "matches": [
+        {
+          "home": "Leeds United",
+          "away": "Tottenham Hotspur",
+          "league": "ENG.1",
+          "date": "11.07 12:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Arsenal",
+          "away": "Hull City",
+          "league": "ENG.1",
+          "date": "11.07 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Fulham",
+          "away": "Newcastle United",
+          "league": "ENG.1",
+          "date": "11.07 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Nottingham Forest",
+          "away": "Manchester City",
+          "league": "ENG.1",
+          "date": "11.07 17:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Bristol City",
+          "away": "Norwich City",
+          "league": "ENG.2",
+          "date": "11.07 12:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Portsmouth",
+          "away": "Stoke City",
+          "league": "ENG.2",
+          "date": "11.07 12:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Wrexham",
+          "away": "Wolverhampton Wanderers",
+          "league": "ENG.2",
+          "date": "11.07 12:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Birmingham City",
+          "away": "Swansea City",
+          "league": "ENG.2",
+          "date": "11.07 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Blackburn Rovers",
+          "away": "West Ham United",
+          "league": "ENG.2",
+          "date": "11.07 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Cardiff City",
+          "away": "Burnley",
+          "league": "ENG.2",
+          "date": "11.07 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Charlton Athletic",
+          "away": "Sheffield United",
+          "league": "ENG.2",
+          "date": "11.07 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Preston North End",
+          "away": "Southampton",
+          "league": "ENG.2",
+          "date": "11.07 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Queens Park Rangers",
+          "away": "Lincoln City",
+          "league": "ENG.2",
+          "date": "11.07 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Watford",
+          "away": "Middlesbrough",
+          "league": "ENG.2",
+          "date": "11.07 15:00",
+          "status": "OPEN"
+        }
+      ]
+    },
+    {
+      "sport": "soccer",
+      "country": "CN",
+      "id": "CN_SOC_20261106",
+      "roundNum": 20261106,
+      "badge": "足彩14场 自动期 (11.06)",
+      "label": "足彩14场 自动期 14-Match Official Slate (20261106)",
+      "deadline": "11.06 Auto-Sync",
+      "isPast": false,
+      "isUpcoming": false,
+      "statusTag": "Active",
+      "matches": [
+        {
+          "home": "Leeds United",
+          "away": "Tottenham Hotspur",
+          "league": "ENG.1",
+          "date": "11.07 12:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Arsenal",
+          "away": "Hull City",
+          "league": "ENG.1",
+          "date": "11.07 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Fulham",
+          "away": "Newcastle United",
+          "league": "ENG.1",
+          "date": "11.07 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Nottingham Forest",
+          "away": "Manchester City",
+          "league": "ENG.1",
+          "date": "11.07 17:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Málaga",
+          "away": "Racing Santander",
+          "league": "ESP.1",
+          "date": "11.07 13:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Espanyol",
+          "away": "Deportivo",
+          "league": "ESP.1",
+          "date": "11.07 15:15",
+          "status": "OPEN"
+        },
+        {
+          "home": "Osasuna",
+          "away": "Athletic Club",
+          "league": "ESP.1",
+          "date": "11.07 17:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Valencia",
+          "away": "Real Madrid",
+          "league": "ESP.1",
+          "date": "11.07 20:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Cagliari",
+          "away": "Frosinone",
+          "league": "ITA.1",
+          "date": "11.07 14:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Torino",
+          "away": "Lecce",
+          "league": "ITA.1",
+          "date": "11.07 14:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Parma",
+          "away": "Bologna",
+          "league": "ITA.1",
+          "date": "11.07 17:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "AS Roma",
+          "away": "Sassuolo",
+          "league": "ITA.1",
+          "date": "11.07 19:45",
+          "status": "OPEN"
+        },
+        {
+          "home": "Borussia Dortmund",
+          "away": "SV Elversberg",
+          "league": "GER.1",
+          "date": "11.07 14:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Mainz",
+          "away": "Bayern Munich",
+          "league": "GER.1",
+          "date": "11.07 14:30",
+          "status": "OPEN"
+        }
+      ]
+    },
+    {
+      "sport": "soccer",
+      "country": "ES",
+      "id": "ES_SOC_20261106",
+      "roundNum": 20261106,
+      "badge": "La Quiniela Auto (11.06)",
+      "label": "La Quiniela Auto 14-Match Official Slate (20261106)",
+      "deadline": "11.06 Auto-Sync",
+      "isPast": false,
+      "isUpcoming": false,
+      "statusTag": "Active",
+      "matches": [
+        {
+          "home": "Málaga",
+          "away": "Racing Santander",
+          "league": "ESP.1",
+          "date": "11.07 13:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Espanyol",
+          "away": "Deportivo",
+          "league": "ESP.1",
+          "date": "11.07 15:15",
+          "status": "OPEN"
+        },
+        {
+          "home": "Osasuna",
+          "away": "Athletic Club",
+          "league": "ESP.1",
+          "date": "11.07 17:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Valencia",
+          "away": "Real Madrid",
+          "league": "ESP.1",
+          "date": "11.07 20:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Leeds United",
+          "away": "Tottenham Hotspur",
+          "league": "ENG.1",
+          "date": "11.07 12:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Arsenal",
+          "away": "Hull City",
+          "league": "ENG.1",
+          "date": "11.07 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Fulham",
+          "away": "Newcastle United",
+          "league": "ENG.1",
+          "date": "11.07 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Nottingham Forest",
+          "away": "Manchester City",
+          "league": "ENG.1",
+          "date": "11.07 17:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Elche",
+          "away": "Real Betis",
+          "league": "ESP.1",
+          "date": "11.08 13:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Real Sociedad",
+          "away": "Rayo Vallecano",
+          "league": "ESP.1",
+          "date": "11.08 15:15",
+          "status": "OPEN"
+        },
+        {
+          "home": "Celta Vigo",
+          "away": "Levante",
+          "league": "ESP.1",
+          "date": "11.08 17:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Villarreal",
+          "away": "Getafe",
+          "league": "ESP.1",
+          "date": "11.08 17:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Atlético Madrid",
+          "away": "Barcelona",
+          "league": "ESP.1",
+          "date": "11.08 20:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Brighton & Hove Albion",
+          "away": "Brentford",
+          "league": "ENG.1",
+          "date": "11.08 14:00",
+          "status": "OPEN"
+        }
+      ]
+    },
+    {
+      "sport": "soccer",
+      "country": "IT",
+      "id": "IT_SOC_20261106",
+      "roundNum": 20261106,
+      "badge": "Totocalcio Auto (11.06)",
+      "label": "Totocalcio Auto 14-Match Official Slate (20261106)",
+      "deadline": "11.06 Auto-Sync",
+      "isPast": false,
+      "isUpcoming": false,
+      "statusTag": "Active",
+      "matches": [
+        {
+          "home": "Cagliari",
+          "away": "Frosinone",
+          "league": "ITA.1",
+          "date": "11.07 14:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Torino",
+          "away": "Lecce",
+          "league": "ITA.1",
+          "date": "11.07 14:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Parma",
+          "away": "Bologna",
+          "league": "ITA.1",
+          "date": "11.07 17:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "AS Roma",
+          "away": "Sassuolo",
+          "league": "ITA.1",
+          "date": "11.07 19:45",
+          "status": "OPEN"
+        },
+        {
+          "home": "Leeds United",
+          "away": "Tottenham Hotspur",
+          "league": "ENG.1",
+          "date": "11.07 12:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Arsenal",
+          "away": "Hull City",
+          "league": "ENG.1",
+          "date": "11.07 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Fulham",
+          "away": "Newcastle United",
+          "league": "ENG.1",
+          "date": "11.07 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Nottingham Forest",
+          "away": "Manchester City",
+          "league": "ENG.1",
+          "date": "11.07 17:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Napoli",
+          "away": "Lazio",
+          "league": "ITA.1",
+          "date": "11.08 11:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Genoa",
+          "away": "AC Milan",
+          "league": "ITA.1",
+          "date": "11.08 14:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Monza",
+          "away": "Atalanta",
+          "league": "ITA.1",
+          "date": "11.08 14:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Internazionale",
+          "away": "Como",
+          "league": "ITA.1",
+          "date": "11.08 17:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Fiorentina",
+          "away": "Juventus",
+          "league": "ITA.1",
+          "date": "11.08 19:45",
+          "status": "OPEN"
+        },
+        {
+          "home": "Brighton & Hove Albion",
+          "away": "Brentford",
+          "league": "ENG.1",
+          "date": "11.08 14:00",
+          "status": "OPEN"
+        }
+      ]
+    },
+    {
+      "sport": "soccer",
+      "country": "BR",
+      "id": "BR_SOC_20261106",
+      "roundNum": 20261106,
+      "badge": "Loteca Auto (11.06)",
+      "label": "Loteca Auto 14-Match Official Slate (20261106)",
+      "deadline": "11.06 Auto-Sync",
+      "isPast": false,
+      "isUpcoming": false,
+      "statusTag": "Active",
+      "matches": [
+        {
+          "home": "Vitória",
+          "away": "Fluminense",
+          "league": "BRA.1",
+          "date": "11.06 23:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Leeds United",
+          "away": "Tottenham Hotspur",
+          "league": "ENG.1",
+          "date": "11.07 12:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Arsenal",
+          "away": "Hull City",
+          "league": "ENG.1",
+          "date": "11.07 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Fulham",
+          "away": "Newcastle United",
+          "league": "ENG.1",
+          "date": "11.07 15:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Nottingham Forest",
+          "away": "Manchester City",
+          "league": "ENG.1",
+          "date": "11.07 17:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Málaga",
+          "away": "Racing Santander",
+          "league": "ESP.1",
+          "date": "11.07 13:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Espanyol",
+          "away": "Deportivo",
+          "league": "ESP.1",
+          "date": "11.07 15:15",
+          "status": "OPEN"
+        },
+        {
+          "home": "Osasuna",
+          "away": "Athletic Club",
+          "league": "ESP.1",
+          "date": "11.07 17:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Valencia",
+          "away": "Real Madrid",
+          "league": "ESP.1",
+          "date": "11.07 20:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Cagliari",
+          "away": "Frosinone",
+          "league": "ITA.1",
+          "date": "11.07 14:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Torino",
+          "away": "Lecce",
+          "league": "ITA.1",
+          "date": "11.07 14:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Parma",
+          "away": "Bologna",
+          "league": "ITA.1",
+          "date": "11.07 17:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "AS Roma",
+          "away": "Sassuolo",
+          "league": "ITA.1",
+          "date": "11.07 19:45",
+          "status": "OPEN"
+        },
+        {
+          "home": "Brighton & Hove Albion",
+          "away": "Brentford",
+          "league": "ENG.1",
+          "date": "11.08 14:00",
+          "status": "OPEN"
+        }
+      ]
+    },
+    {
+      "sport": "basketball",
+      "country": "US",
+      "id": "US_BAS_20261106",
+      "roundNum": 20261106,
+      "badge": "NBA Pool (11.06)",
+      "label": "NBA Pool 14-Match Official Slate (20261106)",
+      "deadline": "11.06 Auto-Sync",
+      "isPast": false,
+      "isUpcoming": false,
+      "statusTag": "Active",
+      "matches": [
+        {
+          "home": "Atlanta Hawks",
+          "away": "Washington Wizards",
+          "league": "NBA",
+          "date": "11.07 00:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Charlotte Hornets",
+          "away": "Boston Celtics",
+          "league": "NBA",
+          "date": "11.07 00:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Cleveland Cavaliers",
+          "away": "Philadelphia 76ers",
+          "league": "NBA",
+          "date": "11.07 00:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Dallas Mavericks",
+          "away": "Utah Jazz",
+          "league": "NBA",
+          "date": "11.07 01:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Memphis Grizzlies",
+          "away": "Oklahoma City Thunder",
+          "league": "NBA",
+          "date": "11.07 01:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Milwaukee Bucks",
+          "away": "Toronto Raptors",
+          "league": "NBA",
+          "date": "11.07 01:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "New Orleans Pelicans",
+          "away": "Minnesota Timberwolves",
+          "league": "NBA",
+          "date": "11.07 01:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Los Angeles Lakers",
+          "away": "Portland Trail Blazers",
+          "league": "NBA",
+          "date": "11.07 03:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Sacramento Kings",
+          "away": "San Antonio Spurs",
+          "league": "NBA",
+          "date": "11.07 03:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Indiana Pacers",
+          "away": "Denver Nuggets",
+          "league": "NBA",
+          "date": "11.07 22:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Atlanta Hawks",
+          "away": "Brooklyn Nets",
+          "league": "NBA",
+          "date": "11.08 00:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Cleveland Cavaliers",
+          "away": "New York Knicks",
+          "league": "NBA",
+          "date": "11.08 01:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Oklahoma City Thunder",
+          "away": "Washington Wizards",
+          "league": "NBA",
+          "date": "11.08 01:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Golden State Warriors",
+          "away": "Orlando Magic",
+          "league": "NBA",
+          "date": "11.08 01:30",
+          "status": "OPEN"
+        }
+      ]
+    },
+    {
+      "sport": "football",
+      "country": "US",
+      "id": "US_FOO_20261106",
+      "roundNum": 20261106,
+      "badge": "NFL Pool (11.06)",
+      "label": "NFL Pool 14-Match Official Slate (20261106)",
+      "deadline": "11.06 Auto-Sync",
+      "isPast": false,
+      "isUpcoming": false,
+      "statusTag": "Active",
+      "matches": [
+        {
+          "home": "Atlanta Falcons",
+          "away": "Cincinnati Bengals",
+          "league": "NFL",
+          "date": "11.08 14:30",
+          "status": "OPEN"
+        },
+        {
+          "home": "Indianapolis Colts",
+          "away": "Dallas Cowboys",
+          "league": "NFL",
+          "date": "11.08 18:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Kansas City Chiefs",
+          "away": "New York Jets",
+          "league": "NFL",
+          "date": "11.08 18:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Miami Dolphins",
+          "away": "Detroit Lions",
+          "league": "NFL",
+          "date": "11.08 18:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "New Orleans Saints",
+          "away": "Cleveland Browns",
+          "league": "NFL",
+          "date": "11.08 18:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Philadelphia Eagles",
+          "away": "New York Giants",
+          "league": "NFL",
+          "date": "11.08 18:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Washington Commanders",
+          "away": "Los Angeles Rams",
+          "league": "NFL",
+          "date": "11.08 18:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Carolina Panthers",
+          "away": "Denver Broncos",
+          "league": "NFL",
+          "date": "11.08 18:00",
+          "status": "OPEN"
+        },
+        {
+          "home": "Los Angeles Chargers",
+          "away": "Houston Texans",
+          "league": "NFL",
+          "date": "11.08 21:05",
+          "status": "OPEN"
+        },
+        {
+          "home": "New England Patriots",
+          "away": "Green Bay Packers",
+          "league": "NFL",
+          "date": "11.08 21:25",
+          "status": "OPEN"
+        },
+        {
+          "home": "San Francisco 49ers",
+          "away": "Las Vegas Raiders",
+          "league": "NFL",
+          "date": "11.08 21:25",
+          "status": "OPEN"
+        },
+        {
+          "home": "Seattle Seahawks",
+          "away": "Arizona Cardinals",
+          "league": "NFL",
+          "date": "11.08 21:25",
+          "status": "OPEN"
+        },
+        {
+          "home": "Chicago Bears",
+          "away": "Tampa Bay Buccaneers",
+          "league": "NFL",
+          "date": "11.09 01:20",
+          "status": "OPEN"
+        },
+        {
+          "home": "Minnesota Vikings",
+          "away": "Buffalo Bills",
+          "league": "NFL",
+          "date": "11.10 01:15",
+          "status": "OPEN"
+        }
       ]
     }
   ]
