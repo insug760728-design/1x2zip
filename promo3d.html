@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOKEON US | 3D Official Patent Promo Studio (No. 10-2026-0205596)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: radial-gradient(circle at 50% 20%, #0f172a 0%, #04070d 100%);
+      color: #f8fafc;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    /* Studio Top Control Bar */
+    .studio-bar {
+      width: 100%;
+      max-width: 1120px;
+      margin: 12px auto 8px auto;
+      padding: 10px 16px;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1.5px solid rgba(245, 158, 11, 0.45);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+      z-index: 100;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+    .studio-btn {
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.80rem;
+      font-weight: 900;
+      cursor: pointer;
+      border: 1px solid #334155;
+      background: #1e293b;
+      color: #cbd5e1;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .studio-btn.active {
+      background: linear-gradient(135deg, #f59e0b, #d97706);
+      color: #090d16;
+      border-color: #fde047;
+      box-shadow: 0 0 14px rgba(245, 158, 11, 0.55);
+    }
+    .studio-btn-play {
+      background: linear-gradient(135deg, #059669, #10b981);
+      color: #fff;
+      border: 1.5px solid #fde047;
+      box-shadow: 0 0 16px rgba(16, 185, 129, 0.5);
+    }
+
+    /* 3D Stage Viewport */
+    .stage-wrapper {
+      width: 100%;
+      max-width: 1060px;
+      height: 620px;
+      margin: 6px auto 16px auto;
+      position: relative;
+      perspective: 1300px;
+      border-radius: 18px;
+      background: radial-gradient(circle at 50% 35%, #1e293b 0%, #090d16 78%);
+      border: 2px solid rgba(245, 158, 11, 0.55);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), inset 0 0 60px rgba(37, 99, 235, 0.18);
+      overflow: hidden;
+      transition: all 0.35s ease;
+    }
+    .stage-wrapper.vertical-mode {
+      max-width: 410px;
+      height: 720px;
+    }
+
+    /* Animated 3D Grid Floor */
+    .cyber-grid {
+      position: absolute;
+      bottom: -35%;
+      left: -25%;
+      width: 150%;
+      height: 85%;
+      background-image:
+        linear-gradient(rgba(56, 189, 248, 0.14) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.14) 1px, transparent 1px);
+      background-size: 40px 40px;
+      transform: rotateX(68deg);
+      animation: gridMove 8s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes gridMove {
+      0% { background-position: 0 0; }
+      100% { background-position: 0 40px; }
+    }
+
+    /* Persistent Top Patent Ribbon inside Stage */
+    .stage-patent-topbar {
+      position: absolute;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: linear-gradient(90deg, rgba(9,13,22,0.92), rgba(30,41,59,0.95), rgba(9,13,22,0.92));
+      border: 1.5px solid #f59e0b;
+      padding: 6px 18px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      z-index: 30;
+      box-shadow: 0 0 20px rgba(245, 158, 11, 0.35);
+      white-space: nowrap;
+    }
+
+    /* 3D Scene Container */
+    .scene-3d {
+      position: absolute;
+      top: 62px;
+      left: 0;
+      right: 0;
+      bottom: 92px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform-style: preserve-3d;
+      padding: 16px;
+    }
+
+    .card-3d {
+      width: 100%;
+      max-width: 860px;
+      background: linear-gradient(145deg, rgba(15, 23, 42, 0.96), rgba(9, 13, 22, 0.98));
+      border: 2px solid #38bdf8;
+      border-radius: 16px;
+      padding: 20px;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.75), 0 0 30px rgba(56, 189, 248, 0.22);
+      transform: rotateX(6deg) rotateY(-4deg) translateZ(10px);
+      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s;
+    }
+    .card-3d.gold-focus {
+      border-color: #fde047;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.85), 0 0 45px rgba(245, 158, 11, 0.45);
+      transform: rotateX(0deg) rotateY(0deg) scale(1.02);
+    }
+
+    /* Giant 3D Patent Shield Emblem */
+    .patent-shield-hero {
+      text-align: center;
+      padding: 18px 10px;
+      animation: float3d 3s ease-in-out infinite;
+    }
+    @keyframes float3d {
+      0%, 100% { transform: translateY(0px) rotateY(-6deg); }
+      50% { transform: translateY(-8px) rotateY(6deg); }
+    }
+    .shield-icon-box {
+      width: 84px;
+      height: 84px;
+      margin: 0 auto 12px auto;
+      border-radius: 22px;
+      background: linear-gradient(135deg, #fde047 0%, #f59e0b 50%, #b45309 100%);
+      color: #090d16;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2.6rem;
+      box-shadow: 0 0 35px rgba(245, 158, 11, 0.75);
+      border: 2px solid #fff;
+    }
+
+    /* Subtitle Box at Bottom of Stage */
+    .subtitle-bar {
+      position: absolute;
+      bottom: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 92%;
+      max-width: 880px;
+      background: rgba(9, 13, 22, 0.94);
+      border: 1.5px solid #fde047;
+      border-radius: 12px;
+      padding: 11px 16px;
+      text-align: center;
+      z-index: 40;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.75);
+    }
+    .sub-en {
+      font-size: 1.02rem;
+      font-weight: 900;
+      color: #ffffff;
+      line-height: 1.35;
+      letter-spacing: 0.2px;
+    }
+    .sub-kr {
+      font-size: 0.84rem;
+      font-weight: 800;
+      color: #fde047;
+      margin-top: 4px;
+    }
+
+    /* Mini Match Grid inside 3D Card */
+    .mini-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 7px;
+      margin-top: 10px;
+    }
+    .mini-row {
+      background: #1e293b;
+      border: 1px solid #334155;
+      border-radius: 7px;
+      padding: 6px 9px;
+      font-size: 0.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .pick-pill {
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-weight: 900;
+      font-size: 0.68rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Studio Controls -->
+  <div class="studio-bar">
+    <div style="display:flex; align-items:center; gap:8px;">
+      <a href="./index.html" class="studio-btn" style="text-decoration:none; color:#fde047; border-color:#f59e0b;">
+        <i class="fa-solid fa-arrow-left"></i> Back to App
+      </a>
+      <button type="button" id="btnEp1" class="studio-btn active" onclick="selectEpisode(1)">
+        🎬 Ep.1: 14-Match Pool (2nd Prize 100%)
+      </button>
+      <button type="button" id="btnEp2" class="studio-btn" onclick="selectEpisode(2)">
+        🎬 Ep.2: US Parlay (Miss 1 Leg · Still Win 100%)
+      </button>
+    </div>
+
+    <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+      <button type="button" id="btnAspect" class="studio-btn" onclick="toggleAspect()">
+        <i class="fa-solid fa-mobile-screen"></i> <span>9:16 Vertical (TikTok/Reels)</span>
+      </button>
+      <button type="button" id="btnLangSub" class="studio-btn" onclick="toggleKrSub()">
+        <i class="fa-solid fa-closed-captioning"></i> <span id="krSubLabel">KR Sub: ON</span>
+      </button>
+      <button type="button" class="studio-btn studio-btn-play" onclick="restartCurrentEpisode()">
+        <i class="fa-solid fa-play"></i> Replay 3D Video
+      </button>
+    </div>
+  </div>
+
+  <!-- 3D Promo Video Stage -->
+  <div class="stage-wrapper" id="stageWrapper">
+    <div class="cyber-grid"></div>
+
+    <!-- Top Patent Ribbon -->
+    <div class="stage-patent-topbar">
+      <i class="fa-solid fa-award" style="color:#fde047;"></i>
+      <span style="font-size:0.78rem; font-weight:900; color:#ffffff; letter-spacing:0.8px;">OFFICIAL PATENT PENDING : <span style="color:#fde047;">NO. 10-2026-0205596</span></span>
+      <span style="background:#059669; color:#fff; font-size:0.66rem; font-weight:900; padding:2px 7px; border-radius:999px;">🎁 7-DAY FREE VVIP TRIAL</span>
+    </div>
+
+    <!-- Main 3D Scene -->
+    <div class="scene-3d" id="scene3dContainer"></div>
+
+    <!-- Bottom Subtitle Bar -->
+    <div class="subtitle-bar">
+      <div class="sub-en" id="subTextEn">Loading 3D Patent Showcase...</div>
+      <div class="sub-kr" id="subTextKr">특허 번호 10-2026-0205596 3D 홍보 영상 로딩 중...</div>
+    </div>
+  </div>
+
+  <script>
+    var currentEp = 1;
+    var showKrSub = true;
+    var sceneTimer = null;
+    var stepIdx = 0;
+
+    var EPISODES = {
+      1: [
+        {
+          duration: 5500,
+          gold: true,
+          en: "OFFICIAL PATENT PENDING NO. 10-2026-0205596! The world's first proprietary 14-Match Pool Compression Engine.",
+          kr: "공식 특허출원 제 10-2026-0205596 호! 세계 최초 독점 14경기 풀 조합 압축 엔진입니다!",
+          html: function() {
+            return '<div class="patent-shield-hero">'
+              + '<div class="shield-icon-box"><i class="fa-solid fa-shield-halved"></i></div>'
+              + '<div style="display:inline-block; background:rgba(245,158,11,0.2); border:2px solid #fde047; color:#fde047; font-size:0.95rem; font-weight:900; padding:5px 18px; border-radius:999px; letter-spacing:1.5px; margin-bottom:10px;">PATENT PENDING : NO. 10-2026-0205596</div>'
+              + '<h1 style="font-size:1.75rem; font-weight:900; color:#ffffff; line-height:1.25; margin-bottom:8px;">STOP BUYING ALL 192 COMBINATIONS!</h1>'
+              + '<p style="font-size:0.95rem; color:#93c5fd; font-weight:800;">Compress 192 Combos ($192) ➔ Just 24 Slips ($24) · Save 87.5% Instantly</p>'
+              + '</div>';
+          }
+        },
+        {
+          duration: 6000,
+          gold: false,
+          en: "Pick 7 Singles, 6 Doubles, and 1 Triple across 14 Live ESPN matches. Patent No. 10-2026-0205596 compresses $192 into just $24 in 0.1 seconds!",
+          kr: "14경기에서 단폴 7·복식 6·삼복식 1개(192조합·$192) 선택! 특허 10-2026-0205596 엔진이 단 0.1초 만에 24장($24)으로 87.5% 압축합니다!",
+          html: function() {
+            var rows = [
+              ['#1 Inter Miami vs LA Galaxy', '1 (Single)', '#2563eb'],
+              ['#2 LAFC vs Seattle', '1 / X (Double)', '#d97706'],
+              ['#3 Arsenal vs Liverpool', '1 / X / 2 (Triple)', '#e11d48'],
+              ['#4 Real Madrid vs Barca', '1 / 2 (Double)', '#d97706'],
+              ['#5 Man City vs Spurs', '1 (Single)', '#2563eb'],
+              ['#6 Bayern vs Dortmund', '1 / X (Double)', '#d97706'],
+              ['#7 Inter vs Juventus', '1 (Single)', '#2563eb'],
+              ['#8 PSG vs Marseille', '1 / X (Double)', '#d97706']
+            ];
+            var g = '';
+            for (var i=0; i<rows.length; i++) {
+              g += '<div class="mini-row"><span style="font-weight:800; color:#e2e8f0;">' + rows[i][0] + '</span><span class="pick-pill" style="background:' + rows[i][2] + '; color:#fff;">' + rows[i][1] + '</span></div>';
+            }
+            return '<div>'
+              + '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid #334155;">'
+              +   '<span style="font-size:0.95rem; font-weight:900; color:#38bdf8;"><i class="fa-solid fa-futbol"></i> 14-Match Pool Selection (S7 · D6 · T1)</span>'
+              +   '<span style="background:#f59e0b; color:#090d16; font-weight:900; font-size:0.80rem; padding:4px 12px; border-radius:999px;">⚡ 192 Combos ($192) ➔ 24 Slips ($24 · -87.5%)</span>'
+              + '</div>'
+              + '<div class="mini-grid">' + g + '</div>'
+              + '</div>';
+          }
+        },
+        {
+          duration: 6500,
+          gold: true,
+          en: "Look at the live results! You saved 87.5% of your cost, yet Patent No. 10-2026-0205596 locks in 2nd Prize (13/14 Hits) 100% GUARANTEED!",
+          kr: "실제 경기 결과를 보십시오! 비용은 87.5% 아꼈는데 특허 10-2026-0205596 알고리즘으로 2등(13/14 적중)이 100% 무조건 터졌습니다!",
+          html: function() {
+            return '<div style="text-align:center; padding:8px;">'
+              + '<div style="display:inline-block; background:#059669; color:#fff; font-size:0.82rem; font-weight:900; padding:4px 14px; border-radius:999px; margin-bottom:8px;">FINAL ESPN OFFICIAL SCORES VERIFIED</div>'
+              + '<h2 style="font-size:1.55rem; font-weight:900; color:#fde047; margin-bottom:10px;">🎯 2ND PRIZE (13/14 HITS) 100% GUARANTEED HIT!</h2>'
+              + '<div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:10px; margin:12px 0;">'
+              +   '<div style="background:#1e293b; border:2px solid #fde047; border-radius:10px; padding:10px;">'
+              +     '<div style="font-size:0.75rem; color:#fde047; font-weight:800;">🥈 2ND PRIZE (13/14)</div>'
+              +     '<div style="font-size:1.35rem; font-weight:900; color:#fff; margin-top:4px;">2 SLIPS HIT!</div>'
+              +   '</div>'
+              +   '<div style="background:#1e293b; border:1.5px solid #38bdf8; border-radius:10px; padding:10px;">'
+              +     '<div style="font-size:0.75rem; color:#38bdf8; font-weight:800;">🥉 3RD PRIZE (12/14)</div>'
+              +     '<div style="font-size:1.35rem; font-weight:900; color:#fff; margin-top:4px;">9 SLIPS HIT!</div>'
+              +   '</div>'
+              +   '<div style="background:#1e293b; border:1.5px solid #34d399; border-radius:10px; padding:10px;">'
+              +     '<div style="font-size:0.75rem; color:#34d399; font-weight:800;">🏅 4TH PRIZE (11/14)</div>'
+              +     '<div style="font-size:1.35rem; font-weight:900; color:#fff; margin-top:4px;">11 SLIPS HIT!</div>'
+              +   '</div>'
+              + '</div>'
+              + '<div style="font-size:0.86rem; color:#cbd5e1; font-weight:800;">Protected by Patent Pending <b style="color:#fde047;">No. 10-2026-0205596</b> · Only $24 Total Stake</div>'
+              + '</div>';
+          }
+        },
+        {
+          duration: 5500,
+          gold: true,
+          en: "Claim your 7-DAY FREE VVIP PASS right now at TOKEON.APP! Experience Patent No. 10-2026-0205596 for free today!",
+          kr: "지금 바로 TOKEON.APP에서 【1주일(7일) 무료 VVIP 프리패스】를 받으세요! 특허 제 10-2026-0205596 호를 지금 무료로 체험하세요!",
+          html: function() {
+            return '<div class="patent-shield-hero">'
+              + '<div style="font-size:0.9rem; font-weight:900; color:#fde047; letter-spacing:1.2px; margin-bottom:6px;">🛡️ PATENT PENDING : NO. 10-2026-0205596</div>'
+              + '<h1 style="font-size:1.85rem; font-weight:900; color:#ffffff; margin-bottom:10px;">🎁 CLAIM YOUR 7-DAY FREE VVIP PASS!</h1>'
+              + '<div style="display:inline-block; background:linear-gradient(135deg, #2563eb, #1d4ed8); border:2px solid #fde047; border-radius:12px; padding:12px 26px; font-size:1.35rem; font-weight:900; color:#fff; box-shadow:0 0 25px rgba(37,99,235,0.7); margin-bottom:10px;">https://tokeon.app</div>'
+              + '<div style="font-size:0.88rem; color:#34d399; font-weight:900;">✓ 3-Second Sign Up · ✓ 7 Days Unlimited 24/36/48/64/96 Slips Free</div>'
+              + '</div>';
+          }
+        }
+      ],
+      2: [
+        {
+          duration: 5500,
+          gold: true,
+          en: "OFFICIAL PATENT PENDING NO. 10-2026-0205596! Sick of losing your 10-leg NBA or NFL parlay by just 1 bad beat?",
+          kr: "공식 특허출원 제 10-2026-0205596 호! 10폴더 팔레이에서 단 1경기 때문에 전액 날리는 악몽, 이제 끝냅니다!",
+          html: function() {
+            return '<div class="patent-shield-hero">'
+              + '<div class="shield-icon-box"><i class="fa-solid fa-crown"></i></div>'
+              + '<div style="display:inline-block; background:rgba(245,158,11,0.2); border:2px solid #fde047; color:#fde047; font-size:0.95rem; font-weight:900; padding:5px 18px; border-radius:999px; letter-spacing:1.5px; margin-bottom:10px;">PATENT PENDING : NO. 10-2026-0205596</div>'
+              + '<h1 style="font-size:1.7rem; font-weight:900; color:#ffffff; line-height:1.25; margin-bottom:8px;">MISS 1 LEG &amp; STILL WIN 100% ALL-KILL!</h1>'
+              + '<p style="font-size:0.95rem; color:#38bdf8; font-weight:800;">NBA · NFL · NHL · MLB · MLS Smart Parlay Compression Engine</p>'
+              + '</div>';
+          }
+        },
+        {
+          duration: 6000,
+          gold: false,
+          en: "Mix Moneyline, Spread, and Over/Under freely! Patent No. 10-2026-0205596 compresses 192 combos into 64 or 96 slips and rotates 1 PASS leg per slip!",
+          kr: "승무패·핸디캡·언더오버 자유 선택! 특허 10-2026-0205596 엔진이 192조합을 64/96슬립으로 압축하며 슬립마다 위험한 1경기를 자동 제외(PASS)합니다!",
+          html: function() {
+            var legs = [
+              ['#1 Celtics ML (-165)', 'WIN ✅', '#059669'],
+              ['#2 Lakers -4.5 (Spread)', 'WIN ✅', '#059669'],
+              ['#3 Chiefs Over 47.5', 'WIN ✅', '#059669'],
+              ['#4 Ravens ML (-140)', 'WIN ✅', '#059669'],
+              ['#5 Knicks vs Bucks', '❌ UPSET (OMITTED / PASS)', '#f59e0b'],
+              ['#6 Nuggets -5.5', 'WIN ✅', '#059669'],
+              ['#7 49ers -6.5', 'WIN ✅', '#059669'],
+              ['#8 Dodgers ML', 'WIN ✅', '#059669']
+            ];
+            var g = '';
+            for (var i=0; i<legs.length; i++) {
+              g += '<div class="mini-row"><span style="font-weight:800; color:#e2e8f0;">' + legs[i][0] + '</span><span class="pick-pill" style="background:' + legs[i][2] + '; color:#fff;">' + legs[i][1] + '</span></div>';
+            }
+            return '<div>'
+              + '<div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:10px; padding-bottom:8px; border-bottom:1px solid #334155;">'
+              +   '<span style="font-size:0.95rem; font-weight:900; color:#fde047;"><i class="fa-solid fa-fire-flame-curved"></i> US Parlay Smart Shield (192 ➔ 96 Slips)</span>'
+              +   '<span style="background:#059669; color:#fff; font-weight:900; font-size:0.78rem; padding:4px 12px; border-radius:999px;">Match #5 Upset Auto-Dropped!</span>'
+              + '</div>'
+              + '<div class="mini-grid">' + g + '</div>'
+              + '</div>';
+          }
+        },
+        {
+          duration: 6500,
+          gold: true,
+          en: "Match #5 suffered a brutal 4th-quarter upset—but Slip #28 automatically omitted Match #5 and cashed $2,150.00 (100% ALL-KILL)!",
+          kr: "5번 경기에서 충격의 역전패가 터졌지만, 특허 알고리즘이 5번을 정확히 PASS 처리한 28번 슬립이 10폴더 올킬($2,150.00)을 그대로 적중시킵니다!",
+          html: function() {
+            return '<div style="text-align:center; padding:8px;">'
+              + '<div style="display:inline-block; background:#f59e0b; color:#090d16; font-size:0.80rem; font-weight:900; padding:4px 14px; border-radius:999px; margin-bottom:8px;">PARLAY SLIP #28 · 10-LEG ALL-KILL VERIFIED</div>'
+              + '<h2 style="font-size:1.6rem; font-weight:900; color:#34d399; margin-bottom:8px;">💰 EST. PAYOUT $2,150.00 CASHED! (100% HIT)</h2>'
+              + '<div style="background:#1e293b; border:2px solid #34d399; border-radius:12px; padding:12px; max-width:640px; margin:10px auto; display:flex; flex-wrap:wrap; justify-content:center; gap:6px;">'
+              +   '<span class="pick-pill" style="background:#059669; color:#fff;">#1:W ✅</span>'
+              +   '<span class="pick-pill" style="background:#059669; color:#fff;">#2:W ✅</span>'
+              +   '<span class="pick-pill" style="background:#059669; color:#fff;">#3:O ✅</span>'
+              +   '<span class="pick-pill" style="background:#059669; color:#fff;">#4:W ✅</span>'
+              +   '<span class="pick-pill" style="background:#475569; color:#fde047; border:1px dashed #fde047;">#5:PASS 🛡️</span>'
+              +   '<span class="pick-pill" style="background:#059669; color:#fff;">#6:W ✅</span>'
+              +   '<span class="pick-pill" style="background:#059669; color:#fff;">#7:W ✅</span>'
+              +   '<span class="pick-pill" style="background:#059669; color:#fff;">#8:W ✅</span>'
+              +   '<span class="pick-pill" style="background:#059669; color:#fff;">#9:U ✅</span>'
+              +   '<span class="pick-pill" style="background:#059669; color:#fff;">#10:W ✅</span>'
+              +   '<span class="pick-pill" style="background:#059669; color:#fff;">#11:W ✅</span>'
+              + '</div>'
+              + '<div style="font-size:0.86rem; color:#fde047; font-weight:900;">1 Wrong Leg Still Wins 100% · Patent Pending No. 10-2026-0205596</div>'
+              + '</div>';
+          }
+        },
+        {
+          duration: 5500,
+          gold: true,
+          en: "Start your 7-DAY FREE VVIP TRIAL now at TOKEON.APP! Never lose a parlay to a 1-leg bad beat again!",
+          kr: "지금 TOKEON.APP에서 【1주일(7일) 무료 VVIP 프리패스】로 시작하세요! 다시는 한 경기 때문에 팔레이를 날리지 마십시오!",
+          html: function() {
+            return '<div class="patent-shield-hero">'
+              + '<div style="font-size:0.9rem; font-weight:900; color:#fde047; letter-spacing:1.2px; margin-bottom:6px;">🛡️ PATENT PENDING : NO. 10-2026-0205596</div>'
+              + '<h1 style="font-size:1.85rem; font-weight:900; color:#ffffff; margin-bottom:10px;">🎁 START YOUR 7-DAY FREE VVIP TRIAL!</h1>'
+              + '<div style="display:inline-block; background:linear-gradient(135deg, #059669, #10b981); border:2px solid #fde047; border-radius:12px; padding:12px 26px; font-size:1.35rem; font-weight:900; color:#fff; box-shadow:0 0 25px rgba(16,185,129,0.7); margin-bottom:10px;">https://tokeon.app</div>'
+              + '<div style="font-size:0.88rem; color:#fde047; font-weight:900;">✓ 7 Days Unlimited Access Free · ✓ Live 2026-27 NBA &amp; NFL Auto-Sync</div>'
+              + '</div>';
+          }
+        }
+      ]
+    };
+
+    function speakEn(text) {
+      try {
+        if (!window.speechSynthesis) return;
+        window.speechSynthesis.cancel();
+        var u = new SpeechSynthesisUtterance(text);
+        u.lang = 'en-US';
+        u.rate = 1.04;
+        u.pitch = 0.98;
+        window.speechSynthesis.speak(u);
+      } catch (e) {}
+    }
+
+    function renderStep() {
+      var list = EPISODES[currentEp];
+      if (!list || !list[stepIdx]) stepIdx = 0;
+      var item = list[stepIdx];
+
+      var container = document.getElementById('scene3dContainer');
+      container.innerHTML = '<div class="card-3d ' + (item.gold ? 'gold-focus' : '') + '">' + item.html() + '</div>';
+
+      document.getElementById('subTextEn').textContent = item.en;
+      var krEl = document.getElementById('subTextKr');
+      krEl.textContent = item.kr;
+      krEl.style.display = showKrSub ? 'block' : 'none';
+
+      speakEn(item.en);
+
+      if (sceneTimer) clearTimeout(sceneTimer);
+      sceneTimer = setTimeout(function() {
+        stepIdx = (stepIdx + 1) % list.length;
+        renderStep();
+      }, item.duration);
+    }
+
+    function selectEpisode(ep) {
+      currentEp = ep;
+      stepIdx = 0;
+      document.getElementById('btnEp1').className = 'studio-btn' + (ep === 1 ? ' active' : '');
+      document.getElementById('btnEp2').className = 'studio-btn' + (ep === 2 ? ' active' : '');
+      renderStep();
+    }
+
+    function restartCurrentEpisode() {
+      stepIdx = 0;
+      renderStep();
+    }
+
+    function toggleAspect() {
+      var w = document.getElementById('stageWrapper');
+      w.classList.toggle('vertical-mode');
+    }
+
+    function toggleKrSub() {
+      showKrSub = !showKrSub;
+      document.getElementById('krSubLabel').textContent = 'KR Sub: ' + (showKrSub ? 'ON' : 'OFF');
+      document.getElementById('subTextKr').style.display = showKrSub ? 'block' : 'none';
+    }
+
+    window.addEventListener('DOMContentLoaded', function() {
+      renderStep();
+    });
+  </script>
+</body>
+</html>
