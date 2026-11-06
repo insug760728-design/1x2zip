@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tokeon-us-20261107_free7d_3d';
+const CACHE_NAME = 'tokeon-us-20261107_us_fortress_v6';
 self.addEventListener('install', function(e) {
   self.skipWaiting();
 });
