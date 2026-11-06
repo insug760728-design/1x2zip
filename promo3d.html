@@ -10,7 +10,7 @@
     body {
       background: radial-gradient(circle at 50% 20%, #0f172a 0%, #04070d 100%);
       color: #f8fafc;
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Inter', 'Malgun Gothic', sans-serif;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -21,11 +21,11 @@
     /* Studio Top Control Bar */
     .studio-bar {
       width: 100%;
-      max-width: 1120px;
+      max-width: 1140px;
       margin: 12px auto 8px auto;
       padding: 10px 16px;
-      background: rgba(15, 23, 42, 0.92);
-      border: 1.5px solid rgba(245, 158, 11, 0.45);
+      background: rgba(15, 23, 42, 0.95);
+      border: 1.5px solid rgba(245, 158, 11, 0.55);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -33,7 +33,7 @@
       flex-wrap: wrap;
       gap: 10px;
       z-index: 100;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
     }
     .studio-btn {
       padding: 8px 14px;
@@ -61,6 +61,12 @@
       border: 1.5px solid #fde047;
       box-shadow: 0 0 16px rgba(16, 185, 129, 0.5);
     }
+    .studio-btn-dl {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #fff;
+      border: 1.5px solid #38bdf8;
+      box-shadow: 0 0 16px rgba(37, 99, 235, 0.5);
+    }
 
     /* 3D Stage Viewport */
     .stage-wrapper {
@@ -72,7 +78,7 @@
       perspective: 1300px;
       border-radius: 18px;
       background: radial-gradient(circle at 50% 35%, #1e293b 0%, #090d16 78%);
-      border: 2px solid rgba(245, 158, 11, 0.55);
+      border: 2px solid rgba(245, 158, 11, 0.65);
       box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8), inset 0 0 60px rgba(37, 99, 235, 0.18);
       overflow: hidden;
       transition: all 0.35s ease;
@@ -90,8 +96,8 @@
       width: 150%;
       height: 85%;
       background-image:
-        linear-gradient(rgba(56, 189, 248, 0.14) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(56, 189, 248, 0.14) 1px, transparent 1px);
+        linear-gradient(rgba(56, 189, 248, 0.16) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56, 189, 248, 0.16) 1px, transparent 1px);
       background-size: 40px 40px;
       transform: rotateX(68deg);
       animation: gridMove 8s linear infinite;
@@ -143,12 +149,15 @@
       padding: 20px;
       box-shadow: 0 25px 50px rgba(0,0,0,0.75), 0 0 30px rgba(56, 189, 248, 0.22);
       transform: rotateX(6deg) rotateY(-4deg) translateZ(10px);
-      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.4s;
+      animation: cardEnter3d 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
     }
     .card-3d.gold-focus {
       border-color: #fde047;
       box-shadow: 0 25px 60px rgba(0,0,0,0.85), 0 0 45px rgba(245, 158, 11, 0.45);
-      transform: rotateX(0deg) rotateY(0deg) scale(1.02);
+    }
+    @keyframes cardEnter3d {
+      0% { opacity: 0; transform: perspective(1100px) rotateX(22deg) rotateY(-18deg) translateZ(-120px) scale(0.88); }
+      100% { opacity: 1; transform: perspective(1100px) rotateX(4deg) rotateY(-3deg) translateZ(10px) scale(1); }
     }
 
     /* Giant 3D Patent Shield Emblem */
@@ -209,7 +218,7 @@
     /* Mini Match Grid inside 3D Card */
     .mini-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
       gap: 7px;
       margin-top: 10px;
     }
@@ -235,27 +244,30 @@
 
   <!-- Top Studio Controls -->
   <div class="studio-bar">
-    <div style="display:flex; align-items:center; gap:8px;">
-      <a href="./index.html" class="studio-btn" style="text-decoration:none; color:#fde047; border-color:#f59e0b;">
-        <i class="fa-solid fa-arrow-left"></i> Back to App
+    <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+      <a href="https://tokeon.app/" class="studio-btn" style="text-decoration:none; color:#fde047; border-color:#f59e0b;">
+        <i class="fa-solid fa-globe"></i> Open Live App
       </a>
       <button type="button" id="btnEp1" class="studio-btn active" onclick="selectEpisode(1)">
-        🎬 Ep.1: 14-Match Pool (2nd Prize 100%)
+        🎬 1편: 14-Match Pool (2등 100% 보장)
       </button>
       <button type="button" id="btnEp2" class="studio-btn" onclick="selectEpisode(2)">
-        🎬 Ep.2: US Parlay (Miss 1 Leg · Still Win 100%)
+        🎬 2편: US Parlay (1경기 틀려도 올킬)
       </button>
     </div>
 
     <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
       <button type="button" id="btnAspect" class="studio-btn" onclick="toggleAspect()">
-        <i class="fa-solid fa-mobile-screen"></i> <span>9:16 Vertical (TikTok/Reels)</span>
+        <i class="fa-solid fa-mobile-screen"></i> <span>9:16 세로모드 (틱톡/릴스/쇼츠)</span>
       </button>
       <button type="button" id="btnLangSub" class="studio-btn" onclick="toggleKrSub()">
-        <i class="fa-solid fa-closed-captioning"></i> <span id="krSubLabel">KR Sub: ON</span>
+        <i class="fa-solid fa-closed-captioning"></i> <span id="krSubLabel">한글 자막: ON</span>
       </button>
       <button type="button" class="studio-btn studio-btn-play" onclick="restartCurrentEpisode()">
-        <i class="fa-solid fa-play"></i> Replay 3D Video
+        <i class="fa-solid fa-rotate-right"></i> 처음부터 재생
+      </button>
+      <button type="button" id="btnExportVideo" class="studio-btn studio-btn-dl" onclick="exportCurrentEpisodeVideo()">
+        <i class="fa-solid fa-download"></i> <span id="exportBtnText">💾 현재 편 영상파일(.webm) 다운로드</span>
       </button>
     </div>
   </div>
@@ -281,6 +293,9 @@
     </div>
   </div>
 
+  <!-- Hidden High-Res Canvas for 60FPS Video File Export -->
+  <canvas id="exportCanvas" width="1280" height="720" style="display:none;"></canvas>
+
   <script>
     var currentEp = 1;
     var showKrSub = true;
@@ -292,6 +307,14 @@
         {
           duration: 5500,
           gold: true,
+          badge: "PATENT PENDING : NO. 10-2026-0205596",
+          headline: "STOP BUYING ALL 192 COMBINATIONS!",
+          subline: "192 Combos ($192) ➔ Just 24 Slips ($24) · Save 87.5% Instantly",
+          bullets: [
+            "🛡️ World's First Proprietary Pool Compression Engine",
+            "⚡ Official Patent Application No. 10-2026-0205596",
+            "🎯 100% Mathematical 2nd Prize (13/14) Coverage Guarantee"
+          ],
           en: "OFFICIAL PATENT PENDING NO. 10-2026-0205596! The world's first proprietary 14-Match Pool Compression Engine.",
           kr: "공식 특허출원 제 10-2026-0205596 호! 세계 최초 독점 14경기 풀 조합 압축 엔진입니다!",
           html: function() {
@@ -306,6 +329,14 @@
         {
           duration: 6000,
           gold: false,
+          badge: "STEP 1 · 14-MATCH SELECTION & COMPRESSION",
+          headline: "192 COMBOS ($192) ➔ 24 SLIPS ($24)",
+          subline: "7 Singles + 6 Doubles + 1 Triple · 87.5% Cost Cut in 0.1 Seconds",
+          bullets: [
+            "#1 Inter Miami vs LA Galaxy [1 Single]   | #2 LAFC vs Seattle [1/X Double]",
+            "#3 Arsenal vs Liverpool [1/X/2 Triple]   | #4 Real Madrid vs Barca [1/2 Double]",
+            "#5 Man City vs Spurs [1 Single]          | #6 Bayern vs Dortmund [1/X Double]"
+          ],
           en: "Pick 7 Singles, 6 Doubles, and 1 Triple across 14 Live ESPN matches. Patent No. 10-2026-0205596 compresses $192 into just $24 in 0.1 seconds!",
           kr: "14경기에서 단폴 7·복식 6·삼복식 1개(192조합·$192) 선택! 특허 10-2026-0205596 엔진이 단 0.1초 만에 24장($24)으로 87.5% 압축합니다!",
           html: function() {
@@ -335,6 +366,14 @@
         {
           duration: 6500,
           gold: true,
+          badge: "STEP 2 · FINAL ESPN SCORES VERIFIED",
+          headline: "🎯 2ND PRIZE (13/14) 100% GUARANTEED HIT!",
+          subline: "Only $24 Total Stake · Multiple Prize Tiers Cashed Simultaneously",
+          bullets: [
+            "🥈 2ND PRIZE (13/14 Hits) : 2 Winning Slips Locked In!",
+            "🥉 3RD PRIZE (12/14 Hits) : 9 Winning Slips Cashed!",
+            "🏅 4TH PRIZE (11/14 Hits) : 11 Winning Slips Cashed!"
+          ],
           en: "Look at the live results! You saved 87.5% of your cost, yet Patent No. 10-2026-0205596 locks in 2nd Prize (13/14 Hits) 100% GUARANTEED!",
           kr: "실제 경기 결과를 보십시오! 비용은 87.5% 아꼈는데 특허 10-2026-0205596 알고리즘으로 2등(13/14 적중)이 100% 무조건 터졌습니다!",
           html: function() {
@@ -362,6 +401,14 @@
         {
           duration: 5500,
           gold: true,
+          badge: "🎁 7-DAY FREE VVIP UNLIMITED TRIAL",
+          headline: "CLAIM YOUR 1-WEEK FREE PASS NOW!",
+          subline: "https://tokeon.app · Instant 3-Second Sign Up",
+          bullets: [
+            "✓ 7 Full Days of Unlimited 24 / 36 / 48 / 64 / 96 Slip Generation",
+            "✓ Official Patent Pending No. 10-2026-0205596",
+            "✓ Real-Time 2026-27 NBA · NFL · NHL · MLS ESPN Auto-Sync"
+          ],
           en: "Claim your 7-DAY FREE VVIP PASS right now at TOKEON.APP! Experience Patent No. 10-2026-0205596 for free today!",
           kr: "지금 바로 TOKEON.APP에서 【1주일(7일) 무료 VVIP 프리패스】를 받으세요! 특허 제 10-2026-0205596 호를 지금 무료로 체험하세요!",
           html: function() {
@@ -378,6 +425,14 @@
         {
           duration: 5500,
           gold: true,
+          badge: "PATENT PENDING : NO. 10-2026-0205596",
+          headline: "MISS 1 LEG & STILL WIN 100% ALL-KILL!",
+          subline: "NBA · NFL · NHL · MLB · MLS Smart Parlay Compression Engine",
+          bullets: [
+            "🛡️ Never Lose a 10-Leg or 14-Leg Parlay to a 1-Leg Bad Beat Again",
+            "⚡ Official Patent Application No. 10-2026-0205596",
+            "🔥 Mix Moneyline, Spread, and Over/Under Freely"
+          ],
           en: "OFFICIAL PATENT PENDING NO. 10-2026-0205596! Sick of losing your 10-leg NBA or NFL parlay by just 1 bad beat?",
           kr: "공식 특허출원 제 10-2026-0205596 호! 10폴더 팔레이에서 단 1경기 때문에 전액 날리는 악몽, 이제 끝냅니다!",
           html: function() {
@@ -392,6 +447,14 @@
         {
           duration: 6000,
           gold: false,
+          badge: "STEP 1 · SMART PARLAY ROTATION (192 ➔ 96 SLIPS)",
+          headline: "DANGEROUS UPSET LEG AUTO-OMITTED (PASS)!",
+          subline: "Moneyline · Spread · Over/Under Combined into 64 / 96 Slips",
+          bullets: [
+            "#1 Celtics ML (-165) : WIN ✅    | #2 Lakers -4.5 Spread : WIN ✅",
+            "#3 Chiefs Over 47.5 : WIN ✅     | #4 Ravens ML (-140) : WIN ✅",
+            "#5 Knicks vs Bucks : ❌ UPSET ➔ AUTO-OMITTED (PASS 🛡️)"
+          ],
           en: "Mix Moneyline, Spread, and Over/Under freely! Patent No. 10-2026-0205596 compresses 192 combos into 64 or 96 slips and rotates 1 PASS leg per slip!",
           kr: "승무패·핸디캡·언더오버 자유 선택! 특허 10-2026-0205596 엔진이 192조합을 64/96슬립으로 압축하며 슬립마다 위험한 1경기를 자동 제외(PASS)합니다!",
           html: function() {
@@ -421,6 +484,14 @@
         {
           duration: 6500,
           gold: true,
+          badge: "STEP 2 · PARLAY SLIP #28 10-LEG ALL-KILL HIT",
+          headline: "💰 EST. PAYOUT $2,150.00 CASHED! (100% HIT)",
+          subline: "Match #5 Lost, But Slip #28 Passed #5 and Hit Every Other Leg!",
+          bullets: [
+            "✅ #1:W  ✅ #2:W  ✅ #3:O  ✅ #4:W  🛡️ #5:PASS (Upset Dodged!)",
+            "✅ #6:W  ✅ #7:W  ✅ #8:W  ✅ #9:U  ✅ #10:W  ✅ #11:W",
+            "🏆 10-Leg All-Kill Payout Locked In by Patent No. 10-2026-0205596!"
+          ],
           en: "Match #5 suffered a brutal 4th-quarter upset—but Slip #28 automatically omitted Match #5 and cashed $2,150.00 (100% ALL-KILL)!",
           kr: "5번 경기에서 충격의 역전패가 터졌지만, 특허 알고리즘이 5번을 정확히 PASS 처리한 28번 슬립이 10폴더 올킬($2,150.00)을 그대로 적중시킵니다!",
           html: function() {
@@ -447,6 +518,14 @@
         {
           duration: 5500,
           gold: true,
+          badge: "🎁 7-DAY FREE VVIP UNLIMITED TRIAL",
+          headline: "START YOUR 1-WEEK FREE TRIAL TODAY!",
+          subline: "https://tokeon.app · Zero Cost for 7 Full Days",
+          bullets: [
+            "✓ 7 Days Unlimited 24 / 36 / 48 / 64 / 96 Slip Generation",
+            "✓ Protected by Patent Pending No. 10-2026-0205596",
+            "✓ Instant Access at https://tokeon.app"
+          ],
           en: "Start your 7-DAY FREE VVIP TRIAL now at TOKEON.APP! Never lose a parlay to a 1-leg bad beat again!",
           kr: "지금 TOKEON.APP에서 【1주일(7일) 무료 VVIP 프리패스】로 시작하세요! 다시는 한 경기 때문에 팔레이를 날리지 마십시오!",
           html: function() {
@@ -515,8 +594,148 @@
 
     function toggleKrSub() {
       showKrSub = !showKrSub;
-      document.getElementById('krSubLabel').textContent = 'KR Sub: ' + (showKrSub ? 'ON' : 'OFF');
+      document.getElementById('krSubLabel').textContent = '한글 자막: ' + (showKrSub ? 'ON' : 'OFF');
       document.getElementById('subTextKr').style.display = showKrSub ? 'block' : 'none';
+    }
+
+    /* 60FPS 3D Canvas Video File Exporter (.webm) */
+    var isExporting = false;
+    function exportCurrentEpisodeVideo() {
+      if (isExporting) return;
+      var canvas = document.getElementById('exportCanvas');
+      var ctx = canvas.getContext('2d');
+      var list = EPISODES[currentEp];
+      var btnTxt = document.getElementById('exportBtnText');
+
+      if (!canvas.captureStream || typeof MediaRecorder === 'undefined') {
+        alert('현재 브라우저에서 자동 영상 파일 변환을 지원하지 않습니다. Chrome 또는 Edge 브라우저를 이용해 주세요.');
+        return;
+      }
+
+      isExporting = true;
+      btnTxt.textContent = '⏳ 3D 영상 파일 생성 중 (약 16초)...';
+
+      var stream = canvas.captureStream(30);
+      var chunks = [];
+      var recorder = new MediaRecorder(stream, { mimeType: 'video/webm' });
+      recorder.ondataavailable = function(e) { if (e.data && e.data.size > 0) chunks.push(e.data); };
+      recorder.onstop = function() {
+        isExporting = false;
+        btnTxt.textContent = '💾 현재 편 영상파일(.webm) 다운로드';
+        var blob = new Blob(chunks, { type: 'video/webm' });
+        var url = URL.createObjectURL(blob);
+        var a = document.createElement('a');
+        a.href = url;
+        a.download = currentEp === 1 ? 'TOKEON_US_Ep1_14Match_Pool_Patent.webm' : 'TOKEON_US_Ep2_Parlay_AllKill_Patent.webm';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      };
+
+      recorder.start();
+      var startTime = performance.now();
+      var sceneDur = 4000; // 4s per scene = 16s total crisp promo video
+      var totalDur = list.length * sceneDur;
+
+      function drawFrame(now) {
+        var elapsed = now - startTime;
+        if (elapsed >= totalDur) {
+          recorder.stop();
+          return;
+        }
+        var sIdx = Math.min(list.length - 1, Math.floor(elapsed / sceneDur));
+        var sc = list[sIdx];
+        var localT = (elapsed % sceneDur) / sceneDur;
+
+        // Background
+        var grad = ctx.createRadialGradient(640, 260, 50, 640, 360, 750);
+        grad.addColorStop(0, '#1e293b');
+        grad.addColorStop(1, '#050811');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, 1280, 720);
+
+        // Moving 3D Perspective Floor Grid
+        ctx.strokeStyle = 'rgba(56, 189, 248, 0.22)';
+        ctx.lineWidth = 1;
+        var offset = (elapsed * 0.06) % 40;
+        for (var y = 460; y < 720; y += 26) {
+          ctx.beginPath();
+          ctx.moveTo(0, y + (offset * 0.5));
+          ctx.lineTo(1280, y + (offset * 0.5));
+          ctx.stroke();
+        }
+        for (var x = -200; x <= 1480; x += 80) {
+          ctx.beginPath();
+          ctx.moveTo(640 + (x - 640) * 0.35, 450);
+          ctx.lineTo(x, 720);
+          ctx.stroke();
+        }
+
+        // Top Patent Header Ribbon
+        ctx.fillStyle = '#090d16';
+        ctx.strokeStyle = '#f59e0b';
+        ctx.lineWidth = 3;
+        ctx.fillRect(240, 24, 800, 48);
+        ctx.strokeRect(240, 24, 800, 48);
+        ctx.fillStyle = '#fde047';
+        ctx.font = 'bold 21px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.fillText('🛡️ OFFICIAL PATENT PENDING : NO. 10-2026-0205596  |  🎁 7-DAY FREE VVIP TRIAL', 640, 55);
+
+        // 3D Floating Card
+        var tilt = Math.sin(localT * Math.PI * 2) * 6;
+        ctx.save();
+        ctx.translate(640, 320 + tilt);
+        ctx.fillStyle = 'rgba(15, 23, 42, 0.96)';
+        ctx.strokeStyle = sc.gold ? '#fde047' : '#38bdf8';
+        ctx.lineWidth = 4;
+        ctx.fillRect(-500, -195, 1000, 380);
+        ctx.strokeRect(-500, -195, 1000, 380);
+
+        // Badge
+        ctx.fillStyle = '#f59e0b';
+        ctx.font = 'bold 22px sans-serif';
+        ctx.fillText(sc.badge, 0, -135);
+
+        // Headline
+        ctx.fillStyle = '#ffffff';
+        ctx.font = '900 38px sans-serif';
+        ctx.fillText(sc.headline, 0, -75);
+
+        // Subline
+        ctx.fillStyle = '#38bdf8';
+        ctx.font = 'bold 24px sans-serif';
+        ctx.fillText(sc.subline, 0, -30);
+
+        // Bullets
+        ctx.fillStyle = '#e2e8f0';
+        ctx.font = 'bold 21px sans-serif';
+        for (var b = 0; b < sc.bullets.length; b++) {
+          ctx.fillText(sc.bullets[b], 0, 35 + b * 42);
+        }
+        ctx.restore();
+
+        // Bottom Subtitle Box
+        ctx.fillStyle = 'rgba(9, 13, 22, 0.95)';
+        ctx.strokeStyle = '#fde047';
+        ctx.lineWidth = 2;
+        ctx.fillRect(90, 585, 1100, 105);
+        ctx.strokeRect(90, 585, 1100, 105);
+
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 20px sans-serif';
+        ctx.fillText(sc.en, 640, 625);
+
+        if (showKrSub) {
+          ctx.fillStyle = '#fde047';
+          ctx.font = 'bold 19px "Malgun Gothic", sans-serif';
+          ctx.fillText(sc.kr, 640, 665);
+        }
+
+        requestAnimationFrame(drawFrame);
+      }
+
+      requestAnimationFrame(drawFrame);
     }
 
     window.addEventListener('DOMContentLoaded', function() {
