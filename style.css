@@ -275,19 +275,19 @@ body.dark-mode .category-tab-btn {
 }
 
 /* ==========================================================================
-   3. MAIN CONTAINER & PC 7:3 GOLDEN RATIO / MOBILE SINGLE COLUMN
+   3. MAIN CONTAINER & PC 7.6:2.4 SPACIOUS RATIO / MOBILE SINGLE COLUMN
    ========================================================================== */
 .main-container {
-  max-width: 1440px;
+  max-width: 1580px;
   margin: 0 auto;
-  padding: 12px 16px 64px 16px;
+  padding: 14px 18px 64px 18px;
   width: 100%;
 }
 
 @media (min-width: 1024px) {
   body:not(.mode-mobile) .main-container {
     display: grid !important;
-    grid-template-columns: minmax(0, 7fr) minmax(320px, 3fr) !important;
+    grid-template-columns: minmax(0, 7.6fr) minmax(300px, 2.4fr) !important;
     gap: 18px !important;
     align-items: start !important;
   }
@@ -336,7 +336,7 @@ body.pc-view-combo .pane-proto { display: none !important; }
   background: #FFFFFF;
   border: 1.5px solid #CBD5E1;
   border-radius: 14px;
-  padding: 10px;
+  padding: 14px;
   box-shadow: var(--card-shadow);
   width: 100%;
 }
@@ -349,12 +349,12 @@ body.dark-mode .toto-vip-board-container {
 .app-toto-toolbar {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
   background: #F8FAFC;
   border: 1px solid #E2E8F0;
-  border-radius: 11px;
-  padding: 8px 10px;
-  margin-bottom: 8px;
+  border-radius: 12px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
 }
 
 body.dark-mode .app-toto-toolbar {
@@ -364,22 +364,35 @@ body.dark-mode .app-toto-toolbar {
 
 .app-toolbar-tools {
   display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 6px;
+  grid-template-columns: minmax(185px, 235px) 1fr auto;
+  gap: 8px;
   align-items: center;
   width: 100%;
+}
+
+@media (max-width: 820px) {
+  .app-toolbar-tools {
+    grid-template-columns: 1fr auto;
+  }
+  .vip-cut-triple-grid {
+    grid-column: 1 / -1;
+    order: 3;
+  }
 }
 
 .vip-round-select {
   background: #FFFFFF;
   color: #0F172A;
   border: 1.5px solid #2563EB;
-  border-radius: 8px;
+  border-radius: 9px;
   padding: 6px 10px;
-  font-size: 0.84rem;
+  font-size: 0.85rem;
   font-weight: 800;
   cursor: pointer;
-  height: 40px;
+  height: 50px;
+  width: 100%;
+  max-width: 235px;
+  text-overflow: ellipsis;
 }
 
 body.dark-mode .vip-round-select {
@@ -391,7 +404,7 @@ body.dark-mode .vip-round-select {
 .vip-cut-triple-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 6px;
+  gap: 8px;
 }
 
 @keyframes vipSparkleSweep {
@@ -402,9 +415,10 @@ body.dark-mode .vip-round-select {
 .btn-hero-action.btn-vip-cut {
   position: relative;
   overflow: hidden;
-  border-radius: 9px;
-  padding: 5px 4px;
-  height: 42px;
+  border-radius: 10px;
+  padding: 6px 8px;
+  min-height: 50px;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -415,6 +429,24 @@ body.dark-mode .vip-round-select {
   color: #FFFFFF;
   font-weight: 900;
   box-shadow: 0 3px 10px rgba(37, 99, 235, 0.3);
+}
+
+.vip-cut-line1 {
+  font-size: 0.82rem;
+  font-weight: 900;
+  line-height: 1.22;
+  white-space: nowrap;
+  display: block;
+}
+
+.vip-cut-line2 {
+  font-size: 0.66rem;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-top: 2px;
+  white-space: nowrap;
+  display: block;
+  color: #DBEAFE;
 }
 
 .btn-hero-action.btn-vip-cut::after {
@@ -441,15 +473,16 @@ body.dark-mode .vip-round-select {
   background: #FFFFFF;
   border: 1.5px solid #CBD5E1;
   color: #0F172A;
-  border-radius: 9px;
-  padding: 0 10px;
-  height: 42px;
-  font-size: 0.78rem;
+  border-radius: 10px;
+  padding: 0 12px;
+  min-height: 50px;
+  height: 50px;
+  font-size: 0.82rem;
   font-weight: 900;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 6px;
   white-space: nowrap;
 }
 
@@ -464,14 +497,46 @@ body.dark-mode .btn-hero-action.btn-vip-saved {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   background: #F8FAFC;
   border: 1px solid #E2E8F0;
-  border-radius: 9px;
-  padding: 6px 10px;
+  border-radius: 10px;
+  padding: 8px 12px;
   margin-bottom: 8px;
-  font-size: 0.78rem;
+  font-size: 0.84rem;
   font-weight: 800;
+}
+
+.vip-combos-badge {
+  background: #EFF6FF;
+  color: #1D4ED8;
+  border: 1px solid #BFDBFE;
+  border-radius: 6px;
+  padding: 3px 9px;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+.vip-guarantee-badge {
+  background: #ECFDF5;
+  color: #047857;
+  border: 1px solid #6EE7B7;
+  border-radius: 6px;
+  padding: 3px 9px;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+body.dark-mode .vip-combos-badge {
+  background: rgba(37, 99, 235, 0.2);
+  color: #93C5FD;
+  border-color: #1D4ED8;
+}
+
+body.dark-mode .vip-guarantee-badge {
+  background: rgba(16, 185, 129, 0.2);
+  color: #6EE7B7;
+  border-color: #059669;
 }
 
 body.dark-mode .vip-summary-bar {
@@ -483,20 +548,20 @@ body.dark-mode .vip-summary-bar {
 .toto-14-screen-table {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 6px;
   width: 100%;
 }
 
 .m14-row {
   display: flex;
   align-items: center;
-  min-height: 42px;
+  min-height: 46px;
   background: #FFFFFF;
   border: 1px solid #CBD5E1;
   border-left: 4px solid #94A3B8;
-  border-radius: 9px;
-  padding: 4px 8px;
-  gap: 6px;
+  border-radius: 10px;
+  padding: 6px 10px;
+  gap: 8px;
   transition: all 0.14s ease;
 }
 
@@ -583,7 +648,7 @@ body.dark-mode .m14-num-badge {
 .m14-team-home {
   flex: 1 1 0;
   text-align: right;
-  font-size: 0.84rem;
+  font-size: 0.90rem;
   font-weight: 900;
   color: var(--text-main);
   overflow: hidden;
@@ -594,7 +659,7 @@ body.dark-mode .m14-num-badge {
 .m14-team-away {
   flex: 1 1 0;
   text-align: left;
-  font-size: 0.84rem;
+  font-size: 0.90rem;
   font-weight: 900;
   color: var(--text-main);
   overflow: hidden;
@@ -608,7 +673,7 @@ body.dark-mode .m14-team-home.picked { color: #38BDF8; }
 body.dark-mode .m14-team-away.picked { color: #FB7185; }
 
 .m14-center-score-wrap {
-  min-width: 44px;
+  min-width: 48px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -619,9 +684,9 @@ body.dark-mode .m14-team-away.picked { color: #FB7185; }
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 1px 6px;
+  padding: 2px 7px;
   border-radius: 5px;
-  font-size: 0.74rem;
+  font-size: 0.78rem;
   font-weight: 900;
   background: #FEF3C7;
   color: #92400E;
@@ -629,7 +694,7 @@ body.dark-mode .m14-team-away.picked { color: #FB7185; }
 }
 
 .m14-vs-badge {
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 800;
   color: #64748B;
 }
@@ -638,31 +703,31 @@ body.dark-mode .m14-team-away.picked { color: #FB7185; }
   background: linear-gradient(135deg, #2563EB 0%, #1D4ED8 100%) !important;
   color: #FFFFFF !important;
   border: 1.5px solid #FDE047 !important;
-  font-size: 0.68rem !important;
+  font-size: 0.72rem !important;
   font-weight: 900 !important;
-  padding: 3px 6px !important;
-  border-radius: 5px !important;
+  padding: 4px 8px !important;
+  border-radius: 6px !important;
   cursor: pointer !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 3px !important;
+  gap: 4px !important;
   flex-shrink: 0 !important;
 }
 
 .m14-col-picks {
-  width: 132px;
-  min-width: 132px;
+  width: 204px;
+  min-width: 204px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 3px;
+  gap: 4px;
   flex-shrink: 0;
 }
 
 .btn-m14-pick {
   flex: 1;
-  height: 32px;
-  border-radius: 6px;
+  height: 36px;
+  border-radius: 7px;
   border: 1px solid #CBD5E1;
   background: #F1F5F9;
   color: #334155;
@@ -672,7 +737,7 @@ body.dark-mode .m14-team-away.picked { color: #FB7185; }
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  line-height: 1.05;
+  line-height: 1.08;
   transition: all 0.12s ease;
 }
 
@@ -683,13 +748,15 @@ body.dark-mode .btn-m14-pick {
 }
 
 .btn-m14-pick .pick-label {
-  font-size: 0.76rem;
+  font-size: 0.70rem;
   font-weight: 900;
+  letter-spacing: -0.2px;
+  white-space: nowrap;
 }
 .btn-m14-pick .pick-odds {
-  font-size: 0.58rem;
+  font-size: 0.62rem;
   font-weight: 700;
-  opacity: 0.85;
+  opacity: 0.88;
 }
 
 .btn-m14-pick.w.active {
@@ -964,8 +1031,8 @@ body.dark-mode .pc-community-card {
     grid-template-columns: 1fr !important;
   }
   .m14-col-picks {
-    width: 104px !important;
-    min-width: 104px !important;
+    width: 134px !important;
+    min-width: 134px !important;
   }
   .m14-team-home, .m14-team-away {
     font-size: 0.76rem !important;

@@ -12,7 +12,7 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="manifest" href="./manifest.json">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="./style.css?v=20261106_us_pure_en">
+  <link rel="stylesheet" href="./style.css?v=20261106_us_espn_live_v4">
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
 </head>
 <body class="pc-view-toto" data-view-mode="pc">
@@ -108,18 +108,18 @@
 
             <div class="vip-cut-triple-grid">
               <button type="button" class="btn-hero-action btn-vip-cut" id="btnVipCutAction" onclick="generateGoldenWheel24(24)" title="192 Combos ➔ 24 Slips ($24) · 2nd Prize 100% Guaranteed">
-                <span style="font-size:0.76rem; font-weight:900; line-height:1.1;"><i class="fa-solid fa-key" style="color:#fde047; font-size:0.65rem;"></i> 24 Slips ($24)</span>
-                <span style="font-size:0.60rem; color:#dbeafe; font-weight:800; line-height:1.05; margin-top:2px;">1st 12.5% + 2nd 100%</span>
+                <span class="vip-cut-line1"><i class="fa-solid fa-key" style="color:#fde047; font-size:0.70rem;"></i> 24 Slips ($24)</span>
+                <span class="vip-cut-line2">1st 12.5% + 2nd 100%</span>
               </button>
 
               <button type="button" class="btn-hero-action btn-vip-cut" id="btnVipCutAction36" onclick="generateGoldenWheel24(36)" title="192 Combos ➔ 36 Slips ($36) · 1st 50% + 2nd 100% Guaranteed">
-                <span style="font-size:0.76rem; font-weight:900; line-height:1.1;"><i class="fa-solid fa-bolt" style="color:#fde047; font-size:0.65rem;"></i> 36 Slips ($36)</span>
-                <span style="font-size:0.60rem; color:#e0f2fe; font-weight:800; line-height:1.05; margin-top:2px;">1st 50% + 2nd 100%</span>
+                <span class="vip-cut-line1"><i class="fa-solid fa-bolt" style="color:#fde047; font-size:0.70rem;"></i> 36 Slips ($36)</span>
+                <span class="vip-cut-line2" style="color:#e0f2fe;">1st 50% + 2nd 100%</span>
               </button>
 
               <button type="button" class="btn-hero-action btn-vip-cut" id="btnVipCutAction48" onclick="generateGoldenWheel24(48)" title="192 Combos ➔ 48 Slips ($48) · 1st 70% + 2nd 100% Guaranteed">
-                <span style="font-size:0.76rem; font-weight:900; line-height:1.1;"><i class="fa-solid fa-crown" style="color:#78350f; font-size:0.65rem;"></i> 48 Slips ($48) ⭐Best</span>
-                <span style="font-size:0.60rem; color:#451a03; font-weight:900; line-height:1.05; margin-top:2px;">1st 70% + 2nd 100%</span>
+                <span class="vip-cut-line1"><i class="fa-solid fa-crown" style="color:#78350f; font-size:0.70rem;"></i> 48 Slips ($48) ⭐Best</span>
+                <span class="vip-cut-line2" style="color:#451a03; font-weight:900;">1st 70% + 2nd 100%</span>
               </button>
             </div>
 
@@ -295,14 +295,14 @@
 
           <!-- 2 Compression Buttons (64 Slips & 96 Slips) -->
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; width:100%;">
-            <button type="button" class="btn-hero-action btn-vip-cut" id="btnProto11Gen64" onclick="generateProto11GuaranteeSlips('exclude_triple')" style="height:46px; background:linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #1e40af 100%) !important; border:1.5px solid #93c5fd !important;">
-              <span style="font-size:0.80rem; font-weight:900; color:#ffffff;"><i class="fa-solid fa-key" style="color:#fde047;"></i> 192 Combos ➔ 64 Slips ($64) [Exclude Triple]</span>
-              <span style="font-size:0.64rem; color:#dbeafe; font-weight:800; margin-top:2px;">16 Slots ➔ 15-Leg Marking · 100% Win Guaranteed</span>
+            <button type="button" class="btn-hero-action btn-vip-cut" id="btnProto11Gen64" onclick="generateProto11GuaranteeSlips('exclude_triple')" style="min-height:52px; height:auto; background:linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #1e40af 100%) !important; border:1.5px solid #93c5fd !important;">
+              <span class="vip-cut-line1" style="color:#ffffff;"><i class="fa-solid fa-key" style="color:#fde047;"></i> 192 Combos ➔ 64 Slips ($64) [Triple Cut]</span>
+              <span class="vip-cut-line2">16 Slots ➔ 15-Leg Marking · 100% Win Guaranteed</span>
             </button>
 
-            <button type="button" class="btn-hero-action btn-vip-cut" id="btnProto11Gen96" onclick="generateProto11GuaranteeSlips('include_triple')" style="height:46px; background:linear-gradient(135deg, #f59e0b 0%, #fbbf24 45%, #d97706 100%) !important; border:2px solid #b45309 !important; color:#090d16 !important;">
-              <span style="font-size:0.80rem; font-weight:900; color:#090d16;"><i class="fa-solid fa-crown" style="color:#78350f;"></i> 192 Combos ➔ 96 Slips ($96) [100% All-Kill]</span>
-              <span style="font-size:0.64rem; color:#451a03; font-weight:900; margin-top:2px;">16 Slots ➔ 15-Leg Marking · 100% All-Kill Guaranteed</span>
+            <button type="button" class="btn-hero-action btn-vip-cut" id="btnProto11Gen96" onclick="generateProto11GuaranteeSlips('include_triple')" style="min-height:52px; height:auto; background:linear-gradient(135deg, #f59e0b 0%, #fbbf24 45%, #d97706 100%) !important; border:2px solid #b45309 !important; color:#090d16 !important;">
+              <span class="vip-cut-line1" style="color:#090d16;"><i class="fa-solid fa-crown" style="color:#78350f;"></i> 192 Combos ➔ 96 Slips ($96) ⭐Best</span>
+              <span class="vip-cut-line2" style="color:#451a03; font-weight:900;">16 Slots ➔ 15-Leg Marking · 100% All-Kill</span>
             </button>
           </div>
 
@@ -722,6 +722,6 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20261106_us_espn_live_v3"></script>
+  <script src="./app.js?v=20261106_us_espn_live_v4"></script>
 </body>
 </html>
