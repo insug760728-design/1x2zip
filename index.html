@@ -166,7 +166,7 @@
               <i class="fa-solid fa-floppy-disk"></i> Save Set
             </button>
             <button type="button" onclick="openGwFullTextModal('omr')" style="background:linear-gradient(135deg, #059669, #10b981); color:#ffffff; border:1px solid #34d399; border-radius:7px; padding:7px 13px; font-size:0.78rem; font-weight:900; cursor:pointer; display:inline-flex; align-items:center; gap:5px;">
-              <i class="fa-solid fa-table-Cells"></i> OMR Slip View
+              <i class="fa-solid fa-table-cells"></i> OMR Slip View
             </button>
             <button type="button" onclick="copyAllPoolSlips()" style="background:#1e293b; color:#fde047; border:1px solid #f59e0b; border-radius:7px; padding:7px 12px; font-size:0.78rem; font-weight:900; cursor:pointer; display:inline-flex; align-items:center; gap:5px;">
               <i class="fa-solid fa-copy"></i> Copy All
@@ -223,32 +223,31 @@
       </div>
     </section>
 
-    <!-- ==================== PANE 2: US PARLAY SPORTSBOOK (NBA · NFL · MLB · NHL · MLS) ==================== -->
+    <!-- ==================== PANE 2: US PARLAY SPORTSBOOK (NBA · NFL · NHL · MLS) ==================== -->
     <section class="pane-column pane-proto" id="paneProto">
       <div class="control-bar proto-clean-bar">
         <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px;">
           <div style="display:flex; align-items:center; gap:8px;">
             <span style="font-size:1rem; font-weight:900; color:var(--text-main);">
-              <i class="fa-solid fa-fire-flame-curved" style="color:#f59e0b;"></i> USA Official Sportsbook Parlay
+              <i class="fa-solid fa-fire-flame-curved" style="color:#f59e0b;"></i> USA Official Sportsbook Parlay (Nov 2026)
             </span>
             <span id="totalMatchCount" style="background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; font-size:0.75rem; font-weight:900; padding:2px 8px; border-radius:999px;">32 Matches</span>
           </div>
           <div style="display:flex; align-items:center; gap:6px;">
-            <input type="text" id="usParlaySearchInput" oninput="renderUsParlayCards()" placeholder="Search US Team (e.g. Celtics, Chiefs, Dodgers)..." style="padding:5px 10px; border-radius:8px; border:1.5px solid #cbd5e1; font-size:0.78rem; font-weight:700; width:220px;">
-            <button type="button" onclick="autoPickTop11ToCombo()" style="background:linear-gradient(135deg, #f59e0b, #d97706); color:#0f172a; border:1px solid #fde047; border-radius:8px; padding:5px 10px; font-size:0.76rem; font-weight:900; cursor:pointer; white-space:nowrap;">
-              <i class="fa-solid fa-wand-magic-sparkles"></i> Auto-Pick 11 (10-Leg)
+            <input type="text" id="usParlaySearchInput" oninput="renderUsParlayCards()" placeholder="Search US Team (e.g. Celtics, Chiefs, Ravens, Inter Miami)..." style="padding:5px 10px; border-radius:8px; border:1.5px solid #cbd5e1; font-size:0.78rem; font-weight:700; width:240px;">
+            <button type="button" onclick="autoPickTop11ToCombo(16)" style="background:linear-gradient(135deg, #f59e0b, #d97706); color:#0f172a; border:1px solid #fde047; border-radius:8px; padding:5px 10px; font-size:0.76rem; font-weight:900; cursor:pointer; white-space:nowrap;">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Auto-Pick 16 (15-Leg)
             </button>
           </div>
         </div>
 
         <!-- US League Filter Buttons -->
         <div class="tag-filter-row" id="usLeagueFilterBar">
-          <button type="button" class="tag-btn active" data-league="ALL" onclick="setUsParlayLeagueFilter('ALL')">🇺🇸 All US Leagues</button>
-          <button type="button" class="tag-btn" data-league="NBA" onclick="setUsParlayLeagueFilter('NBA')">🏀 NBA</button>
-          <button type="button" class="tag-btn" data-league="NFL" onclick="setUsParlayLeagueFilter('NFL')">🏈 NFL</button>
-          <button type="button" class="tag-btn" data-league="MLB" onclick="setUsParlayLeagueFilter('MLB')">⚾ MLB</button>
-          <button type="button" class="tag-btn" data-league="NHL" onclick="setUsParlayLeagueFilter('NHL')">🏒 NHL</button>
-          <button type="button" class="tag-btn" data-league="MLS" onclick="setUsParlayLeagueFilter('MLS')">⚽ MLS</button>
+          <button type="button" class="tag-btn active" data-league="ALL" onclick="setUsParlayLeagueFilter('ALL')">🇺🇸 All US Leagues (32)</button>
+          <button type="button" class="tag-btn" data-league="NBA" onclick="setUsParlayLeagueFilter('NBA')">🏀 NBA (12)</button>
+          <button type="button" class="tag-btn" data-league="NFL" onclick="setUsParlayLeagueFilter('NFL')">🏈 NFL Week 9 (10)</button>
+          <button type="button" class="tag-btn" data-league="NHL" onclick="setUsParlayLeagueFilter('NHL')">🏒 NHL (5)</button>
+          <button type="button" class="tag-btn" data-league="MLS" onclick="setUsParlayLeagueFilter('MLS')">⚽ MLS Decision Day (5)</button>
           <button type="button" class="tag-btn" data-league="SNIPER" onclick="setUsParlayLeagueFilter('SNIPER')" style="border-color:#f59e0b; color:#b45309;">👑 AI #1 Lock Only</button>
         </div>
 
@@ -283,8 +282,8 @@
               <button type="button" onclick="proto11AutoFill11()" style="background:linear-gradient(135deg, #059669, #10b981); color:#ffffff; border:1px solid #34d399; border-radius:8px; padding:0 10px; height:36px; font-size:0.75rem; font-weight:900; cursor:pointer;" title="11 Matches ➔ 10-Leg Marking (100% Win)">
                 <i class="fa-solid fa-wand-magic-sparkles"></i> Auto 11 (10-Leg)
               </button>
-              <button type="button" onclick="proto11AutoFillBest()" style="background:linear-gradient(135deg, #0284c7, #2563eb); color:#ffffff; border:1px solid #38bdf8; border-radius:8px; padding:0 10px; height:36px; font-size:0.75rem; font-weight:900; cursor:pointer;" title="15 Matches ➔ 14-Leg Marking (100% Win)">
-                <i class="fa-solid fa-crown" style="color:#fde047;"></i> Auto 15 (14M)
+              <button type="button" onclick="proto11AutoFillBest()" style="background:linear-gradient(135deg, #0284c7, #2563eb); color:#ffffff; border:1px solid #38bdf8; border-radius:8px; padding:0 10px; height:36px; font-size:0.75rem; font-weight:900; cursor:pointer;" title="16 Matches ➔ 15-Leg Marking (100% Win · US 16-Game Standard)">
+                <i class="fa-solid fa-crown" style="color:#fde047;"></i> Auto 16 (15-Leg)
               </button>
               <button type="button" onclick="proto11ClearAll()" style="background:#fef2f2; color:#dc2626; border:1px solid #fca5a5; border-radius:8px; padding:0 10px; height:36px; font-size:0.75rem; font-weight:900; cursor:pointer;">
                 <i class="fa-solid fa-trash-can"></i> Clear
@@ -299,20 +298,20 @@
           <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; width:100%;">
             <button type="button" class="btn-hero-action btn-vip-cut" id="btnProto11Gen64" onclick="generateProto11GuaranteeSlips('exclude_triple')" style="height:46px; background:linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #1e40af 100%) !important; border:1.5px solid #93c5fd !important;">
               <span style="font-size:0.80rem; font-weight:900; color:#ffffff;"><i class="fa-solid fa-key" style="color:#fde047;"></i> 192 Combos ➔ 64 Slips ($64) [Exclude Triple]</span>
-              <span style="font-size:0.64rem; color:#dbeafe; font-weight:800; margin-top:2px;">14-Leg Marking · 100% Win Guaranteed</span>
+              <span style="font-size:0.64rem; color:#dbeafe; font-weight:800; margin-top:2px;">16 Slots ➔ 15-Leg Marking · 100% Win Guaranteed</span>
             </button>
 
             <button type="button" class="btn-hero-action btn-vip-cut" id="btnProto11Gen96" onclick="generateProto11GuaranteeSlips('include_triple')" style="height:46px; background:linear-gradient(135deg, #f59e0b 0%, #fbbf24 45%, #d97706 100%) !important; border:2px solid #b45309 !important; color:#090d16 !important;">
               <span style="font-size:0.80rem; font-weight:900; color:#090d16;"><i class="fa-solid fa-crown" style="color:#78350f;"></i> 192 Combos ➔ 96 Slips ($96) [100% All-Kill]</span>
-              <span style="font-size:0.64rem; color:#451a03; font-weight:900; margin-top:2px;">10-Leg / 14-Leg Marking · 100% All-Kill Guaranteed</span>
+              <span style="font-size:0.64rem; color:#451a03; font-weight:900; margin-top:2px;">16 Slots ➔ 15-Leg Marking · 100% All-Kill Guaranteed</span>
             </button>
           </div>
 
           <!-- Combo Status Summary Bar -->
           <div class="vip-summary-bar" style="margin-bottom:0;">
-            <span class="vip-counts-tag" id="proto11PickCountsText"><b>11</b> Picked (S4 · D6 · T1)</span>
+            <span class="vip-counts-tag" id="proto11PickCountsText"><b>16</b>/16 Slots Picked (S9 · D6 · T1)</span>
             <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
-              <span class="vip-combos-badge" id="proto11TotalCombosText">192 Combos ➔ 96 Slips (10-Leg / 14-Leg 100% All-Kill) / 64 Slips</span>
+              <span class="vip-combos-badge" id="proto11TotalCombosText">192 Combos ➔ 96 Slips (15-Leg Marking · 100% All-Kill) / 64 Slips</span>
               <span class="vip-guarantee-badge" id="proto11GuaranteeStatusBadge">1 Wrong Leg Still Wins 100%!</span>
             </div>
           </div>
@@ -724,6 +723,6 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20261106_us_pure_en"></script>
+  <script src="./app.js?v=20261106_us_16slot_nov2026"></script>
 </body>
 </html>

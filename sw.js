@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tokeon-us-20261106_us_pure_en';
+const CACHE_NAME = 'tokeon-us-20261106_us_16slot_nov2026';
 self.addEventListener('install', function(e) {
   self.skipWaiting();
 });
