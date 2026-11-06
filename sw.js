@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tokeon-us-20261104_betman_10m';
+const CACHE_NAME = 'tokeon-us-20261106_crypto_pay';
 self.addEventListener('install', function(e) {
   self.skipWaiting();
 });
