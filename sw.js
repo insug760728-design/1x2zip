@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tokeon-us-20261106_blockchain_verify';
+const CACHE_NAME = 'tokeon-us-20261106_us_pure_en';
 self.addEventListener('install', function(e) {
   self.skipWaiting();
 });

@@ -12,7 +12,7 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="manifest" href="./manifest.json">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="./style.css?v=20261106_blockchain_verify">
+  <link rel="stylesheet" href="./style.css?v=20261106_us_pure_en">
   <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
 </head>
 <body class="pc-view-toto" data-view-mode="pc">
@@ -30,10 +30,10 @@
         <span>Install App</span>
       </button>
 
-      <div id="headerKeyDisplayBox" class="btn-header-item btn-key" style="cursor:default;">
-        <i class="fa-solid fa-key"></i>
-        <span>Keys</span>
-        <span class="key-pill" id="headerKeyCountBadge">3</span>
+      <div id="headerKeyDisplayBox" class="btn-header-item btn-key" style="cursor:pointer;" onclick="openKeyChargeModal('vvip')" title="7-Day Free Trial &amp; Key Status">
+        <i class="fa-solid fa-gift" id="headerKeyIcon" style="color:#fde047;"></i>
+        <span id="headerKeyLabelText">Free Trial</span>
+        <span class="key-pill" id="headerKeyCountBadge">7d Left</span>
       </div>
 
       <button type="button" id="btnHeaderChargeKey" class="btn-header-item btn-sparkle-gold" onclick="openKeyChargeModal('key')">
@@ -84,6 +84,15 @@
       <span>Saved (<span id="navSavedSetsCount">0</span>)</span>
     </button>
   </nav>
+
+  <!-- US 7-DAY UNLIMITED FREE TRIAL LAUNCH BANNER -->
+  <div id="usFreeTrialTopBanner" style="max-width:1400px; margin:6px auto 0 auto; padding:7px 14px; background:linear-gradient(90deg, #065f46 0%, #047857 50%, #0f172a 100%); border:1.5px solid #34d399; border-radius:10px; color:#ffffff; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:8px; font-size:0.78rem; box-shadow:0 3px 12px rgba(16,185,129,0.28);">
+    <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+      <span id="usTrialBadgePill" style="background:#fde047; color:#064e3b; font-size:0.70rem; font-weight:900; padding:2px 8px; border-radius:999px;">🎁 7-DAY FREE TRIAL ACTIVE</span>
+      <span id="usTrialBannerDesc" style="font-weight:800; color:#ecfdf5;">Unlimited 24 / 36 / 48 Pool Slips &amp; 64 / 96 Parlay Slips unlocked <b>100% FREE for 7 Days</b>! (No Sign-Up or Card Required)</span>
+    </div>
+    <span id="usTrialCountdownTag" style="background:rgba(0,0,0,0.35); border:1px solid #6ee7b7; color:#fde047; font-weight:900; font-size:0.74rem; padding:2px 10px; border-radius:999px;">⏳ 7 Days Remaining</span>
+  </div>
 
   <!-- MAIN CONTAINER -->
   <main class="main-container">
@@ -227,7 +236,7 @@
           <div style="display:flex; align-items:center; gap:6px;">
             <input type="text" id="usParlaySearchInput" oninput="renderUsParlayCards()" placeholder="Search US Team (e.g. Celtics, Chiefs, Dodgers)..." style="padding:5px 10px; border-radius:8px; border:1.5px solid #cbd5e1; font-size:0.78rem; font-weight:700; width:220px;">
             <button type="button" onclick="autoPickTop11ToCombo()" style="background:linear-gradient(135deg, #f59e0b, #d97706); color:#0f172a; border:1px solid #fde047; border-radius:8px; padding:5px 10px; font-size:0.76rem; font-weight:900; cursor:pointer; white-space:nowrap;">
-              <i class="fa-solid fa-wand-magic-sparkles"></i> Auto-Pick 11 (배트맨 10M)
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Auto-Pick 11 (10-Leg)
             </button>
           </div>
         </div>
@@ -271,8 +280,8 @@
               <button type="button" onclick="switchMainCategory('proto')" style="background:#eff6ff; color:#1d4ed8; border:1.5px solid #93c5fd; border-radius:8px; padding:0 10px; height:36px; font-size:0.75rem; font-weight:900; cursor:pointer;">
                 <i class="fa-solid fa-list-check"></i> + Pick from US Parlay
               </button>
-              <button type="button" onclick="proto11AutoFill11()" style="background:linear-gradient(135deg, #059669, #10b981); color:#ffffff; border:1px solid #34d399; border-radius:8px; padding:0 10px; height:36px; font-size:0.75rem; font-weight:900; cursor:pointer;" title="11 Matches ➔ 10-Leg Marking (Betman Limit · 100% Win)">
-                <i class="fa-solid fa-wand-magic-sparkles"></i> Auto 11 (배트맨 10M)
+              <button type="button" onclick="proto11AutoFill11()" style="background:linear-gradient(135deg, #059669, #10b981); color:#ffffff; border:1px solid #34d399; border-radius:8px; padding:0 10px; height:36px; font-size:0.75rem; font-weight:900; cursor:pointer;" title="11 Matches ➔ 10-Leg Marking (100% Win)">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Auto 11 (10-Leg)
               </button>
               <button type="button" onclick="proto11AutoFillBest()" style="background:linear-gradient(135deg, #0284c7, #2563eb); color:#ffffff; border:1px solid #38bdf8; border-radius:8px; padding:0 10px; height:36px; font-size:0.75rem; font-weight:900; cursor:pointer;" title="15 Matches ➔ 14-Leg Marking (100% Win)">
                 <i class="fa-solid fa-crown" style="color:#fde047;"></i> Auto 15 (14M)
@@ -295,7 +304,7 @@
 
             <button type="button" class="btn-hero-action btn-vip-cut" id="btnProto11Gen96" onclick="generateProto11GuaranteeSlips('include_triple')" style="height:46px; background:linear-gradient(135deg, #f59e0b 0%, #fbbf24 45%, #d97706 100%) !important; border:2px solid #b45309 !important; color:#090d16 !important;">
               <span style="font-size:0.80rem; font-weight:900; color:#090d16;"><i class="fa-solid fa-crown" style="color:#78350f;"></i> 192 Combos ➔ 96 Slips ($96) [100% All-Kill]</span>
-              <span style="font-size:0.64rem; color:#451a03; font-weight:900; margin-top:2px;">10-Leg (배트맨) / 14-Leg Marking · 100% All-Kill Guaranteed</span>
+              <span style="font-size:0.64rem; color:#451a03; font-weight:900; margin-top:2px;">10-Leg / 14-Leg Marking · 100% All-Kill Guaranteed</span>
             </button>
           </div>
 
@@ -406,13 +415,29 @@
     </aside>
 
   
-    <!-- Prominent Bottom Patent Footer -->
-    <footer style="grid-column:1 / -1; width:100%; margin:40px auto 20px auto; padding:26px 16px; text-align:center; border-top:1.5px solid #334155; background:rgba(15,23,42,0.6); border-radius:12px;">
-      <div style="font-size:1.35rem; font-weight:900; color:#f8fafc; letter-spacing:2px; text-shadow:0 0 12px rgba(255,255,255,0.2);">
-        특허출원 제10-2026-0205596호
+        <!-- Premium US Official Patent & Security Footer -->
+    <footer style="grid-column:1 / -1; width:100%; margin:28px auto 18px auto; padding:18px 22px; background:linear-gradient(135deg, #090d16 0%, #0f172a 55%, #1e293b 100%); border:1.5px solid rgba(245,158,11,0.45); border-radius:14px; box-shadow:0 8px 24px rgba(15,23,42,0.22); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+      <div style="display:flex; align-items:center; gap:12px;">
+        <div style="width:40px; height:40px; border-radius:10px; background:linear-gradient(135deg, #f59e0b, #d97706); color:#090d16; display:inline-flex; align-items:center; justify-content:center; font-size:1.15rem; font-weight:900; box-shadow:0 0 14px rgba(245,158,11,0.45);">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <div style="text-align:left;">
+          <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+            <span style="font-size:0.92rem; font-weight:900; color:#ffffff; letter-spacing:0.8px;">TOKEON <span style="color:#fde047;">US</span> OFFICIAL ANALYTICS</span>
+            <span style="background:rgba(245,158,11,0.18); border:1px solid #f59e0b; color:#fde047; font-size:0.68rem; font-weight:900; padding:2px 8px; border-radius:999px; letter-spacing:0.6px;">PATENT PENDING : NO. 10-2026-0205596</span>
+          </div>
+          <div style="font-size:0.74rem; color:#94a3b8; font-weight:700; margin-top:3px;">
+            Proprietary High-Efficiency Wheel &amp; Parlay Compression Architecture (NBA / NFL / MLB / NHL / MLS)
+          </div>
+        </div>
       </div>
-      <div style="font-size:0.88rem; color:#94a3b8; font-weight:800; margin-top:6px; letter-spacing:1px;">
-        PATENT PENDING: KR 10-2026-0205596
+      <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+        <span style="background:#1e293b; border:1px solid #334155; color:#38bdf8; font-size:0.70rem; font-weight:800; padding:4px 10px; border-radius:8px; display:inline-flex; align-items:center; gap:5px;">
+          <i class="fa-solid fa-satellite-dish"></i> ESPN Live Sync
+        </span>
+        <span style="background:#1e293b; border:1px solid #334155; color:#34d399; font-size:0.70rem; font-weight:800; padding:4px 10px; border-radius:8px; display:inline-flex; align-items:center; gap:5px;">
+          <i class="fa-solid fa-lock"></i> On-Chain Verified
+        </span>
       </div>
     </footer>
   </main>
@@ -531,10 +556,10 @@
         </div>
         <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
           <button type="button" onclick="checkoutSelectedUsPackage()" style="height:42px; border-radius:9px; border:1.5px solid #475569; background:#1e293b; color:#94a3b8; font-size:0.78rem; font-weight:900; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:5px;">
-            <i class="fa-solid fa-credit-card"></i> <span>신용카드 결제 (준비중)</span>
+            <i class="fa-solid fa-credit-card"></i> <span>Credit Card (Coming Soon)</span>
           </button>
           <button type="button" onclick="openCryptoPayModal()" style="height:42px; border-radius:9px; border:1.5px solid #fde047; background:linear-gradient(135deg, #059669 0%, #10b981 50%, #047857 100%); color:#ffffff; font-size:0.82rem; font-weight:900; cursor:pointer; box-shadow:0 4px 14px rgba(16,185,129,0.55); display:flex; align-items:center; justify-content:center; gap:5px;">
-            <i class="fa-solid fa-bolt" style="color:#fde047;"></i> <span>USDT/TRX 코인 결제</span>
+            <i class="fa-solid fa-bolt" style="color:#fde047;"></i> <span>Pay with USDT / TRX</span>
           </button>
         </div>
       </div>
@@ -554,7 +579,7 @@
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; padding-bottom:8px; border-bottom:1px solid rgba(16,185,129,0.3);">
         <div style="display:flex; align-items:center; gap:6px; font-weight:900; color:#ffffff; font-size:1.02rem;">
           <i class="fa-solid fa-bolt" style="color:#fde047;"></i>
-          <span style="color:#34d399;">USDT / TRX 코인 즉시 결제</span>
+          <span style="color:#34d399;">Instant USDT / TRX Crypto Checkout</span>
         </div>
         <button type="button" onclick="closeCryptoPayModal()" style="background:#dc2626; color:#fff; border:none; width:30px; height:30px; border-radius:7px; font-weight:900; cursor:pointer;">✕</button>
       </div>
@@ -562,11 +587,11 @@
       <!-- Selected Package Info Box -->
       <div style="background:#1e293b; border:1px solid #334155; border-radius:9px; padding:9px 12px; margin-bottom:12px; display:flex; justify-content:space-between; align-items:center;">
         <div>
-          <div style="font-size:0.72rem; color:#94a3b8; font-weight:700;">선택된 상품</div>
+          <div style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Selected Plan</div>
           <div id="cryptoSelectedPlanTitle" style="font-size:0.92rem; color:#fde047; font-weight:900;">3-Month Free Pass</div>
         </div>
         <div style="text-align:right;">
-          <div style="font-size:0.72rem; color:#94a3b8; font-weight:700;">결제 금액</div>
+          <div style="font-size:0.72rem; color:#94a3b8; font-weight:700;">Amount Due</div>
           <div id="cryptoPayAmountDisplay" style="font-size:1.08rem; color:#34d399; font-weight:900;">89.00 USDT</div>
         </div>
       </div>
@@ -574,40 +599,40 @@
       <!-- Network Selection Tabs -->
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:12px;">
         <button type="button" id="tabBtnCryptoTrc" onclick="switchCryptoNetwork('TRC')" style="height:38px; border-radius:8px; border:2px solid #34d399; background:linear-gradient(135deg, #065f46 0%, #047857 100%); color:#ffffff; font-size:0.78rem; font-weight:900; cursor:pointer;">
-          🟢 TRC-20 (Tron) <span style="font-size:0.65rem; color:#fde047;">[수수료 ~100원]</span>
+          🟢 TRC-20 (Tron) <span style="font-size:0.65rem; color:#fde047;">[Low Fee ~$0.10]</span>
         </button>
         <button type="button" id="tabBtnCryptoBsc" onclick="switchCryptoNetwork('BSC')" style="height:38px; border-radius:8px; border:1px solid #334155; background:#1e293b; color:#94a3b8; font-size:0.78rem; font-weight:900; cursor:pointer;">
-          🟡 BEP-20 (BSC) <span style="font-size:0.65rem;">[바이낸스 체인]</span>
+          🟡 BEP-20 (BSC) <span style="font-size:0.65rem;">[BNB Smart Chain]</span>
         </button>
       </div>
 
       <!-- QR Code & Address Box -->
       <div style="background:#111827; border:1.5px solid #10b981; border-radius:10px; padding:12px; text-align:center; margin-bottom:12px;">
         <div style="font-size:0.76rem; color:#cbd5e1; margin-bottom:8px; font-weight:700;">
-          스마트폰 카메라 또는 거래소 앱에서 QR코드를 스캔하세요
+          Scan QR code with your wallet or exchange app
         </div>
         <div style="display:inline-block; padding:6px; background:#ffffff; border-radius:8px; margin-bottom:8px;">
           <img id="cryptoQrImg" src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=TN9wD36GNrCjxHMEwYdS6QvjanxftaAJfm" alt="QR Code" style="width:140px; height:140px; display:block;">
         </div>
 
-        <div style="font-size:0.72rem; color:#94a3b8; margin-bottom:4px; font-weight:700;">입금 지갑 주소:</div>
+        <div style="font-size:0.72rem; color:#94a3b8; margin-bottom:4px; font-weight:700;">Deposit Wallet Address:</div>
         <div id="cryptoAddressText" style="font-family:monospace; font-size:0.78rem; color:#fde047; word-break:break-all; background:#1e293b; padding:6px 8px; border-radius:6px; border:1px dashed #475569; margin-bottom:8px;">
           TN9wD36GNrCjxHMEwYdS6QvjanxftaAJfm
         </div>
 
         <button type="button" id="btnCopyCryptoAddr" onclick="copyCryptoAddress()" style="width:100%; height:34px; border-radius:6px; border:1px solid #34d399; background:rgba(16,185,129,0.15); color:#34d399; font-weight:900; font-size:0.80rem; cursor:pointer; display:flex; align-items:center; justify-content:center; gap:6px;">
-          <i class="fa-solid fa-copy"></i> <span id="copyCryptoAddrText">📋 지갑 주소 복사하기</span>
+          <i class="fa-solid fa-copy"></i> <span id="copyCryptoAddrText">📋 Copy Wallet Address</span>
         </button>
       </div>
 
       <!-- Verification & Activation Input -->
       <div style="background:#1e293b; border-radius:9px; padding:10px; margin-bottom:10px;">
         <div style="font-size:0.74rem; color:#cbd5e1; font-weight:700; margin-bottom:6px;">
-          💡 입금 후 보낸 분 지갑 주소(또는 TXID)를 입력해 주세요:
+          💡 Enter your sender wallet address or TXID (optional — auto-detected in 10s):
         </div>
-        <input type="text" id="inpCryptoTxid" placeholder="보내신 지갑 주소 또는 TXID (선택 입력)" style="width:100%; height:34px; padding:0 10px; border-radius:6px; border:1px solid #475569; background:#0f172a; color:#fff; font-size:0.78rem; font-weight:700; box-sizing:border-box; margin-bottom:8px;">
+        <input type="text" id="inpCryptoTxid" placeholder="Sender Wallet Address or TXID (Optional)" style="width:100%; height:34px; padding:0 10px; border-radius:6px; border:1px solid #475569; background:#0f172a; color:#fff; font-size:0.78rem; font-weight:700; box-sizing:border-box; margin-bottom:8px;">
         <button type="button" onclick="confirmCryptoPayment()" style="width:100%; height:44px; border-radius:9px; border:none; background:linear-gradient(135deg, #059669 0%, #10b981 50%, #047857 100%); color:#ffffff; font-size:0.90rem; font-weight:900; cursor:pointer; box-shadow:0 4px 14px rgba(16,185,129,0.55); display:flex; align-items:center; justify-content:center; gap:6px;">
-          <i class="fa-solid fa-circle-check" style="color:#fde047;"></i> <span>✅ 입금 완료 확인 및 즉시 잠금 해제</span>
+          <i class="fa-solid fa-circle-check" style="color:#fde047;"></i> <span>✅ Verify Deposit &amp; Unlock Instantly</span>
         </button>
       </div>
     </div>
@@ -623,7 +648,7 @@
         <button type="button" onclick="closeMembershipModal()" style="background:#dc2626; color:#fff; border:none; width:30px; height:30px; border-radius:7px; font-weight:900; cursor:pointer;">✕</button>
       </div>
       <div style="font-size:0.8rem; color:#fde047; background:rgba(245,158,11,0.15); border:1px solid #f59e0b; border-radius:8px; padding:8px 10px; margin-bottom:12px; font-weight:800;">
-        🎁 Sign in or create a 3-second account to receive <b>3 Free Keys</b> immediately!
+        🎁 Your <b>7-Day Unlimited Free Trial</b> starts automatically! Sign in or create a 3-second account to receive <b>+3 Bonus Keys</b>.
       </div>
       <div style="display:flex; flex-direction:column; gap:9px;">
         <input type="text" id="inpMemberId" placeholder="Username or Email (e.g. usplayer1)" style="padding:10px 12px; border-radius:8px; border:1.5px solid #475569; background:#1e293b; color:#fff; font-size:0.86rem; font-weight:700;">
@@ -699,6 +724,6 @@
     </div>
   </div>
 
-  <script src="./app.js?v=20261106_blockchain_verify"></script>
+  <script src="./app.js?v=20261106_us_pure_en"></script>
 </body>
 </html>
