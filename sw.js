@@ -1,4 +1,4 @@
-const CACHE_NAME = 'tokeon-us-20261109_live_auto';
+const CACHE_NAME = 'tokeon-us-20261114_live_espn';
 self.addEventListener('install', function(e) {
   self.skipWaiting();
 });
